@@ -13,11 +13,13 @@ export default function CohortsPage() {
       <Navbar />
       <main className="min-h-screen bg-[var(--bg)] pt-28">
         <section className="py-16 sm:py-24 border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
-              <p className="section-label mb-4">Courses</p>
-              <h1 className="section-title text-4xl sm:text-5xl mb-5">Placement Essentials for Engineers</h1>
-              <p className="text-[var(--text-secondary)] text-[15px] max-w-xl leading-relaxed">
+              <p className="section-label mb-5">Courses</p>
+              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-6 max-w-[16ch]">
+                Placement essentials for <span className="serif-i text-[var(--accent)]">engineers</span>
+              </h1>
+              <p className="text-[var(--text-secondary)] text-base max-w-xl leading-relaxed">
                 Designed by experienced interviewers. Hybrid LIVE + recorded format with 3-year access.
               </p>
             </PageEnter>
@@ -25,7 +27,7 @@ export default function CohortsPage() {
         </section>
 
         <section className="py-16 sm:py-20">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Stagger className="grid grid-cols-1 gap-4">
               {cohorts.map((cohort) => (
                 <StaggerItem key={cohort.slug}>

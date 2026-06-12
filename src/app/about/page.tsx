@@ -14,11 +14,12 @@ export default function AboutPage() {
       <Navbar />
       <main className="min-h-screen bg-[var(--bg)] pt-28">
         <section className="py-20 sm:py-28 border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter className="max-w-3xl">
-              <p className="section-label mb-4">About EdgeX Academy</p>
-              <h1 className="section-title text-4xl sm:text-5xl mb-6">
-                Built by ISB & IIM alums for placement success
+              <p className="section-label mb-5">About EdgeX Academy</p>
+              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-7">
+                Built by ISB & IIM alums for placement{" "}
+                <span className="serif-i text-[var(--accent)]">success</span>
               </h1>
               <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-4">
                 {site.footer.mission}
@@ -31,7 +32,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-16 sm:py-20 border-b border-[var(--border)] bg-[var(--bg-secondary)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="max-w-2xl mb-12">
               <p className="section-label mb-3">Founders</p>
               <h2 className="section-title text-3xl sm:text-4xl">
@@ -49,7 +50,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-16 sm:py-20 border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="max-w-2xl mb-12">
               <p className="section-label mb-3">Advisors & SMEs</p>
               <h2 className="section-title text-3xl sm:text-4xl mb-5">
@@ -72,7 +73,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-16 sm:py-20 border-b border-[var(--border)] bg-[var(--bg-secondary)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="max-w-2xl mb-12">
               <p className="section-label mb-3">Core team</p>
               <h2 className="section-title text-3xl sm:text-4xl mb-5">
@@ -94,7 +95,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-16 sm:py-20 border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
               <Reveal>
                 <p className="section-label mb-3">EdgeX Foundations</p>
@@ -121,7 +122,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 bg-[var(--bg)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8 text-center">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 text-center">
             <Reveal>
               <h2 className="section-title text-2xl sm:text-3xl mb-4">Ready to prepare seriously?</h2>
               <p className="text-[var(--text-secondary)] mb-7 max-w-md mx-auto text-sm">

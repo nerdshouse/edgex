@@ -15,22 +15,24 @@ export default function DemoPage() {
       <Navbar />
       <main className="min-h-screen bg-[var(--bg)] pt-28">
         <section className="py-16 sm:py-24 border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
-              <p className="section-label mb-4">{demoClass.title}</p>
-              <h1 className="section-title text-4xl sm:text-5xl mb-5">{demoClass.heading}</h1>
-              <p className="text-[var(--text-secondary)] text-[15px] max-w-xl leading-relaxed mb-8">
+              <p className="section-label mb-5">{demoClass.title}</p>
+              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-6 max-w-[18ch]">
+                EdgeX Foundations class <span className="serif-i text-[var(--accent)]">preview</span>
+              </h1>
+              <p className="text-[var(--text-secondary)] text-base max-w-xl leading-relaxed mb-9">
                 Preview clips from actual EdgeX Foundations classes before you enroll.
               </p>
-              <Link href="/cohorts/edgex-foundations" className="btn-primary text-sm px-5 py-2.5 rounded-lg">
-                Enroll in EdgeX Foundations
+              <Link href="/cohorts/edgex-foundations" className="btn-primary text-sm px-6 py-3 rounded-full">
+                Enroll in EdgeX Foundations →
               </Link>
             </PageEnter>
           </div>
         </section>
 
         <section className="py-16 sm:py-20">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {demoClass.clips.map((clip) => (
                 <StaggerItem key={clip.title}>

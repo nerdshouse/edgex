@@ -74,7 +74,7 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
       <Navbar />
       <main className="min-h-screen bg-[var(--bg)] pt-28">
         <section className="py-16 sm:py-24 bg-[var(--bg-secondary)] border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
               <Link
                 href={`/cohorts/${cohort.slug}`}
@@ -86,23 +86,25 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
                 <div>
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <span className="text-[11px] font-medium text-[var(--accent)] bg-[var(--accent-muted)] px-2 py-0.5 rounded-md">
+                  <div className="flex flex-wrap items-center gap-2.5 mb-5 font-mono text-[10px] uppercase tracking-[0.14em]">
+                    <span className="text-[var(--accent)] bg-[var(--accent-muted)] px-2.5 py-1 rounded-full">
                       {course.tag}
                     </span>
-                    <span className={`text-xs font-medium ${levelColor[course.level]}`}>{course.level}</span>
+                    <span className={`font-medium ${levelColor[course.level]}`}>{course.level}</span>
                   </div>
-                  <h1 className="section-title text-3xl sm:text-5xl mb-4">{course.title}</h1>
-                  <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-6">{course.desc}</p>
+                  <h1 className="section-title text-[clamp(2.25rem,5vw,4rem)] mb-5">{course.title}</h1>
+                  <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-7">{course.desc}</p>
 
-                  <div className="flex flex-wrap gap-4 text-sm text-[var(--text-secondary)] mb-8">
-                    <span><strong className="text-[var(--text-primary)] font-medium">{course.lessons}</strong> lessons</span>
-                    <span><strong className="text-[var(--text-primary)] font-medium">{course.hours}h</strong> of content</span>
-                    <span><strong className="text-[var(--text-primary)] font-medium">{course.duration}</strong></span>
+                  <div className="flex flex-wrap gap-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)] mb-9">
+                    <span className="tabular-nums">{course.lessons} lessons</span>
+                    <span aria-hidden>/</span>
+                    <span className="tabular-nums">{course.hours}h of content</span>
+                    <span aria-hidden>/</span>
+                    <span>{course.duration}</span>
                   </div>
 
-                  <Link href="/contact" className="btn-primary inline-block text-sm px-5 py-2.5 rounded-lg">
-                    Enroll in this course
+                  <Link href="/contact" className="btn-primary inline-block text-sm px-6 py-3 rounded-full">
+                    Enroll in this course →
                   </Link>
                 </div>
 
@@ -134,7 +136,7 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
         </section>
 
         <section className="py-14 sm:py-20">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
             <Reveal className="lg:col-span-2">
               <h2 className="text-lg font-medium text-[var(--text-primary)] mb-6">Curriculum</h2>
               <Stagger className="flex flex-col gap-3">

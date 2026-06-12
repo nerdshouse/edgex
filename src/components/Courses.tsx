@@ -10,60 +10,62 @@ export default function Courses() {
   const featured = program.courses;
 
   return (
-    <section id="courses" className="py-20 sm:py-24 border-t border-[var(--border)]">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <Reveal className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10 pb-10 border-b border-[var(--border)]">
+    <section id="courses" className="py-24 sm:py-32">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <Reveal className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
           <div>
-            <p className="section-label mb-3">{site.programHighlight.label}</p>
-            <h2 className="section-title text-2xl sm:text-3xl">{site.programHighlight.title}</h2>
+            <p className="section-label mb-5">{site.programHighlight.label}</p>
+            <h2 className="section-title text-[clamp(1.875rem,4vw,3.25rem)]">
+              {site.programHighlight.title}
+            </h2>
           </div>
-          <p className="text-[var(--text-secondary)] text-sm max-w-sm leading-relaxed">
+          <p className="text-[var(--text-secondary)] text-sm max-w-sm leading-relaxed sm:text-right sm:pb-1">
             {site.programHighlight.note}
           </p>
         </Reveal>
 
-        <Stagger className="divide-y divide-[var(--border)]">
-          {featured.map((course) => (
+        <Stagger className="border-t border-[var(--border)]">
+          {featured.map((course, i) => (
             <StaggerItem key={course.slug}>
               <Link
                 href={`/courses/${course.slug}`}
-                className="group grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3 sm:gap-8 py-5 items-start sm:items-center row-hover -mx-5 px-5 sm:-mx-8 sm:px-8 rounded-lg"
+                className="group grid grid-cols-[auto_1fr] sm:grid-cols-[3.5rem_1fr_auto] gap-x-5 sm:gap-x-8 gap-y-2 py-7 sm:py-8 items-baseline border-b border-[var(--border)] transition-colors duration-300 hover:bg-[var(--bg-secondary)] -mx-5 px-5 sm:-mx-8 sm:px-8"
               >
+                <span className="index-num transition-colors duration-300 group-hover:text-[var(--accent)]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <div>
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-[11px] font-medium uppercase tracking-[0.04em] text-[var(--accent)]">
-                      {course.tag}
-                    </span>
-                    <span className="text-[var(--border-hover)]">·</span>
-                    <span className="text-[11px] font-medium text-[var(--text-muted)]">{course.level}</span>
-                  </div>
-                  <h3 className="text-[15px] font-medium text-[var(--text-primary)] tracking-[-0.02em] group-hover:text-[var(--accent)] transition-colors duration-200">
+                  <h3 className="text-xl sm:text-2xl font-medium text-[var(--text-primary)] tracking-[-0.03em] mb-1.5 transition-transform duration-300 group-hover:translate-x-1">
                     {course.title}
                   </h3>
-                  <p className="text-[var(--text-muted)] text-sm leading-relaxed mt-1 line-clamp-2">
+                  <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-xl line-clamp-2">
                     {course.desc}
                   </p>
+                  <div className="flex items-center gap-2.5 mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                    <span className="text-[var(--accent)]">{course.tag}</span>
+                    <span aria-hidden>/</span>
+                    <span>{course.level}</span>
+                    <span aria-hidden>/</span>
+                    <span className="tabular-nums">{course.lessons} modules · {course.hours}h</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3 text-[12px] text-[var(--text-muted)] tabular-nums sm:text-right">
-                  <span>{course.lessons} modules</span>
-                  <span className="text-[var(--border-hover)]">·</span>
-                  <span>{course.hours}h</span>
-                  <span className="text-[var(--text-primary)] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 ml-1">
-                    →
-                  </span>
-                </div>
+                <span
+                  className="hidden sm:flex self-center w-10 h-10 rounded-full border border-[var(--border)] items-center justify-center text-[var(--text-muted)] transition-all duration-300 group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-white group-hover:-rotate-45"
+                  aria-hidden
+                >
+                  →
+                </span>
               </Link>
             </StaggerItem>
           ))}
         </Stagger>
 
-        <Reveal className="mt-8" delay={0.1}>
+        <Reveal className="mt-10" delay={0.1}>
           <Link
             href={`/cohorts/${program.slug}`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] link-hover group"
+            className="u-link inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text-primary)]"
           >
-            View full program
-            <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>→</span>
+            View full program <span aria-hidden>→</span>
           </Link>
         </Reveal>
       </div>

@@ -77,21 +77,22 @@ export default function EngineeringStudentsPage() {
 
         {/* Hero */}
         <section className="py-16 sm:py-24 border-b border-[var(--border)] bg-[var(--bg-secondary)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
-              <p className="section-label mb-4">Engineering Students</p>
-              <h1 className="section-title text-4xl sm:text-5xl mb-5">
-                Crack your placement interviews<br className="hidden sm:block" /> with confidence.
+              <p className="section-label mb-5">Engineering Students</p>
+              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-6 max-w-[16ch]">
+                Crack your placement interviews with{" "}
+                <span className="serif-i text-[var(--accent)]">confidence.</span>
               </h1>
-              <p className="text-[var(--text-secondary)] text-[15px] max-w-xl leading-relaxed mb-8">
+              <p className="text-[var(--text-secondary)] text-base max-w-xl leading-relaxed mb-9">
                 EdgeX Foundations is built for B.Tech and B.E. students targeting non-core, non-tech roles — consulting, analytics, product, FMCG, and finance. Taught from the interviewer&apos;s perspective.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <Link href="/contact" className="btn-primary text-sm px-5 py-2.5 rounded-lg">
-                  Enroll Now
+                <Link href="/contact" className="btn-primary text-sm px-6 py-3 rounded-full">
+                  Enroll Now →
                 </Link>
-                <Link href="/demo" className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors px-2 py-2.5">
-                  Watch demo class →
+                <Link href="/demo" className="u-link text-sm font-medium text-[var(--text-primary)] px-2 py-2.5">
+                  Watch demo class
                 </Link>
               </div>
             </PageEnter>
@@ -100,7 +101,7 @@ export default function EngineeringStudentsPage() {
 
         {/* Section 1 — Explore Online Courses */}
         <section className="py-16 sm:py-20 border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-10">
               <p className="section-label mb-3">What you&apos;ll learn</p>
               <h2 className="section-title text-2xl sm:text-3xl">Explore Online Courses</h2>
@@ -138,7 +139,7 @@ export default function EngineeringStudentsPage() {
 
         {/* Section 2 — Other Important Offerings */}
         <section className="py-16 sm:py-20">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-10">
               <p className="section-label mb-3">Beyond the curriculum</p>
               <h2 className="section-title text-2xl sm:text-3xl">Other Important Offerings</h2>

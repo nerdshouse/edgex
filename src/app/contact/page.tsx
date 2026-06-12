@@ -34,11 +34,13 @@ export default function ContactPage() {
       <Navbar />
       <main className="min-h-screen bg-[var(--bg)] pt-28">
         <section className="py-16 sm:py-24 border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
-              <p className="section-label mb-4">Contact</p>
-              <h1 className="section-title text-4xl sm:text-5xl mb-4">Have questions?</h1>
-              <p className="text-[var(--text-secondary)] text-[15px] max-w-lg leading-relaxed">
+              <p className="section-label mb-5">Contact</p>
+              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-6">
+                Have <span className="serif-i text-[var(--accent)]">questions?</span>
+              </h1>
+              <p className="text-[var(--text-secondary)] text-base max-w-lg leading-relaxed">
                 Leave your contact details and our team will get in touch within 24 hours.
               </p>
             </PageEnter>
@@ -46,7 +48,7 @@ export default function ContactPage() {
         </section>
 
         <section className="py-14 sm:py-20">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
               <Reveal className="lg:col-span-2" delay={0.05}>
                 <AnimatePresence mode="wait">

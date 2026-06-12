@@ -193,6 +193,19 @@ export const site = {
     },
   ],
 
+  companies: [
+    "BCG",
+    "McKinsey",
+    "Deloitte",
+    "Amazon",
+    "Razorpay",
+    "HUL",
+    "Goldman Sachs",
+    "Bain",
+    "Flipkart",
+    "ITC",
+  ],
+
   audiences: [
     "B.Tech, B.E, BBA, B.Com and MBA students",
     "IITs, NITs, BITS, VIT, Manipal, DTU, NSUT, and top colleges",

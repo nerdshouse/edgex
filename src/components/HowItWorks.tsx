@@ -5,21 +5,23 @@ import { Reveal, Stagger, StaggerItem } from "./Reveal";
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 sm:py-24 bg-[var(--bg-secondary)] border-y border-[var(--border)]">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        <Reveal className="mb-12">
-          <p className="section-label mb-3">How it works</p>
-          <h2 className="section-title text-2xl sm:text-3xl">From enroll to interview-ready</h2>
+    <section id="how-it-works" className="py-24 sm:py-32 bg-[var(--bg-secondary)] border-y border-[var(--border)]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <Reveal className="mb-16">
+          <p className="section-label mb-5">How it works</p>
+          <h2 className="section-title text-[clamp(1.875rem,4vw,3.25rem)] max-w-2xl">
+            From enroll to <span className="serif-i text-[var(--accent)]">interview-ready</span>
+          </h2>
         </Reveal>
 
-        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--border)] border border-[var(--border)] rounded-lg overflow-hidden">
+        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14">
           {site.howItWorks.map((step) => (
             <StaggerItem key={step.number}>
-              <div className="bg-[var(--bg)] p-6 sm:p-7 h-full transition-colors duration-200 hover:bg-[var(--bg-secondary)]">
-                <div className="text-[11px] font-medium uppercase tracking-[0.05em] text-[var(--accent)] mb-4 tabular-nums">
-                  Step {step.number}
+              <div className="group relative h-full pt-6 border-t border-[var(--border)] transition-colors duration-300 hover:border-[var(--accent)]">
+                <div className="text-[clamp(3rem,5vw,4.5rem)] font-semibold leading-none tracking-[-0.05em] text-transparent mb-6 tabular-nums select-none [-webkit-text-stroke:1px_var(--border-hover)] transition-all duration-300 group-hover:[-webkit-text-stroke:1px_var(--accent)]">
+                  {step.number}
                 </div>
-                <h3 className="text-[15px] font-medium text-[var(--text-primary)] mb-2 tracking-[-0.02em]">
+                <h3 className="text-lg font-medium text-[var(--text-primary)] mb-2.5 tracking-[-0.02em]">
                   {step.title}
                 </h3>
                 <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{step.desc}</p>

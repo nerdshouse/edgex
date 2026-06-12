@@ -25,7 +25,7 @@ export default function CohortPage({ params }: { params: Promise<{ slug: string 
       <Navbar />
       <main className="min-h-screen bg-[var(--bg)] pt-28">
         <section className="py-20 sm:py-24 bg-[var(--bg-secondary)] border-b border-[var(--border)]">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
               <Link
                 href="/cohorts"
@@ -35,21 +35,22 @@ export default function CohortPage({ params }: { params: Promise<{ slug: string 
                 All Cohorts
               </Link>
 
-              <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className="text-[11px] font-medium text-[var(--accent)] bg-[var(--accent-muted)] px-2 py-0.5 rounded-md">
+              <div className="flex flex-wrap items-center gap-2.5 mb-6 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                <span className="text-[var(--accent)] bg-[var(--accent-muted)] px-2.5 py-1 rounded-full">
                   {cohort.tag}
                 </span>
-                <span className="text-xs text-[var(--text-muted)]">{cohort.duration}</span>
-                <span className="text-xs text-[var(--text-muted)]">·</span>
-                <span className="text-xs text-[var(--text-muted)]">{cohort.seats} seats</span>
+                <span aria-hidden>/</span>
+                <span>{cohort.duration}</span>
+                <span aria-hidden>/</span>
+                <span>{cohort.seats} seats</span>
               </div>
 
-              <h1 className="section-title text-4xl sm:text-5xl mb-4">{cohort.title}</h1>
-              <p className="text-[var(--text-secondary)] text-lg max-w-2xl mb-8">{cohort.desc}</p>
+              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-5 max-w-[16ch]">{cohort.title}</h1>
+              <p className="text-[var(--text-secondary)] text-lg max-w-2xl mb-9">{cohort.desc}</p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="btn-primary inline-block text-sm px-5 py-2.5 rounded-lg">
-                  Apply for {cohort.nextBatch}
+                <Link href="/contact" className="btn-primary inline-block text-sm px-6 py-3 rounded-full">
+                  Apply for {cohort.nextBatch} →
                 </Link>
                 <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -61,7 +62,7 @@ export default function CohortPage({ params }: { params: Promise<{ slug: string 
         </section>
 
         <section className="py-16 sm:py-20">
-          <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-10">
               <h2 className="section-title text-2xl sm:text-3xl">
                 {cohort.courses.length} courses in this cohort
