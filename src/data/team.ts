@@ -14,7 +14,7 @@ export const team = {
     {
       name: "Punita Shrivastava",
       role: "Co-Founder & Lead Instructor",
-      bio: "Placement & interview coach. EdgeX Foundations is designed and created by Punita, drawing from her experience cracking several interviews and interviewing hundreds of candidates. She incorporates inputs from her network of IIM, IIT, and NIT alumni.",
+      bio: "Ex-Management Consultant and now a Placement & Interview Coach. EdgeX courses are designed and created by Punita, drawing from her experience cracking several interviews and interviewing hundreds of candidates. She incorporates inputs from her network of IIM, IIT, and NIT alumni.",
       initials: "PS",
       image: "/media/team/punita.png",
       tags: ["ISB Co'20", "Ex-Management Consultant", "Placement & Interview Coach"],
@@ -22,7 +22,7 @@ export const team = {
     {
       name: "Anshul Kothari",
       role: "Co-Founder",
-      bio: "Operations & supply chain professional. Former member of the Indian Swimming Team, Anshul brings the discipline of elite sport and years of industry experience to how EdgeX programs are built and run.",
+      bio: "Operations & supply chain professional. Former member of the Indian Swimming Team (Asian Games and Commonwealth Games Finalist), Anshul brings the discipline of elite sport and years of industry experience to how EdgeX programs are built and run.",
       initials: "AK",
       image: "/media/team/anshul.png",
       tags: ["ISB Co'18", "Indian Swimming Team", "Operations & Supply Chain"],
