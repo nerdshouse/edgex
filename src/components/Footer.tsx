@@ -98,7 +98,7 @@ export default function Footer() {
         <Reveal delay={0.1}>
           <div className="relative flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-[var(--border)] gap-3">
             <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-              © 2026 EdgeX Academy — All rights reserved
+              © 2026 EdgeX Academy - All rights reserved
             </p>
             <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
               {site.contact.location} / {site.domain}

@@ -56,7 +56,7 @@ body {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* ── Film grain — the whole site sits under a faint noise texture ───────── */
+/* ── Film grain - the whole site sits under a faint noise texture ───────── */
 body::after {
   content: "";
   position: fixed;
@@ -74,7 +74,7 @@ body::after {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 2px; }
 
-/* ── Editorial label — mono, uppercase, accent dash signature ───────────── */
+/* ── Editorial label - mono, uppercase, accent dash signature ───────────── */
 .section-label {
   display: inline-flex;
   align-items: center;
@@ -104,7 +104,7 @@ body::after {
   text-wrap: balance;
 }
 
-/* Serif italic accent inside display type — the editorial counterpoint */
+/* Serif italic accent inside display type - the editorial counterpoint */
 .serif-i {
   font-family: var(--font-serif), "EB Garamond", Georgia, serif;
   font-style: italic;
@@ -226,7 +226,7 @@ body::after {
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 
-/* ── Corner ticks — registration-mark frame for media ───────────────────── */
+/* ── Corner ticks - registration-mark frame for media ───────────────────── */
 .tick-frame { position: relative; }
 .tick-frame::before,
 .tick-frame::after,

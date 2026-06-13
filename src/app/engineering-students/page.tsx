@@ -12,7 +12,7 @@ const courses = [
     slug: "case-interviews",
     tag: "Interview",
     title: "Case Interviews & Guesstimates",
-    desc: "Structured frameworks for consulting-style case questions and guesstimate problems — taught from the interviewer's perspective.",
+    desc: "Structured frameworks for consulting-style case questions and guesstimate problems - taught from the interviewer's perspective.",
     meta: "12 lessons · 8h · Intermediate",
   },
   {
@@ -85,7 +85,7 @@ export default function EngineeringStudentsPage() {
                 <span className="serif-i text-[var(--accent)]">confidence.</span>
               </h1>
               <p className="text-[var(--text-secondary)] text-base max-w-xl leading-relaxed mb-9">
-                EdgeX Foundations is built for B.Tech and B.E. students targeting non-core, non-tech roles — consulting, analytics, product, FMCG, and finance. Taught from the interviewer&apos;s perspective.
+                EdgeX Foundations is built for B.Tech and B.E. students targeting non-core, non-tech roles - consulting, analytics, product, FMCG, and finance. Taught from the interviewer&apos;s perspective.
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link href="/contact" className="btn-primary text-sm px-6 py-3 rounded-full">
@@ -99,7 +99,7 @@ export default function EngineeringStudentsPage() {
           </div>
         </section>
 
-        {/* Section 1 — Explore Online Courses */}
+        {/* Section 1 - Explore Online Courses */}
         <section className="py-16 sm:py-20 border-b border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-10">
@@ -137,7 +137,7 @@ export default function EngineeringStudentsPage() {
           </div>
         </section>
 
-        {/* Section 2 — Other Important Offerings */}
+        {/* Section 2 - Other Important Offerings */}
         <section className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-10">

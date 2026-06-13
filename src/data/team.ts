@@ -80,7 +80,7 @@ export const team = {
     {
       name: "Team Member",
       role: "Student Success",
-      bio: "First point of contact for enrolled students — portal access, doubts, and support.",
+      bio: "First point of contact for enrolled students - portal access, doubts, and support.",
       initials: "SS",
       image: "/media/team/core-student-success.png",
     },

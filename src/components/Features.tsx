@@ -15,7 +15,7 @@ export default function Features() {
               Everything in EdgeX <span className="serif-i">Foundations</span>
             </h2>
             <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 max-w-xs">
-              Hybrid format — instant recorded access plus live batches and weekly GD practice.
+              Hybrid format - instant recorded access plus live batches and weekly GD practice.
             </p>
             <Link
               href="/cohorts/edgex-foundations"

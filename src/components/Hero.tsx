@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, ease, stagger, fadeUp } from "./Motion";
 import Marquee from "./Marquee";
+import VideoPlayer from "./VideoPlayer";
 import { site } from "@/data/site";
 
 /* Split the headline so the last word gets the serif italic treatment. */
@@ -45,13 +45,13 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-60 animate-ping" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
               </span>
-              Next live batch — {site.liveBatches.startDate}
+              Next live batch - {site.liveBatches.startDate}
             </p>
           </motion.div>
 
           {/* Display headline */}
           <motion.h1
-            className="section-title text-[clamp(2.75rem,8vw,6.75rem)] max-w-[14ch] mb-10 sm:mb-14"
+            className="section-title text-[clamp(2.5rem,6.2vw,5rem)] max-w-[14ch] mb-10 sm:mb-14"
             variants={fadeUp}
           >
             {lead}{" "}
@@ -83,25 +83,21 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Hero image with registration-mark frame */}
+        {/* Hero video - click-to-play, in place of static image */}
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease }}
-          className="tick-frame mb-16 sm:mb-20"
+          className="mb-16 sm:mb-20"
         >
-          <span className="tick-b" aria-hidden />
-          <Image
-            src={hero.image}
-            alt={hero.imageAlt}
-            width={1600}
-            height={900}
-            className="w-full h-auto rounded-xl border border-[var(--border)] shadow-[var(--shadow-card)]"
-            priority
+          <VideoPlayer
+            youtubeId={site.videoFeature.youtubeId}
+            caption={site.videoFeature.caption}
+            runtime={site.videoFeature.runtime}
           />
         </motion.div>
 
-        {/* Stats — hairline editorial strip */}
+        {/* Stats - hairline editorial strip */}
         <motion.dl
           className="grid grid-cols-2 lg:grid-cols-4 border-t border-[var(--border)]"
           variants={reduce ? undefined : stagger}

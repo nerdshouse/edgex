@@ -58,7 +58,7 @@ export default function AboutPage() {
               </h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
                 Every module is reviewed by practitioners from our network of IIM, IIT, and NIT
-                alumni — people who have sat on both sides of the interview table at top
+                alumni - people who have sat on both sides of the interview table at top
                 consulting, finance, and product companies.
               </p>
             </Reveal>

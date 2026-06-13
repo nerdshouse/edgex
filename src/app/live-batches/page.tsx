@@ -39,7 +39,7 @@ export default function LiveBatchesPage() {
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal>
               <div className="flex items-center justify-between mb-4">
-                <span className="index-num">Fig. 01 — Batch schedule</span>
+                <span className="index-num">Fig. 01 - Batch schedule</span>
                 <span className="index-num hidden sm:block">Starts {liveBatches.startDate}</span>
               </div>
               <div className="tick-frame">

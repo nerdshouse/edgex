@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Banners from "@/components/Banners";
 import Courses from "@/components/Courses";
+import DesignedFor from "@/components/DesignedFor";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <Courses />
+        <DesignedFor />
         <Banners />
         <HowItWorks />
         <Features />

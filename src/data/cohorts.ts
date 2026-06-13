@@ -8,7 +8,7 @@ export const cohorts: Cohort[] = [
     title: "EdgeX Foundations",
     tag: "Flagship",
     tagline: "India's most comprehensive placement interview preparation program.",
-    desc: "A hybrid LIVE + recorded program for students targeting non-core, non-tech business and managerial roles. Covers case interviews, guesstimates, GDs, behavioral rounds, CV strategy, and company research — taught end-to-end by Punita Shrivastava.",
+    desc: "A hybrid LIVE + recorded program for students targeting non-core, non-tech business and managerial roles. Covers case interviews, guesstimates, GDs, behavioral rounds, CV strategy, and company research - taught end-to-end by Punita Shrivastava.",
     duration: "3-month live batch + 3-year access",
     nextBatch: "13 June 2026",
     seats: 60,
@@ -18,7 +18,7 @@ export const cohorts: Cohort[] = [
       {
         slug: "case-interviews",
         title: "Case Interviews & Guesstimates",
-        desc: "Structured frameworks for consulting-style case questions and guesstimate problems — taught from the interviewer's perspective.",
+        desc: "Structured frameworks for consulting-style case questions and guesstimate problems - taught from the interviewer's perspective.",
         duration: "4 weeks",
         lessons: 12,
         hours: 8,

@@ -21,7 +21,7 @@ export const site = {
   seo: {
     title: "EdgeX Academy | Interview and GD Coaching and online courses",
     description:
-      "EdgeX Foundations is India's most comprehensive placement interview preparation course for students targeting non-core, non-tech business and managerial roles. Stop winging your placement interviews — start preparing systematically.",
+      "EdgeX Foundations is India's most comprehensive placement interview preparation course for students targeting non-core, non-tech business and managerial roles. Stop winging your placement interviews - start preparing systematically.",
     ogImage: "/media/og-image.png",
   },
 
@@ -41,11 +41,26 @@ export const site = {
     label: "Placement essentials for engineers",
     title: "Crack placement interviews with confidence.",
     description:
-      "EdgeX Foundations is India's most comprehensive placement interview preparation program — case interviews, guesstimates, GDs, behavioral rounds, and business fundamentals. Taught from the interviewer's perspective by Punita Shrivastava.",
+      "EdgeX Foundations is India's most comprehensive placement interview preparation program - case interviews, guesstimates, GDs, behavioral rounds, and business fundamentals. Taught from the interviewer's perspective by Punita Shrivastava.",
     ctaPrimary: { label: "Start preparing", href: "/cohorts" },
     ctaSecondary: { label: "Watch demo class", href: "/demo" },
     image: "/media/hero.png",
     imageAlt: "Crack placement interviews with confidence",
+  },
+
+  videoFeature: {
+    label: "See it in action",
+    heading: "Crack placement interviews with confidence.",
+    description:
+      "A look inside the EdgeX method - how we prepare you for case interviews, guesstimates, GDs, and behavioral rounds from the interviewer's perspective.",
+    youtubeId: "p7iwXvBnbIE",
+    runtime: "Watch the intro",
+    caption: "EdgeX Foundations - course walkthrough",
+    points: [
+      "Taught from the interviewer's perspective",
+      "Frameworks for cases, guesstimates & GDs",
+      "Built for Tier 1 & Tier 2 placement prep",
+    ],
   },
 
   stats: [
@@ -58,7 +73,7 @@ export const site = {
   programHighlight: {
     label: "Placement essentials for engineers",
     title: "LIVE + Recorded Course Package",
-    note: "EdgeX Foundations — hybrid format with instant recorded access and live 3-month batches.",
+    note: "EdgeX Foundations - hybrid format with instant recorded access and live 3-month batches.",
   },
 
   banners: [
@@ -67,12 +82,8 @@ export const site = {
       alt: "EdgeX Foundations curriculum overview",
     },
     {
-      src: "/media/banner-designed-for.png",
-      alt: "Designed for campus placement candidates",
-    },
-    {
       src: "/media/banner-access.png",
-      alt: "Your access breakdown — live classes, recordings, and GD slots",
+      alt: "Your access breakdown - live classes, recordings, and GD slots",
     },
     {
       src: "/media/banner-expect.png",
@@ -80,10 +91,45 @@ export const site = {
     },
   ],
 
+  designedFor: {
+    label: "EdgeX Foundations Course Package",
+    title: "Designed for Business, Consulting, and Analytics Roles",
+    description:
+      "A course built to give you structured methods and systematic frameworks for your college placement prep - taught from the interviewer's perspective.",
+    groups: [
+      {
+        tag: "Designed for",
+        items: [
+          "B.Tech / B.E. students targeting Business Roles & the Managerial track (Tier 1 & Tier 2).",
+          "Business, Economics, and Commerce students from premier institutions.",
+          "MBA students looking to build foundational knowledge.",
+        ],
+      },
+      {
+        tag: "Program Fit",
+        items: [
+          "Non-negotiable for Consulting, Strategy, General Management, Ops, Program Management, Business Analytics and similar roles.",
+          "Also useful for all other students targeting Engineering & Software, Product, IT, and Research roles - given specific domain knowledge is prepared by the student.",
+        ],
+      },
+    ],
+    targetRoles: [
+      "Corporate Strategy",
+      "Consulting",
+      "General Management",
+      "Business Analytics",
+      "Data Analytics",
+      "Product Management",
+      "Product Analytics",
+      "Marketing",
+      "Operations",
+    ],
+  },
+
   features: [
     {
       title: "40+ recorded lectures",
-      desc: "Instant access to lectures, assignments, cheat sheets, and question banks — learn at your own pace.",
+      desc: "Instant access to lectures, assignments, cheat sheets, and question banks - learn at your own pace.",
     },
     {
       title: "Live 3-month batches",
@@ -121,7 +167,7 @@ export const site = {
     {
       number: "03",
       title: "Join a live batch",
-      desc: "Reserve your seat in a 3-month live batch — next intake starts 13 June 2026.",
+      desc: "Reserve your seat in a 3-month live batch - next intake starts 13 June 2026.",
     },
     {
       number: "04",
@@ -189,7 +235,7 @@ export const site = {
     },
     {
       q: "Who will conduct the GDs?",
-      a: "GDs are moderated by Teaching Assistants. All GD sessions are recorded — EdgeX faculty goes through the recordings later to assess your performance and provide you a detailed written feedback.",
+      a: "GDs are moderated by Teaching Assistants. All GD sessions are recorded - EdgeX faculty goes through the recordings later to assess your performance and provide you a detailed written feedback.",
     },
   ],
 
