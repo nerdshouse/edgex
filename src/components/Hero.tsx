@@ -2,25 +2,19 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion, ease, stagger, fadeUp } from "./Motion";
-import Marquee from "./Marquee";
-import VideoPlayer from "./VideoPlayer";
 import { site } from "@/data/site";
 
-/* Split the headline so the last word gets the serif italic treatment. */
-function splitTitle(title: string) {
-  const clean = title.replace(/\.$/, "");
-  const words = clean.split(" ");
-  const last = words.pop() ?? "";
-  return { lead: words.join(" "), last };
-}
+const cardHover = {
+  y: -4,
+  transition: { duration: 0.25, ease },
+};
 
 export default function Hero() {
   const reduce = useReducedMotion();
-  const { hero, stats } = site;
-  const { lead, last } = splitTitle(hero.title);
+  const { hero } = site;
 
   return (
-    <section className="relative bg-[var(--bg)] pt-32 sm:pt-40 overflow-hidden">
+    <section className="relative bg-[var(--bg)] pt-32 sm:pt-36 pb-16 sm:pb-20 overflow-hidden">
       <motion.div
         className="absolute inset-0 pointer-events-none"
         initial={reduce ? false : { opacity: 0 }}
@@ -28,106 +22,95 @@ export default function Hero() {
         transition={{ duration: 1.2, ease }}
         aria-hidden
       >
-        <div className="hero-glow absolute inset-x-0 top-0 h-[70%]" />
+        <div className="hero-glow absolute inset-x-0 top-0 h-[55%]" />
         <div className="hero-grid absolute inset-0" />
       </motion.div>
 
-      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 w-full">
-        <motion.div variants={reduce ? undefined : stagger} initial="hidden" animate="show">
-          {/* Meta row */}
-          <motion.div
-            className="flex flex-wrap items-center justify-between gap-3 mb-10 sm:mb-14"
-            variants={fadeUp}
-          >
-            <p className="section-label">{hero.label}</p>
-            <p className="hidden sm:flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-60 animate-ping" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-              </span>
-              Next live batch - {site.liveBatches.startDate}
-            </p>
-          </motion.div>
-
-          {/* Display headline */}
-          <motion.h1
-            className="section-title text-[clamp(2.5rem,6.2vw,5rem)] max-w-[14ch] mb-10 sm:mb-14"
-            variants={fadeUp}
-          >
-            {lead}{" "}
-            <span className="serif-i text-[var(--accent)]">{last}.</span>
-          </motion.h1>
-
-          {/* Description + CTAs, split editorial row */}
-          <motion.div
-            className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 pb-12 sm:pb-16"
-            variants={fadeUp}
-          >
-            <p className="text-[var(--text-secondary)] text-base sm:text-lg leading-[1.65] max-w-xl">
-              {hero.description}
-            </p>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 shrink-0">
-              <Link
-                href={hero.ctaPrimary.href}
-                className="btn-primary text-sm px-6 py-3 rounded-full text-center"
-              >
-                {hero.ctaPrimary.label} →
-              </Link>
-              <Link
-                href={hero.ctaSecondary.href}
-                className="btn-secondary text-sm px-6 py-3 rounded-full text-center"
-              >
-                {hero.ctaSecondary.label}
-              </Link>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        {/* Hero video - click-to-play, in place of static image */}
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 w-full text-center">
         <motion.div
-          initial={reduce ? false : { opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease }}
-          className="mb-16 sm:mb-20"
-        >
-          <VideoPlayer
-            youtubeId={site.videoFeature.youtubeId}
-            caption={site.videoFeature.caption}
-            runtime={site.videoFeature.runtime}
-          />
-        </motion.div>
-
-        {/* Stats - hairline editorial strip */}
-        <motion.dl
-          className="grid grid-cols-2 lg:grid-cols-4 border-t border-[var(--border)]"
           variants={reduce ? undefined : stagger}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-48px" }}
+          animate="show"
+          className="max-w-4xl mx-auto"
         >
-          {stats.map((s, i) => (
+          <motion.h1
+            className="section-title text-[clamp(2rem,5vw,3.5rem)] mb-5 sm:mb-6 text-balance"
+            variants={fadeUp}
+          >
+            {hero.title.split("EdgeX")[0]}
+            <span className="text-[var(--accent)]">EdgeX</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 text-balance max-w-2xl mx-auto"
+            variants={fadeUp}
+          >
+            {hero.subtitle}
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="flex justify-center mb-12 sm:mb-14">
+            <span className="inline-flex items-center rounded-full border-2 border-[var(--accent)] bg-[var(--accent-muted)] px-5 py-2.5 text-sm font-medium text-[var(--text-primary)] tracking-[-0.01em]">
+              {hero.badge}
+            </span>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto"
+          variants={reduce ? undefined : stagger}
+          initial="hidden"
+          animate="show"
+          transition={{ delayChildren: 0.15 }}
+        >
+          {hero.audiences.map((audience, i) => (
             <motion.div
-              key={s.label}
+              key={audience.href}
               variants={fadeUp}
-              className={`py-8 sm:py-10 pr-6 ${i > 0 ? "lg:border-l lg:border-[var(--border)] lg:pl-8" : ""} ${
-                i % 2 === 1 ? "border-l border-[var(--border)] pl-6 lg:pl-8" : ""
-              }`}
+              whileHover={reduce ? undefined : cardHover}
             >
-              <dd className="text-3xl sm:text-4xl font-semibold tracking-[-0.04em] text-[var(--text-primary)] tabular-nums mb-1.5">
-                {s.value}
-              </dd>
-              <dt className="index-num">{s.label}</dt>
+              <Link
+                href={audience.href}
+                className="group flex flex-col h-full overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg-card)] text-left shadow-[var(--shadow-card)] transition-all duration-200 hover:border-[var(--accent)]/40 hover:shadow-[0_8px_32px_var(--accent-muted)]"
+              >
+                <div className="bg-[var(--accent)] px-5 py-4 sm:px-6 sm:py-5 transition-colors duration-200 group-hover:bg-[var(--accent-hover)]">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/60 mb-2 block">
+                    0{i + 1}
+                  </span>
+                  <h2 className="text-[15px] sm:text-base font-semibold text-white leading-snug tracking-[-0.02em]">
+                    {audience.title}
+                  </h2>
+                </div>
+
+                <ul className="flex flex-col gap-2.5 px-5 py-5 sm:px-6 sm:py-6 flex-1">
+                  {audience.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm text-[var(--text-secondary)] transition-colors duration-200 group-hover:text-[var(--text-primary)]"
+                    >
+                      <span
+                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                        aria-hidden
+                      />
+                      <span className="leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto px-5 py-4 sm:px-6 border-t border-[var(--border)]">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--text-muted)] transition-colors duration-200 group-hover:text-[var(--accent)]">
+                    Explore pathway
+                    <span
+                      aria-hidden
+                      className="transition-transform duration-200 group-hover:translate-x-0.5"
+                    >
+                      →
+                    </span>
+                  </span>
+                </div>
+              </Link>
             </motion.div>
           ))}
-        </motion.dl>
-      </div>
-
-      {/* Target companies marquee */}
-      <div className="relative border-y border-[var(--border)] py-5">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center gap-6">
-          <span className="index-num shrink-0 hidden sm:block">Alumni target firms</span>
-          <Marquee items={site.companies} className="flex-1" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

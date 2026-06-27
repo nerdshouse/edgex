@@ -4,9 +4,11 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
-import { FounderCard, TeamCard } from "@/components/TeamCard";
+import { FounderCard } from "@/components/TeamCard";
+import { AdvisorCard } from "@/components/ExternalAdvisors";
+import { CoreTeamCard } from "@/components/CoreTeam";
 import { site } from "@/data/site";
-import { team } from "@/data/team";
+import { team, externalAdvisorsSection, coreTeamSection } from "@/data/team";
 
 export default function AboutPage() {
   return (
@@ -54,7 +56,7 @@ export default function AboutPage() {
             <Reveal className="max-w-2xl mb-12">
               <p className="section-label mb-3">Advisors & SMEs</p>
               <h2 className="section-title text-3xl sm:text-4xl mb-5">
-                Subject matter experts behind the curriculum
+                {externalAdvisorsSection.title}
               </h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
                 Every module is reviewed by practitioners from our network of IIM, IIT, and NIT
@@ -62,10 +64,10 @@ export default function AboutPage() {
                 consulting, finance, and product companies.
               </p>
             </Reveal>
-            <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {team.advisors.map((member) => (
-                <StaggerItem key={member.name + member.role}>
-                  <TeamCard member={member} />
+            <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {externalAdvisorsSection.advisors.map((advisor) => (
+                <StaggerItem key={advisor.name}>
+                  <AdvisorCard advisor={advisor} />
                 </StaggerItem>
               ))}
             </Stagger>
@@ -74,20 +76,20 @@ export default function AboutPage() {
 
         <section className="py-16 sm:py-20 border-b border-[var(--border)] bg-[var(--bg-secondary)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <Reveal className="max-w-2xl mb-12">
-              <p className="section-label mb-3">Core team</p>
+            <Reveal className="max-w-2xl mb-12 mx-auto text-center sm:mx-0 sm:text-left">
+              <p className="section-label mb-3 sm:justify-start">Core team</p>
               <h2 className="section-title text-3xl sm:text-4xl mb-5">
-                The team that runs your batches every week
+                {coreTeamSection.title}
               </h2>
               <p className="text-[var(--text-secondary)] leading-relaxed">
                 From live batch schedules to GD moderation and written feedback, the core team
                 keeps every cohort on track.
               </p>
             </Reveal>
-            <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {team.coreTeam.map((member) => (
-                <StaggerItem key={member.name + member.role}>
-                  <TeamCard member={member} />
+            <Stagger className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+              {coreTeamSection.members.map((member) => (
+                <StaggerItem key={member.name}>
+                  <CoreTeamCard member={member} />
                 </StaggerItem>
               ))}
             </Stagger>

@@ -226,6 +226,47 @@ body::after {
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 
+/* ── Logo lanes (company slider) ─────────────────────────────────────────── */
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.logo-lane {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+.logo-lane-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.logo-lane-track--reverse {
+  animation-name: marquee-reverse;
+}
+.logo-lane:hover .logo-lane-track { animation-play-state: paused; }
+.logo-lane-box,
+.logo-lane-box--light {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+.logo-lane-box--light:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 2px 12px var(--accent-muted);
+}
+
 /* ── Corner ticks - registration-mark frame for media ───────────────────── */
 .tick-frame { position: relative; }
 .tick-frame::before,
@@ -234,16 +275,16 @@ body::after {
 .tick-frame > .tick-b::after {
   content: "";
   position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: var(--text-muted);
+  width: 22px;
+  height: 22px;
+  border-color: var(--accent);
   border-style: solid;
   border-width: 0;
 }
-.tick-frame::before { top: -7px; left: -7px; border-top-width: 1px; border-left-width: 1px; }
-.tick-frame::after  { top: -7px; right: -7px; border-top-width: 1px; border-right-width: 1px; }
-.tick-frame > .tick-b::before { bottom: -7px; left: -7px; border-bottom-width: 1px; border-left-width: 1px; }
-.tick-frame > .tick-b::after  { bottom: -7px; right: -7px; border-bottom-width: 1px; border-right-width: 1px; }
+.tick-frame::before { top: -8px; left: -8px; border-top-width: 2px; border-left-width: 2px; }
+.tick-frame::after  { top: -8px; right: -8px; border-top-width: 2px; border-right-width: 2px; }
+.tick-frame > .tick-b::before { bottom: -8px; left: -8px; border-bottom-width: 2px; border-left-width: 2px; }
+.tick-frame > .tick-b::after  { bottom: -8px; right: -8px; border-bottom-width: 2px; border-right-width: 2px; }
 
 /* ── Hero background – red radial glow ──────────────────────────────────── */
 .hero-glow {
@@ -284,6 +325,7 @@ body::after {
   }
 
   .marquee-track { animation: none; }
+  .logo-lane-track { animation: none; }
 
   .btn-primary:hover,
   .btn-secondary:hover,

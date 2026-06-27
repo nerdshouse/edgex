@@ -19,7 +19,20 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--bg)]">
+    <footer className="dark relative overflow-hidden border-t border-[var(--border)] bg-[var(--bg)]">
+      {/* red accent line + glow across the top */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/60 to-transparent"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 left-1/2 h-72 w-[44rem] -translate-x-1/2 rounded-full"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255,36,56,0.12) 0%, rgba(255,36,56,0.04) 45%, transparent 72%)",
+        }}
+      />
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-20 pb-8">
         <Stagger className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-24">
           <StaggerItem>

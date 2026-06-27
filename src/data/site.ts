@@ -38,6 +38,50 @@ export const site = {
   ],
 
   hero: {
+    title: "Prepare for Your Dream Job with EdgeX",
+    subtitle:
+      "India's Largest Learning Platform for Corporate Aspirants & Working Professionals",
+    badge: "Founded by ISB & IIM Alums",
+    audiences: [
+      {
+        title: "Placement prep for Engineering Students",
+        href: "/engineering-students",
+        items: [
+          "Interview Prep Courses",
+          "CV Prep",
+          "CV Reviews",
+          "Mock GD Practice",
+          "Consulting Prep",
+          "1:1 Mock Interviews",
+        ],
+      },
+      {
+        title: "Placement prep for MBA Students",
+        href: "/mba-students",
+        items: [
+          "Interview Prep Courses",
+          "Advanced Consulting prep",
+          "CV Prep",
+          "CV Reviews",
+          "Mock GD Practice",
+          "1:1 Mock Interviews",
+        ],
+      },
+      {
+        title: "Lateral Interviews for Working Professionals",
+        href: "/working-professionals",
+        items: [
+          "Lateral Interview Prep",
+          "1:1 CV Prep Support",
+          "B-School Essay Reviews",
+          "B-School Interview Prep",
+        ],
+      },
+    ],
+  },
+
+  /** @deprecated legacy fields — used by inner pages / video block */
+  heroLegacy: {
     label: "Placement essentials for engineers",
     title: "Crack placement interviews with confidence.",
     description:
@@ -76,20 +120,154 @@ export const site = {
     note: "EdgeX Foundations - hybrid format with instant recorded access and live 3-month batches.",
   },
 
-  banners: [
-    {
-      src: "/media/banner-curriculum.png",
-      alt: "EdgeX Foundations curriculum overview",
+  featuredCourses: {
+    title: "Featured Courses",
+    courses: [
+      {
+        title: "Complete Placement Prep for Engineers",
+        href: "/engineering-students",
+      },
+      {
+        title: "Placement Essentials for B-Schools",
+        href: "/mba-students",
+      },
+      {
+        title: "Consulting Advanced for B Schools",
+        href: "/mba-students",
+      },
+    ],
+  },
+
+  instructorProfile: {
+    label: "Meet your instructor",
+    name: "Punita Shrivastava",
+    education: ["ISB Hyderabad (MBA)", "NIT-D (B.Tech)"],
+    summary:
+      "Experience in Management Consulting, Business Analytics, Strategy & Ops, Product and Data Analytics.",
+    quote: "Because confidence in an interview isn't luck.",
+    quoteAccent: "It's preparation.",
+    headline: "Learn from someone who has been on both ends of the table for Top Global Firms.",
+    headlineAccent: "both ends of the table",
+    interviewed: {
+      label: "Interviewed 100+ Engineers for top firms",
+      roles: [
+        { company: "PwC Strategy&", role: "Management Consultant" },
+        { company: "BCG", role: "Business Analyst" },
+        { company: "Mu Sigma", role: "Decision Scientist" },
+        { company: "Airtel", role: "Product Analytics Lead" },
+        { company: "Furlenco", role: "Founder's Office Associate" },
+      ],
     },
-    {
-      src: "/media/banner-access.png",
-      alt: "Your access breakdown - live classes, recordings, and GD slots",
+    otherOffers: {
+      label: "Other offers obtained across 10 years of corporate career",
+      companies: ["Amazon", "Deloitte", "Flipkart", "Barclays", "American Express", "Meesho"],
     },
-    {
-      src: "/media/banner-expect.png",
-      alt: "What to expect when you enroll",
-    },
-  ],
+  },
+
+  accessBreakdown: {
+    label: "Your access breakdown",
+    title: "Everything included with enrollment",
+    timeline: [
+      {
+        category: "Recorded content",
+        color: "emerald",
+        span: "Year 0 → Year 3",
+        badge: "3 years",
+        detail: "Instant access — 6 modules, 40+ lectures, assignments",
+      },
+      {
+        category: "Live batches",
+        color: "blue",
+        span: "Year 0 → Year 3",
+        badge: "Flexible",
+        detail: "2-month batch — weekend classes, new batches every month",
+      },
+      {
+        category: "Group discussion preparation",
+        color: "neutral",
+        span: "Year 0 → Year 3",
+        badge: "Flexible",
+        detail: "2 mock GDs & feedback",
+      },
+      {
+        category: "EdgeX Corporate Club",
+        color: "accent",
+        span: "Year 0 → Lifetime",
+        badge: "Lifetime",
+        detail: "Networking, podcasts, events with corporate leaders",
+      },
+    ],
+    cards: [
+      {
+        stat: "3",
+        statSuffix: "years",
+        title: "Recorded access",
+        desc: "Lectures, assignments, cheat sheets and question banks. Content updated monthly.",
+      },
+      {
+        stat: "~",
+        title: "Flexible live batch",
+        desc: "Weekend classes. New batches every month — schedule shared in advance. Pre-enroll flexibly anytime in the 3 years.",
+      },
+      {
+        stat: "GD",
+        title: "GD preparation",
+        desc: "30-minute mock GDs conducted virtually with similar cohort groups. Detailed personalized feedback from experts.",
+      },
+      {
+        stat: "∞",
+        title: "EdgeX Corporate Club",
+        desc: "Guest lectures, podcasts, and networking events with senior corporate professionals.",
+      },
+    ],
+  },
+
+  enrollTimeline: {
+    label: "What to expect",
+    title: "When you enroll",
+    steps: [
+      {
+        side: "left" as const,
+        text: "You buy the course package today",
+        delay: null,
+      },
+      {
+        side: "right" as const,
+        text: "Instant access to 6 recorded modules unlocked. Start preparing at your own pace. 7–8 weeks recommended.",
+        delay: null,
+      },
+      {
+        side: "right" as const,
+        text: "Fill in a simple Google Form to help us understand your profile and your aspirations.",
+        delay: "2 days",
+      },
+      {
+        side: "left" as const,
+        text: "A dedicated Teaching Assistant (TA) is assigned to you, based on your profile",
+        delay: "5 days",
+      },
+      {
+        side: "left" as const,
+        text: "Your TA gets in touch with further instructions, LIVE batches & GD schedules and availability",
+        delay: "2 days",
+      },
+      {
+        side: "right" as const,
+        text: "Book your LIVE batch slots and Mock GD slots closer to your placements, to refine your preparation. Keep in touch with your TA for all schedules and bookings.",
+        delay: "7 days",
+      },
+      {
+        side: "left" as const,
+        text: "You are added to EdgeX Corporate Club Forum for all Corporate Club event details",
+        delay: null,
+      },
+      {
+        side: "right" as const,
+        text: "Attend events of your choice and be a part of the EdgeX community, forever.",
+        delay: null,
+      },
+    ],
+  },
 
   designedFor: {
     label: "EdgeX Foundations Course Package",
@@ -238,6 +416,45 @@ export const site = {
       a: "GDs are moderated by Teaching Assistants. All GD sessions are recorded - EdgeX faculty goes through the recordings later to assess your performance and provide you a detailed written feedback.",
     },
   ],
+
+  companySlider: {
+    label: "Placement outcomes",
+    title: "Students have cracked interviews at",
+    lanes: [
+      [
+        "Accenture",
+        "PwC",
+        "Deloitte",
+        "ZS Associates",
+        "Mu Sigma",
+        "Amazon",
+        "Flipkart",
+        "BCG",
+        "Bain",
+        "McKinsey",
+        "AT Kearney",
+        "KPMG",
+        "Goldman Sachs",
+        "Razorpay",
+      ],
+      [
+        "Amex",
+        "EY",
+        "Barclays",
+        "Zinnov",
+        "Cognizant Consulting",
+        "Vector Consulting",
+        "Oliver Wyman",
+        "Airtel",
+        "HUL",
+        "ITC",
+        "Meesho",
+        "Capgemini",
+        "Swiggy",
+        "PhonePe",
+      ],
+    ],
+  },
 
   companies: [
     "BCG",

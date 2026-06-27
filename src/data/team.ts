@@ -30,59 +30,163 @@ export const team = {
   ],
   advisors: [
     {
-      name: "Advisor Name",
-      role: "Consulting SME",
-      bio: "Ex-management consultant guiding the case interview and guesstimate curriculum.",
-      initials: "CS",
-      image: "/media/team/advisor-consulting.png",
-      tags: ["IIM Alum"],
+      name: "Ujjwal Tamang",
+      role: "External Advisor",
+      initials: "UT",
+      image: "/media/team/advisors/ujjwal-tamang.png",
+      tags: ["IIM Bangalore Co'18"],
     },
     {
-      name: "Advisor Name",
-      role: "Finance SME",
-      bio: "Investment banking and corporate finance interview specialist shaping the finance track.",
-      initials: "FS",
-      image: "/media/team/advisor-finance.png",
-      tags: ["IIM Alum"],
+      name: "Vijeta Shrivastava",
+      role: "External Advisor",
+      initials: "VS",
+      image: "/media/team/advisors/vijeta-shrivastava.png",
+      tags: ["IIM Kozhikode Co'13"],
     },
     {
-      name: "Advisor Name",
-      role: "Product & Analytics SME",
-      bio: "Product manager advising on product sense, analytics, and structured problem solving rounds.",
-      initials: "PA",
-      image: "/media/team/advisor-product.png",
-      tags: ["IIT Alum"],
+      name: "Srawesh",
+      role: "External Advisor",
+      initials: "SR",
+      image: "/media/team/advisors/srawesh.jpeg",
+      tags: ["IIM Lucknow Co'20"],
     },
     {
-      name: "Advisor Name",
-      role: "HR & Behavioral SME",
-      bio: "Senior HR leader reviewing the behavioral, HR round, and CV modules.",
-      initials: "HB",
-      image: "/media/team/advisor-hr.png",
-      tags: ["NIT Alum"],
+      name: "Ajita Bisht",
+      role: "External Advisor",
+      initials: "AB",
+      image: "/media/team/advisors/ajita-bisht.png",
+      tags: ["McCombs School of Business"],
+    },
+    {
+      name: "Satyam Mudaliar",
+      role: "External Advisor",
+      initials: "SM",
+      image: "/media/team/advisors/satyam-mudaliar.png",
+      tags: ["IIT Bombay Co'15"],
+    },
+    {
+      name: "Palak Jain",
+      role: "External Advisor",
+      initials: "PJ",
+      image: "/media/team/advisors/palak-jain.png",
+      tags: ["IIT Kharagpur Co'16"],
     },
   ],
   coreTeam: [
     {
-      name: "Team Member",
+      name: "Sathvik Aradhya",
       role: "Program Manager",
       bio: "Runs live batch schedules, GD slot bookings, and student communications end to end.",
-      initials: "PM",
-      image: "/media/team/core-program-manager.png",
+      initials: "SA",
+      image: "/media/team/core/sathvik-aradhya.png",
     },
     {
-      name: "Team Member",
-      role: "Teaching Assistant",
-      bio: "Moderates weekly GDs and coordinates recorded feedback from EdgeX faculty.",
-      initials: "TA",
-      image: "/media/team/core-teaching-assistant.png",
-    },
-    {
-      name: "Team Member",
-      role: "Student Success",
-      bio: "First point of contact for enrolled students - portal access, doubts, and support.",
-      initials: "SS",
-      image: "/media/team/core-student-success.png",
+      name: "Esha Kumari",
+      role: "Program Manager",
+      bio: "Coordinates program operations, student onboarding, and day-to-day cohort support.",
+      initials: "EK",
+      image: "/media/team/core/esha-kumari.png",
     },
   ],
+} as const;
+
+export type ExternalAdvisor = {
+  name: string;
+  credential: string;
+  image: string;
+  initials: string;
+  linkedin?: string;
+};
+
+export const externalAdvisorsSection = {
+  title: "Team of External Advisors & SMEs",
+  linkedinLabel: "LinkedIn",
+  advisors: [
+    {
+      name: "Ujjwal Tamang",
+      credential: "IIM Bangalore Co'18",
+      image: "/media/team/advisors/ujjwal-tamang.png",
+      initials: "UT",
+    },
+    {
+      name: "Vijeta Shrivastava",
+      credential: "IIM Kozhikode Co'13",
+      image: "/media/team/advisors/vijeta-shrivastava.png",
+      initials: "VS",
+    },
+    {
+      name: "Srawesh",
+      credential: "IIM Lucknow Co'20",
+      image: "/media/team/advisors/srawesh.jpeg",
+      initials: "SR",
+    },
+    {
+      name: "Ajita Bisht",
+      credential: "McCombs School of Business",
+      image: "/media/team/advisors/ajita-bisht.png",
+      initials: "AB",
+    },
+    {
+      name: "Satyam Mudaliar",
+      credential: "IIT Bombay Co'15",
+      image: "/media/team/advisors/satyam-mudaliar.png",
+      initials: "SM",
+    },
+    {
+      name: "Palak Jain",
+      credential: "IIT Kharagpur Co'16",
+      image: "/media/team/advisors/palak-jain.png",
+      initials: "PJ",
+    },
+  ] satisfies readonly ExternalAdvisor[],
+} as const;
+
+export type CoreTeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  initials: string;
+};
+
+export const coreTeamSection = {
+  title: "Core Team",
+  members: [
+    {
+      name: "Sathvik Aradhya",
+      role: "Program Manager",
+      image: "/media/team/core/sathvik-aradhya.png",
+      initials: "SA",
+    },
+    {
+      name: "Esha Kumari",
+      role: "Program Manager",
+      image: "/media/team/core/esha-kumari.png",
+      initials: "EK",
+    },
+  ] satisfies readonly CoreTeamMember[],
+} as const;
+
+export type FounderHighlight = {
+  name: string;
+  image: string;
+  credentials: readonly string[];
+  highlights: readonly string[];
+};
+
+export const founderHighlight = {
+  label: "Co-founder",
+  title: "Meet Our Founders",
+  founder: {
+    name: "Anshul Kothari",
+    image: "/media/team/anshul.png",
+    credentials: [
+      "ISB Co'18, Indian Swimming Team",
+      "Operations & Supply Chain Professional",
+    ],
+    highlights: [
+      "ISB Interview Panelist",
+      "Expertise in MBA Applications, Essays, and profile building",
+      "Interviewed 50+ Candidates",
+    ],
+  },
 } as const;
