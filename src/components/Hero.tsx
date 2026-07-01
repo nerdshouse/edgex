@@ -4,11 +4,6 @@ import Link from "next/link";
 import { motion, useReducedMotion, ease, stagger, fadeUp } from "./Motion";
 import { site } from "@/data/site";
 
-const cardHover = {
-  y: -4,
-  transition: { duration: 0.25, ease },
-};
-
 export default function Hero() {
   const reduce = useReducedMotion();
   const { hero } = site;
@@ -66,46 +61,59 @@ export default function Hero() {
             <motion.div
               key={audience.href}
               variants={fadeUp}
-              whileHover={reduce ? undefined : cardHover}
+              className="h-[280px] sm:h-[300px]"
             >
               <Link
                 href={audience.href}
-                className="group flex flex-col h-full overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg-card)] text-left shadow-[var(--shadow-card)] transition-all duration-200 hover:border-[var(--accent)]/40 hover:shadow-[0_8px_32px_var(--accent-muted)]"
+                aria-label={`${audience.title} — explore pathway`}
+                className="flip-card group block h-full rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
-                <div className="bg-[var(--accent)] px-5 py-4 sm:px-6 sm:py-5 transition-colors duration-200 group-hover:bg-[var(--accent-hover)]">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/60 mb-2 block">
-                    0{i + 1}
-                  </span>
-                  <h2 className="text-[15px] sm:text-base font-semibold text-white leading-snug tracking-[-0.02em]">
-                    {audience.title}
-                  </h2>
-                </div>
-
-                <ul className="flex flex-col gap-2.5 px-5 py-5 sm:px-6 sm:py-6 flex-1">
-                  {audience.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2.5 text-sm text-[var(--text-secondary)] transition-colors duration-200 group-hover:text-[var(--text-primary)]"
-                    >
-                      <span
-                        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)] opacity-60 group-hover:opacity-100 transition-opacity duration-200"
-                        aria-hidden
-                      />
-                      <span className="leading-snug">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-auto px-5 py-4 sm:px-6 border-t border-[var(--border)]">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--text-muted)] transition-colors duration-200 group-hover:text-[var(--accent)]">
-                    Explore pathway
-                    <span
-                      aria-hidden
-                      className="transition-transform duration-200 group-hover:translate-x-0.5"
-                    >
-                      →
+                <div className="flip-inner rounded-xl">
+                  {/* FRONT — solid maroon, title + arrow */}
+                  <div className="flip-face flex flex-col justify-between rounded-xl bg-[var(--accent)] p-6 sm:p-7 text-left text-white shadow-[0_8px_32px_var(--accent-muted)]">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/55">
+                      0{i + 1}
                     </span>
-                  </span>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-semibold leading-snug tracking-[-0.02em]">
+                        {audience.title}
+                      </h2>
+                      <span className="mt-5 inline-flex items-center gap-2.5 text-sm font-medium text-white/90">
+                        Explore pathway
+                        <span
+                          aria-hidden
+                          className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-base transition-transform duration-200 group-hover:translate-x-0.5"
+                        >
+                          →
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* BACK — what's included (revealed on hover) */}
+                  <div className="flip-face flip-back flex flex-col rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-6 sm:p-7 text-left shadow-[var(--shadow-card)]">
+                    <span className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--accent)]">
+                      What&apos;s included
+                    </span>
+                    <ul className="flex flex-1 flex-col gap-2.5">
+                      {audience.items.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"
+                        >
+                          <span
+                            className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]"
+                            aria-hidden
+                          />
+                          <span className="leading-snug">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)]">
+                      View pathway
+                      <span aria-hidden>→</span>
+                    </span>
+                  </div>
                 </div>
               </Link>
             </motion.div>

@@ -1,71 +1,121 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CompanySlider from "@/components/CompanySlider";
+import Reviews from "@/components/Reviews";
+import FAQ from "@/components/FAQ";
 import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
-import EnrollBar from "@/components/EnrollBar";
 import { site } from "@/data/site";
+import { externalAdvisorsSection } from "@/data/team";
 
-const courses = [
+const teacher = site.instructorProfile;
+
+// Overlaps with the homepage FAQs, but tuned for MBA placement season.
+const mbaFaqs = [
   {
-    slug: "case-interviews",
-    tag: "Interview",
-    title: "Case Interviews & Guesstimates",
-    desc: "Advanced consulting frameworks for MBA placement and summer internship interviews - structured thinking under pressure.",
-    meta: "12 lessons · 8h · Advanced",
+    q: "Is EdgeX right for MBA summer and final placements?",
+    a: "Yes. The curriculum is built around B-school placement cycles - cases, guesstimates, group discussions, and behavioral rounds - so you can prep for both summer internships and final placements from the interviewer's perspective.",
   },
   {
-    slug: "behavioral-hr",
-    tag: "Interview",
-    title: "Behavioral & HR Interview Prep",
-    desc: "Leadership stories, HR rounds, and communication patterns tailored for MBA cohorts and lateral hiring panels.",
-    meta: "10 lessons · 6h · Intermediate",
+    q: "Which roles and firms does the prep target?",
+    a: "Consulting, strategy, business analytics, product, and general management roles. The frameworks and mock rounds are modeled on how top consulting and strategy firms actually evaluate candidates.",
   },
   {
-    slug: "business-fundamentals",
-    tag: "Core",
-    title: "Advanced Consulting Prep",
-    desc: "Deep-dive business concepts, industry analysis, and mental models for consulting, strategy, and general management roles.",
-    meta: "14 lessons · 10h · Advanced",
+    q: "Do you cover case interviews and guesstimates?",
+    a: "In depth. There's a dedicated module for structured problem-solving, a large guesstimate practice bank, and mock case rounds with detailed feedback so structuring becomes second nature before placement week.",
   },
   {
-    slug: "cv-company-research",
-    tag: "Career",
-    title: "CV Prep & Company Research",
-    desc: "Build a consulting-ready CV and research target firms systematically for MBA placement and PPO conversions.",
-    meta: "6 lessons · 4h · Intermediate",
+    q: "Is this a live or recorded course?",
+    a: "It is a hybrid format. As soon as you enroll you get instant access to 40+ recorded lectures, assignments, cheat sheets, and question banks to go through at your own pace. You can also join a live batch anytime within your access window, and book weekly GD slots whenever you feel ready.",
+  },
+  {
+    q: "Are mock interviews and GDs included?",
+    a: 'Weekly mock GD slots with peer cohorts and feedback are included. 1:1 mock interviews with detailed feedback reports are available as an add-on, and every student gets lifetime access to "The EdgeX Corporate Club" for networking.',
+  },
+  {
+    q: "Will my participation be anonymous?",
+    a: "Yes. Your enrollment is completely private and is not revealed to other students. GD participation is roll-number based, so your name and credentials are not shared with peers.",
+  },
+  {
+    q: "How long is my access valid?",
+    a: "You receive 3-year extended access to all course materials, recordings, live batches, and GD slots - enough to cover your entire MBA and placement journey.",
   },
 ];
 
-const offerings = [
+const teamBehind = [
   {
-    icon: "🎓",
-    title: "Live 3-Month Batches",
-    desc: "Structured instructor-led cohorts with recorded access. Next batch starts 13 June 2026.",
-    href: "/live-batches",
-    cta: "View schedule →",
+    name: "Anshul Kothari",
+    credential: "Co-Founder · ISB Co'18",
+    image: "/media/team/anshul.png",
+    initials: "AK",
+  },
+  ...externalAdvisorsSection.advisors,
+  {
+    name: "Sathvik Aradhya",
+    credential: "Program Manager",
+    image: "/media/team/core/sathvik-aradhya.png",
+    initials: "SA",
   },
   {
-    icon: "🗣️",
-    title: "Mock GD Practice",
-    desc: "Weekly group discussion slots with peers from top B-schools. Anonymous, roll-number based participation.",
-    href: "/contact",
-    cta: "Reserve a slot →",
+    name: "Esha Kumari",
+    credential: "Program Manager",
+    image: "/media/team/core/esha-kumari.png",
+    initials: "EK",
+  },
+];
+
+const mbaCourses = [
+  {
+    tag: "Package",
+    title: "B-School Placement Essentials",
+    desc: "The core placement toolkit - cases, guesstimates, HR rounds, and CV prep mapped to B-school hiring cycles.",
+    meta: "Placement track",
+    href: "/cohorts",
   },
   {
-    icon: "🎯",
-    title: "1:1 Mock Interviews",
-    desc: "Optional add-on mock interviews with EdgeX mentors who have placed at consulting and strategy firms.",
-    href: "/contact",
-    cta: "Book a session →",
+    tag: "Advanced",
+    title: "Consulting Advanced for B-Schools",
+    desc: "Deep consulting frameworks, industry deep-dives, and structured problem-solving for strategy and consulting roles.",
+    meta: "Consulting track",
+    href: "/cohorts",
   },
   {
-    icon: "🤝",
-    title: "EdgeX Corporate Club",
-    desc: "Lifetime access to networking events with alumni from IIM, ISB, and top consulting firms.",
+    tag: "Combo",
+    title: "B-School Placement Essentials + Consulting Advanced",
+    desc: "Placement Essentials and Consulting Advanced together - the complete prep stack at a bundled price.",
+    meta: "Best value",
+    href: "/cohorts",
+  },
+  {
+    tag: "GD Labs",
+    title: "EdgeX GD Labs",
+    desc: "Live group-discussion labs with peer cohorts and interviewer-grade feedback on every round.",
+    meta: "Live practice",
+    href: "/cohorts",
+  },
+];
+
+const sessions = [
+  {
+    title: "1:1 Mock Interviews with Feedback",
+    desc: "Full-length mock interviews with EdgeX mentors, followed by a structured, actionable feedback report.",
     href: "/contact",
-    cta: "Learn more →",
+    cta: "Book a session",
+  },
+  {
+    title: "1:1 CV Reviews",
+    desc: "Line-by-line CV review to make your profile consulting- and placement-ready before applications open.",
+    href: "/contact",
+    cta: "Book a review",
+  },
+  {
+    title: "1:1 Career Consultation",
+    desc: "One-on-one guidance on role targeting, firm selection, and building your placement-season strategy.",
+    href: "/contact",
+    cta: "Book a call",
   },
 ];
 
@@ -73,59 +123,118 @@ export default function MBAStudentsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[var(--bg)] pt-28">
-        <section className="py-16 sm:py-24 border-b border-[var(--border)] bg-[var(--bg-secondary)]">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <main className="dot-page min-h-screen">
+        <section className="relative overflow-hidden border-b border-[var(--border)] pt-44 pb-16 sm:pt-52 sm:pb-24">
+          {/* editorial backdrop — glow only; dots come from the page background */}
+          <div className="absolute inset-0 pointer-events-none" aria-hidden>
+            <div className="hero-glow absolute inset-x-0 top-0 h-[62%]" />
+          </div>
+
+          <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
             <PageEnter>
-              <p className="section-label mb-5">MBA Students</p>
-              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-6 max-w-[16ch]">
-                Ace placement season with{" "}
-                <span className="serif-i text-[var(--accent)]">precision.</span>
+              <p className="section-label mb-6">MBA Students</p>
+              <h1 className="section-title text-[clamp(2.25rem,5.5vw,4rem)] mb-6 text-balance">
+                Ace your summer internship &amp;{" "}
+                <span className="serif-i text-[var(--accent)]">final placements.</span>
               </h1>
-              <p className="text-[var(--text-secondary)] text-base max-w-xl leading-relaxed mb-9">
-                EdgeX Foundations is built for MBA students targeting consulting, strategy, product, and general management roles. Advanced prep for cases, GDs, and behavioral rounds from the interviewer&apos;s perspective.
+              <p className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed mb-9 max-w-2xl mx-auto text-balance">
+                Focused interview preparation and consulting readiness, taught by ISB &amp; IIM alumni.
               </p>
-              <div className="flex flex-wrap items-center gap-3">
-                <Link href="/contact" className="btn-primary text-sm px-6 py-3 rounded-full">
-                  Enroll Now →
-                </Link>
-                <Link href="/demo" className="u-link text-sm font-medium text-[var(--text-primary)] px-2 py-2.5">
-                  Watch demo class
-                </Link>
+
+              <div className="flex flex-wrap justify-center gap-2.5 mb-10">
+                {["Structured curriculum", "Pre-recorded classes", "Mock GD prep"].map((chip) => (
+                  <span
+                    key={chip}
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg-card)] px-4 py-1.5 text-sm font-medium text-[var(--text-primary)] shadow-[var(--shadow-card)]"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
+                    {chip}
+                  </span>
+                ))}
               </div>
+
+              <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+                {mbaCourses.map((course) => (
+                  <StaggerItem key={course.title}>
+                    <Link
+                      href={course.href}
+                      className="group relative flex aspect-square flex-col justify-end overflow-hidden rounded-2xl p-6 shadow-[0_14px_44px_-16px_rgba(0,0,0,0.6)] ring-1 ring-black/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_56px_-16px_rgba(96,4,4,0.7)]"
+                      style={{ background: "linear-gradient(155deg, #171717 0%, #2a0808 55%, #600404 100%)" }}
+                    >
+                      {/* accent glow, brightens on hover */}
+                      <div
+                        className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-40 blur-2xl transition-opacity duration-300 group-hover:opacity-80"
+                        style={{ background: "radial-gradient(circle, #600404 0%, transparent 70%)" }}
+                        aria-hidden
+                      />
+                      {/* darken veil on hover so text stays legible */}
+                      <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25" aria-hidden />
+
+                      <div className="relative z-10">
+                        <h3 className="text-xl font-semibold leading-snug tracking-[-0.02em] text-white sm:text-2xl">
+                          {course.title}
+                        </h3>
+
+                        {/* details revealed on hover */}
+                        <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
+                          <div className="overflow-hidden">
+                            <p className="pt-3 text-sm leading-relaxed text-white/70">
+                              {course.desc}
+                            </p>
+                            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white">
+                              View course
+                              <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </StaggerItem>
+                ))}
+              </Stagger>
             </PageEnter>
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 border-b border-[var(--border)]">
+        <section className="py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <Reveal className="mb-10">
-              <p className="section-label mb-3">What you&apos;ll learn</p>
-              <h2 className="section-title text-2xl sm:text-3xl">Explore Online Courses</h2>
+            <Reveal className="mb-8">
+              <p className="section-label mb-3">Personalized mentoring</p>
+              <h2 className="section-title text-2xl sm:text-3xl">Book a 1:1 Session</h2>
             </Reveal>
 
-            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {courses.map((course) => (
-                <StaggerItem key={course.slug}>
+            <Stagger className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {sessions.map((item, i) => (
+                <StaggerItem key={item.title}>
                   <Link
-                    href={`/courses/${course.slug}`}
-                    className="group card flex flex-col rounded-xl p-6 h-full hover:border-[var(--border-hover)] transition-colors"
+                    href={item.href}
+                    className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/40 hover:shadow-[0_18px_44px_-18px_rgba(96,4,4,0.45)]"
                   >
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] font-medium text-[var(--accent)] bg-[var(--accent-muted)] px-2 py-0.5 rounded-md">
-                        {course.tag}
+                    {/* accent bar that grows on hover */}
+                    <span
+                      className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+                      style={{ background: "linear-gradient(90deg, #600404, #7d0606)" }}
+                      aria-hidden
+                    />
+                    <div className="mb-5 flex items-center justify-between">
+                      <span
+                        className="grid h-10 w-10 place-items-center rounded-xl text-sm font-semibold text-white shadow-[0_8px_20px_-8px_rgba(96,4,4,0.7)] transition-transform duration-300 group-hover:scale-110"
+                        style={{ background: "linear-gradient(155deg, #2a0808 0%, #600404 100%)" }}
+                        aria-hidden
+                      >
+                        {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-[11px] text-[var(--text-muted)]">{course.meta}</span>
+                      <span className="index-num shrink-0">1:1</span>
                     </div>
-                    <h3 className="text-[15px] font-semibold text-[var(--text-primary)] tracking-[-0.02em] mb-2 group-hover:text-[var(--accent)] transition-colors duration-200">
-                      {course.title}
+                    <h3 className="mb-2 text-base font-semibold tracking-[-0.02em] text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--accent)]">
+                      {item.title}
                     </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed flex-1">
-                      {course.desc}
+                    <p className="flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+                      {item.desc}
                     </p>
-                    <div className="mt-5 pt-4 border-t border-[var(--border)] flex items-center justify-between">
-                      <span className="text-xs text-[var(--text-muted)]">Punita Shrivastava</span>
-                      <span className="text-[var(--accent)] text-sm group-hover:translate-x-0.5 transition-transform duration-200">→</span>
+                    <div className="mt-5 flex items-center justify-between border-t border-[var(--border)] pt-4">
+                      <span className="text-sm font-semibold text-[var(--accent)]">{item.cta}</span>
+                      <span className="text-[var(--accent)] transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>→</span>
                     </div>
                   </Link>
                 </StaggerItem>
@@ -134,40 +243,103 @@ export default function MBAStudentsPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20">
+        <CompanySlider />
+
+        <section className="py-16 sm:py-24 border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <Reveal className="mb-10">
-              <p className="section-label mb-3">Beyond the curriculum</p>
-              <h2 className="section-title text-2xl sm:text-3xl">Other Important Offerings</h2>
+            <Reveal className="mb-10 sm:mb-12">
+              <p className="section-label mb-4">Your teacher</p>
+              <h2 className="section-title text-2xl sm:text-3xl">
+                The people who&apos;ll prepare you
+              </h2>
             </Reveal>
 
-            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {offerings.map((item) => (
-                <StaggerItem key={item.title}>
-                  <div className="card rounded-xl p-6 h-full flex flex-col">
-                    <div className="text-2xl mb-4">{item.icon}</div>
-                    <h3 className="text-[15px] font-semibold text-[var(--text-primary)] tracking-[-0.02em] mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed flex-1">
-                      {item.desc}
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 items-start">
+              {/* LEFT — Your Teacher (highlight) */}
+              <Reveal className="tick-frame h-full">
+                <span className="tick-b" aria-hidden />
+                <article className="flex h-full flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg-card)] shadow-[var(--shadow-card)] sm:flex-row">
+                  <div className="relative h-64 shrink-0 bg-[var(--bg-secondary)] sm:h-auto sm:w-52">
+                    <Image
+                      src="/media/team/punita.png"
+                      alt="Punita Shrivastava"
+                      fill
+                      sizes="(min-width: 640px) 208px, 100vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6 sm:p-8">
+                    <p className="section-label mb-4">{teacher.label}</p>
+                    <h3 className="section-title text-2xl mb-1.5">{teacher.name}</h3>
+                    <p className="text-sm text-[var(--text-muted)] mb-6">
+                      {teacher.education.join(" · ")}
                     </p>
-                    <div className="mt-5 pt-4 border-t border-[var(--border)]">
-                      <Link
-                        href={item.href}
-                        className="text-sm font-medium text-[var(--accent)] hover:underline underline-offset-2 transition-colors"
-                      >
-                        {item.cta}
-                      </Link>
+
+                    <blockquote className="mb-7 text-lg font-medium leading-snug tracking-[-0.02em] text-[var(--text-primary)]">
+                      {teacher.quote}{" "}
+                      <span className="serif-i text-[var(--accent)]">{teacher.quoteAccent}</span>
+                    </blockquote>
+
+                    <div className="mt-auto">
+                      <p className="mb-3 inline-block rounded-md bg-[var(--accent-muted)] px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--accent)]">
+                        {teacher.interviewed.label}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {teacher.interviewed.roles.map((r) => (
+                          <span
+                            key={r.company}
+                            className="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)]"
+                          >
+                            {r.company}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
+                </article>
+              </Reveal>
+
+              {/* RIGHT — Meet the team behind (smaller) */}
+              <div>
+                <div className="mb-7 flex items-baseline gap-3">
+                  <h3 className="text-base font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                    Meet the team behind
+                  </h3>
+                  <span className="h-px flex-1 bg-[var(--border)]" aria-hidden />
+                  <span className="index-num shrink-0">The team</span>
+                </div>
+
+                <Stagger className="grid grid-cols-3 gap-x-4 gap-y-7">
+                  {teamBehind.map((member) => (
+                    <StaggerItem key={member.name}>
+                      <div className="group flex flex-col items-center text-center">
+                        <div className="relative h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full border-2 border-[var(--accent)]/60 bg-[var(--bg-secondary)] transition-colors duration-200 group-hover:border-[var(--accent)]">
+                          <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            sizes="68px"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                        <p className="mt-2.5 text-[13px] font-semibold leading-tight text-[var(--text-primary)]">
+                          {member.name}
+                        </p>
+                        <p className="mt-0.5 text-[11px] leading-tight text-[var(--text-muted)]">
+                          {member.credential}
+                        </p>
+                      </div>
+                    </StaggerItem>
+                  ))}
+                </Stagger>
+              </div>
+            </div>
           </div>
         </section>
 
-        <EnrollBar deadline={site.liveBatches.startDate} />
+        <Reviews />
+
+        <FAQ faqs={mbaFaqs} />
       </main>
       <Footer />
     </>

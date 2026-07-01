@@ -26,7 +26,7 @@ export default function DesignedFor() {
                 className="pointer-events-none absolute -left-[15%] -top-[30%] h-[40rem] w-[40rem] rounded-full"
                 style={{
                   background:
-                    "radial-gradient(circle, rgba(212,0,26,0.22) 0%, rgba(212,0,26,0.05) 45%, transparent 70%)",
+                    "radial-gradient(circle, rgba(96,4,4,0.22) 0%, rgba(96,4,4,0.05) 45%, transparent 70%)",
                 }}
               />
               {/* cool counter-glow, bottom-right, for depth */}
@@ -55,7 +55,7 @@ export default function DesignedFor() {
 
               <div className="relative px-6 sm:px-12 lg:px-16 py-14 sm:py-18">
                 {/* eyebrow chip */}
-                <span className="inline-flex items-center rounded-full bg-[var(--accent)] px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white shadow-[0_8px_24px_-8px_rgba(212,0,26,0.7)]">
+                <span className="inline-flex items-center rounded-full bg-[var(--accent)] px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white shadow-[0_8px_24px_-8px_rgba(96,4,4,0.7)]">
                   {designedFor.label}
                 </span>
 

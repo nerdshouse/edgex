@@ -4,7 +4,9 @@ import { useState } from "react";
 import { motion, AnimatePresence, useReducedMotion, ease, stagger, fadeUp } from "./Motion";
 import { site } from "@/data/site";
 
-export default function FAQ() {
+type FaqItem = { q: string; a: string };
+
+export default function FAQ({ faqs = site.faqs }: { faqs?: readonly FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
   const reduce = useReducedMotion();
 
@@ -31,7 +33,7 @@ export default function FAQ() {
           whileInView="show"
           viewport={{ once: true, margin: "-48px" }}
         >
-          {site.faqs.map((faq, i) => {
+          {faqs.map((faq, i) => {
             const isOpen = open === i;
             return (
               <motion.div

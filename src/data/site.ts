@@ -26,8 +26,8 @@ export const site = {
   },
 
   nav: [
-    { label: "Engineering Students", href: "/engineering-students" },
     { label: "MBA Students", href: "/mba-students" },
+    { label: "Engineering Students", href: "/engineering-students" },
     { label: "Working Professionals", href: "/working-professionals" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
@@ -44,18 +44,6 @@ export const site = {
     badge: "Founded by ISB & IIM Alums",
     audiences: [
       {
-        title: "Placement prep for Engineering Students",
-        href: "/engineering-students",
-        items: [
-          "Interview Prep Courses",
-          "CV Prep",
-          "CV Reviews",
-          "Mock GD Practice",
-          "Consulting Prep",
-          "1:1 Mock Interviews",
-        ],
-      },
-      {
         title: "Placement prep for MBA Students",
         href: "/mba-students",
         items: [
@@ -64,6 +52,18 @@ export const site = {
           "CV Prep",
           "CV Reviews",
           "Mock GD Practice",
+          "1:1 Mock Interviews",
+        ],
+      },
+      {
+        title: "Placement prep for Engineering Students",
+        href: "/engineering-students",
+        items: [
+          "Interview Prep Courses",
+          "CV Prep",
+          "CV Reviews",
+          "Mock GD Practice",
+          "Consulting Prep",
           "1:1 Mock Interviews",
         ],
       },

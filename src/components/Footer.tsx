@@ -30,7 +30,7 @@ export default function Footer() {
         className="pointer-events-none absolute -top-40 left-1/2 h-72 w-[44rem] -translate-x-1/2 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(255,36,56,0.12) 0%, rgba(255,36,56,0.04) 45%, transparent 72%)",
+            "radial-gradient(circle, rgba(96,4,4,0.12) 0%, rgba(96,4,4,0.04) 45%, transparent 72%)",
         }}
       />
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-20 pb-8">

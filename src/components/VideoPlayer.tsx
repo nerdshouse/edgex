@@ -57,13 +57,13 @@ export default function VideoPlayer({ youtubeId, caption, runtime, className }: 
                 className="pointer-events-none absolute -left-[12%] -top-[28%] h-[34rem] w-[34rem] rounded-full"
                 style={{
                   background:
-                    "radial-gradient(circle, rgba(212,0,26,0.32) 0%, rgba(212,0,26,0.08) 45%, transparent 70%)",
+                    "radial-gradient(circle, rgba(96,4,4,0.32) 0%, rgba(96,4,4,0.08) 45%, transparent 70%)",
                 }}
               />
 
               {/* play button */}
               <span className="absolute inset-0 flex items-center justify-center">
-                <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[var(--accent)] shadow-[0_18px_50px_-12px_rgba(212,0,26,0.85)] transition-transform duration-300 ease-out group-hover:scale-110">
+                <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[var(--accent)] shadow-[0_18px_50px_-12px_rgba(96,4,4,0.85)] transition-transform duration-300 ease-out group-hover:scale-110">
                   <span
                     aria-hidden
                     className="absolute inset-0 rounded-full bg-[var(--accent)] opacity-50 transition-transform duration-500 ease-out group-hover:scale-125 group-hover:opacity-0"

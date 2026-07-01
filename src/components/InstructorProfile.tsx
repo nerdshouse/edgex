@@ -30,13 +30,11 @@ function ContentFrame({
   );
 }
 
-export default function InstructorProfile() {
+export default function InstructorProfile({ embedded = false }: { embedded?: boolean }) {
   const p = instructorProfile;
 
-  return (
-    <section className="py-24 sm:py-32 border-t border-[var(--border)]">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8">
-        <ContentFrame index="01" label="EdgeX Foundations">
+  const content = (
+    <ContentFrame index="01" label="EdgeX Foundations">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
             <div className="relative flex flex-col justify-center gap-6 bg-[var(--bg-secondary)] p-8 sm:p-10 min-h-[280px] lg:min-h-0 lg:border-r border-[var(--border)]">
               <span
@@ -110,7 +108,13 @@ export default function InstructorProfile() {
             </div>
           </div>
         </ContentFrame>
-      </div>
+  );
+
+  if (embedded) return content;
+
+  return (
+    <section className="py-24 sm:py-32 border-t border-[var(--border)]">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">{content}</div>
     </section>
   );
 }

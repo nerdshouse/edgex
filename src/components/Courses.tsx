@@ -29,7 +29,7 @@ export default function Courses() {
             <StaggerItem key={course.slug}>
               <Link
                 href={`/courses/${course.slug}`}
-                className="group grid grid-cols-[auto_1fr] sm:grid-cols-[3.5rem_1fr_auto] gap-x-5 sm:gap-x-8 gap-y-2 py-7 sm:py-8 items-baseline border-b border-[var(--border)] transition-colors duration-300 hover:bg-[var(--bg-secondary)] -mx-5 px-5 sm:-mx-8 sm:px-8"
+                className="group grid grid-cols-[auto_1fr] sm:grid-cols-[3.5rem_1fr_auto] gap-x-5 sm:gap-x-8 gap-y-2 py-7 sm:py-8 items-baseline border-b border-[var(--border)] transition-colors duration-300 hover:bg-[var(--bg-secondary)] rounded-lg px-1 -mx-1"
               >
                 <span className="index-num transition-colors duration-300 group-hover:text-[var(--accent)]">
                   {String(i + 1).padStart(2, "0")}

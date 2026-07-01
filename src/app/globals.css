@@ -3,9 +3,9 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --accent: #d4001a;
-  --accent-hover: #b80017;
-  --accent-muted: rgba(212, 0, 26, 0.06);
+  --accent: #600404;
+  --accent-hover: #7d0606;
+  --accent-muted: rgba(96, 4, 4, 0.06);
 
   --bg: #fbfbfa;
   --bg-secondary: #f4f4f2;
@@ -21,9 +21,9 @@
 }
 
 .dark {
-  --accent: #ff2438;
-  --accent-hover: #e3192a;
-  --accent-muted: rgba(255, 36, 56, 0.09);
+  --accent: #600404;
+  --accent-hover: #7d0606;
+  --accent-muted: rgba(96, 4, 4, 0.09);
 
   --bg: #0b0b0a;
   --bg-secondary: #121211;
@@ -167,6 +167,27 @@ body::after {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
+/* ── Flip cards (hero audience pathways) ────────────────────────────────── */
+.flip-card { perspective: 1400px; }
+.flip-inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.flip-card:hover .flip-inner,
+.flip-card:focus-visible .flip-inner { transform: rotateY(180deg); }
+.flip-face {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back { transform: rotateY(180deg); }
+
 .nav-pill {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -225,6 +246,29 @@ body::after {
   animation: marquee 36s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* ── Vertical marquee (reviews wall) ─────────────────────────────────────── */
+@keyframes marquee-y {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+@keyframes marquee-y-reverse {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+.vmarquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 11%, #000 89%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 11%, #000 89%, transparent);
+}
+.vmarquee-track {
+  display: flex;
+  flex-direction: column;
+  animation: marquee-y 48s linear infinite;
+  will-change: transform;
+}
+.vmarquee-track--reverse { animation-name: marquee-y-reverse; }
+.vmarquee:hover .vmarquee-track { animation-play-state: paused; }
 
 /* ── Logo lanes (company slider) ─────────────────────────────────────────── */
 @keyframes marquee-reverse {
@@ -290,16 +334,16 @@ body::after {
 .hero-glow {
   background: radial-gradient(
     ellipse 90% 65% at 50% -10%,
-    rgba(212, 0, 26, 0.26) 0%,
-    rgba(212, 0, 26, 0.08) 48%,
+    rgba(96, 4, 4, 0.26) 0%,
+    rgba(96, 4, 4, 0.08) 48%,
     transparent 70%
   );
 }
 .dark .hero-glow {
   background: radial-gradient(
     ellipse 90% 65% at 50% -10%,
-    rgba(227, 25, 42, 0.38) 0%,
-    rgba(227, 25, 42, 0.12) 48%,
+    rgba(96, 4, 4, 0.38) 0%,
+    rgba(96, 4, 4, 0.12) 48%,
     transparent 70%
   );
 }
@@ -315,6 +359,16 @@ body::after {
   background-size: 26px 26px;
 }
 
+/* Full-page dot pattern — same style as the hero grid, tiled across the whole page */
+.dot-page {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.13) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.dark .dot-page {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 
@@ -326,6 +380,7 @@ body::after {
 
   .marquee-track { animation: none; }
   .logo-lane-track { animation: none; }
+  .vmarquee-track { animation: none; }
 
   .btn-primary:hover,
   .btn-secondary:hover,
