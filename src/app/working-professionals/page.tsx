@@ -66,25 +66,36 @@ export default function WorkingProfessionalsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[var(--bg)] pt-28">
-        <section className="py-16 sm:py-24 border-b border-[var(--border)] bg-[var(--bg-secondary)]">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8">
+      <main className="dot-page min-h-screen">
+        {/* Hero - informational only, no CTAs */}
+        <section className="relative overflow-hidden border-b border-[var(--border)] pt-44 pb-16 sm:pt-52 sm:pb-24">
+          {/* editorial backdrop — glow only; dots come from the page background */}
+          <div className="absolute inset-0 pointer-events-none" aria-hidden>
+            <div className="hero-glow absolute inset-x-0 top-0 h-[62%]" />
+          </div>
+
+          <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
             <PageEnter>
-              <p className="section-label mb-5">Working Professionals</p>
-              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-6 max-w-[16ch]">
-                Make your next career move with{" "}
-                <span className="serif-i text-[var(--accent)]">clarity.</span>
+              <p className="section-label mb-6">Working Professionals</p>
+              <h1 className="section-title text-[clamp(2.25rem,5.5vw,4rem)] mb-6 text-balance">
+                Crack Your Next Lateral Interview. Accelerate Your Career.
               </h1>
-              <p className="text-[var(--text-secondary)] text-base max-w-xl leading-relaxed mb-9">
-                Lateral interview prep, CV support, and B-school application guidance for professionals targeting consulting, strategy, and top MBA programs.
+              <p className="mb-9">
+                <span className="inline-block rounded-lg bg-[var(--accent)] px-3 py-1.5 text-white text-base sm:text-lg font-medium leading-relaxed text-balance">
+                  Practical interview training designed by experienced interviewers from ISB &amp; IIMs
+                </span>
               </p>
-              <div className="flex flex-wrap items-center gap-3">
-                <Link href="/contact" className="btn-primary text-sm px-6 py-3 rounded-full">
-                  Talk to us →
-                </Link>
-                <Link href="/demo" className="u-link text-sm font-medium text-[var(--text-primary)] px-2 py-2.5">
-                  Watch demo class
-                </Link>
+
+              <div className="flex flex-wrap justify-center gap-2.5">
+                {["Structured Curriculum", "Pre-Recorded Classes", "Mock GD Prep"].map((chip) => (
+                  <span
+                    key={chip}
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg-card)] px-4 py-1.5 text-sm font-medium text-[var(--text-primary)] shadow-[var(--shadow-card)]"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
+                    {chip}
+                  </span>
+                ))}
               </div>
             </PageEnter>
           </div>
