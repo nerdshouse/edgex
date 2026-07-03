@@ -42,6 +42,9 @@ export function AdvisorCard({ advisor }: { advisor: ExternalAdvisor }) {
           <span className="h-px w-4 shrink-0 bg-[var(--accent)]" aria-hidden />
           <p className="text-sm text-[var(--text-muted)]">{advisor.credential}</p>
         </div>
+        {advisor.focus ? (
+          <p className="mt-1 text-sm font-medium text-[var(--text-secondary)]">{advisor.focus}</p>
+        ) : null}
         {advisor.linkedin ? (
           <a
             href={advisor.linkedin}

@@ -75,13 +75,10 @@ export default function Navbar() {
             href={site.loginUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline text-[13px] font-medium px-3 py-1.5 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+            className="btn-primary hidden lg:inline text-[13px] px-4 py-1.5 rounded-full"
           >
             Login
           </a>
-          <Link href="/contact" className="btn-primary text-[13px] px-4 py-1.5 rounded-full">
-            Enroll
-          </Link>
         </div>
       </nav>
 
@@ -137,13 +134,10 @@ export default function Navbar() {
                 href={site.loginUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block px-4 py-3 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                className="btn-primary mt-1 text-sm px-4 py-3 rounded-xl text-center"
               >
                 Login
               </a>
-              <Link href="/contact" className="btn-primary mt-1 text-sm px-4 py-3 rounded-xl text-center">
-                Enroll
-              </Link>
             </div>
           </motion.div>
         )}

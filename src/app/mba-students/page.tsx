@@ -135,10 +135,12 @@ export default function MBAStudentsPage() {
               <p className="section-label mb-6">MBA Students</p>
               <h1 className="section-title text-[clamp(2.25rem,5.5vw,4rem)] mb-6 text-balance">
                 Ace your summer internship &amp;{" "}
-                <span className="serif-i text-[var(--accent)]">final placements.</span>
+                <span className="text-[var(--accent)]">final placements.</span>
               </h1>
-              <p className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed mb-9 max-w-2xl mx-auto text-balance">
-                Focused interview preparation and consulting readiness, taught by ISB &amp; IIM alumni.
+              <p className="mb-9">
+                <span className="inline-block rounded-lg bg-[rgb(96,4,4)] px-3 py-1.5 text-white text-base sm:text-lg font-medium leading-relaxed text-balance">
+                  Focused interview preparation and consulting readiness, taught by ISB &amp; IIM alumni.
+                </span>
               </p>
 
               <div className="flex flex-wrap justify-center gap-2.5 mb-10">
@@ -153,41 +155,35 @@ export default function MBAStudentsPage() {
                 ))}
               </div>
 
-              <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
+              <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] mb-16">
                 {mbaCourses.map((course) => (
-                  <StaggerItem key={course.title}>
+                  <StaggerItem key={course.title} className="h-full">
                     <Link
                       href={course.href}
-                      className="group relative flex aspect-square flex-col justify-end overflow-hidden rounded-2xl p-6 shadow-[0_14px_44px_-16px_rgba(0,0,0,0.6)] ring-1 ring-black/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_56px_-16px_rgba(96,4,4,0.7)]"
-                      style={{ background: "linear-gradient(155deg, #171717 0%, #2a0808 55%, #600404 100%)" }}
+                      className="group relative flex h-full flex-col bg-[var(--bg-card)] p-7 text-left sm:p-9 transition-colors duration-300 hover:bg-[var(--accent-muted)]"
                     >
-                      {/* accent glow, brightens on hover */}
-                      <div
-                        className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-40 blur-2xl transition-opacity duration-300 group-hover:opacity-80"
-                        style={{ background: "radial-gradient(circle, #600404 0%, transparent 70%)" }}
-                        aria-hidden
-                      />
-                      {/* darken veil on hover so text stays legible */}
-                      <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/25" aria-hidden />
+                      <span className="mb-6 inline-flex w-fit items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                        <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
+                        {course.tag}
+                      </span>
 
-                      <div className="relative z-10">
-                        <h3 className="text-xl font-semibold leading-snug tracking-[-0.02em] text-white sm:text-2xl">
-                          {course.title}
-                        </h3>
+                      <h3 className="mb-2 max-w-[20ch] text-lg font-semibold leading-snug tracking-[-0.02em] text-[var(--text-primary)]">
+                        {course.title}
+                      </h3>
+                      <p className="mb-9 max-w-[44ch] text-sm leading-relaxed text-[var(--text-secondary)]">
+                        {course.desc}
+                      </p>
 
-                        {/* details revealed on hover */}
-                        <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
-                          <div className="overflow-hidden">
-                            <p className="pt-3 text-sm leading-relaxed text-white/70">
-                              {course.desc}
-                            </p>
-                            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-white">
-                              View course
-                              <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                      <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
+                        <span className="relative">
+                          View course
+                          <span
+                            className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 group-hover:scale-x-100"
+                            aria-hidden
+                          />
+                        </span>
+                        <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                      </span>
                     </Link>
                   </StaggerItem>
                 ))}

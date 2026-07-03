@@ -5,10 +5,10 @@ import { site } from "@/data/site";
 import { Reveal, Stagger, StaggerItem } from "./Reveal";
 
 const footerLinks = {
-  Program: [
-    { label: "EdgeX Foundations", href: "/cohorts/edgex-foundations" },
-    { label: "Demo Class", href: "/demo" },
-    { label: "Live Batches", href: "/live-batches" },
+  Courses: [
+    { label: "MBA Students", href: "/mba-students" },
+    { label: "Engineering students", href: "/engineering-students" },
+    { label: "Working Professionals", href: "/working-professionals" },
   ],
   Company: [
     { label: "About", href: "/about" },

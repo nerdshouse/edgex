@@ -93,6 +93,7 @@ export const team = {
 export type ExternalAdvisor = {
   name: string;
   credential: string;
+  focus?: string;
   image: string;
   initials: string;
   linkedin?: string;
@@ -105,36 +106,42 @@ export const externalAdvisorsSection = {
     {
       name: "Ujjwal Tamang",
       credential: "IIM Bangalore Co'18",
+      focus: "Finance",
       image: "/media/team/advisors/ujjwal-tamang.png",
       initials: "UT",
     },
     {
       name: "Vijeta Shrivastava",
       credential: "IIM Kozhikode Co'13",
+      focus: "IT & Consulting",
       image: "/media/team/advisors/vijeta-shrivastava.png",
       initials: "VS",
     },
     {
       name: "Srawesh",
       credential: "IIM Lucknow Co'20",
+      focus: "Research & Consulting",
       image: "/media/team/advisors/srawesh.jpeg",
       initials: "SR",
     },
     {
       name: "Ajita Bisht",
       credential: "McCombs School of Business",
+      focus: "Analytics",
       image: "/media/team/advisors/ajita-bisht.png",
       initials: "AB",
     },
     {
       name: "Satyam Mudaliar",
       credential: "IIT Bombay Co'15",
+      focus: "Corporate Strategy",
       image: "/media/team/advisors/satyam-mudaliar.png",
       initials: "SM",
     },
     {
       name: "Palak Jain",
       credential: "IIT Kharagpur Co'16",
+      focus: "Product Management",
       image: "/media/team/advisors/palak-jain.png",
       initials: "PJ",
     },
@@ -144,6 +151,7 @@ export const externalAdvisorsSection = {
 export type CoreTeamMember = {
   name: string;
   role: string;
+  focus?: string;
   image: string;
   initials: string;
 };
@@ -154,12 +162,14 @@ export const coreTeamSection = {
     {
       name: "Sathvik Aradhya",
       role: "Program Manager",
+      focus: "Marketing & Design",
       image: "/media/team/core/sathvik-aradhya.png",
       initials: "SA",
     },
     {
       name: "Esha Kumari",
       role: "Program Manager",
+      focus: "Program Management",
       image: "/media/team/core/esha-kumari.png",
       initials: "EK",
     },

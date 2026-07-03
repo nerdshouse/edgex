@@ -71,6 +71,7 @@ const courses = [
   {
     code: "A1",
     tag: "Placement",
+    status: "Ongoing enrollments",
     title: "Complete Placement Prep for Engineers",
     desc: "End-to-end preparation for non-core placements - aptitude, case interviews, GD, HR rounds, and CV. Everything an engineer needs, in one track.",
     href: "/contact",
@@ -78,6 +79,7 @@ const courses = [
   {
     code: "A2",
     tag: "Consulting",
+    status: "Ongoing enrollments",
     title: "Consulting Fundamentals for Engineers",
     desc: "Structured problem-solving, guesstimates, and case frameworks for consulting-style interviews - taught from the interviewer's perspective.",
     href: "/contact",
@@ -85,6 +87,7 @@ const courses = [
   {
     code: "A3",
     tag: "Combo",
+    status: "Ongoing enrollments",
     title: "Placement Essentials + Consulting Foundations Combo",
     desc: "The best of both tracks bundled together for engineers targeting consulting, analytics, and product roles at a combined price.",
     href: "/contact",
@@ -92,6 +95,7 @@ const courses = [
   {
     code: "A4",
     tag: "Practice",
+    status: "Ongoing enrollments",
     title: "Virtual GD Labs for Engineers",
     desc: "Live, moderated group discussion practice with peers from Tier 1 & 2 colleges and structured feedback on every round.",
     href: "/contact",
@@ -137,11 +141,15 @@ export default function EngineeringStudentsPage() {
               <p className="section-label mb-5">Engineering Students</p>
               <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-8 max-w-[18ch]">
                 Crack placement interviews with{" "}
-                <span className="serif-i text-[var(--accent)]">confidence.</span>{" "}
-                Land the job you deserve.
+                <span className="text-[var(--accent)]">confidence.</span>
+                <span className="block text-[0.42em] font-normal tracking-[-0.01em] text-[var(--accent)] mt-3">
+                  Land the job you deserve.
+                </span>
               </h1>
-              <p className="text-[var(--text-primary)] text-xl sm:text-2xl font-medium tracking-[-0.02em] max-w-2xl leading-snug mb-6">
-                Courses designed by experienced interviewers.
+              <p className="mb-6">
+                <span className="inline-block rounded-lg bg-[var(--accent)] px-3 py-1.5 text-white text-xl sm:text-2xl font-medium tracking-[-0.02em] leading-snug">
+                  Courses designed by experienced interviewers.
+                </span>
               </p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[var(--text-secondary)] text-base sm:text-lg">
                 <span>Structured Curriculum</span>
@@ -158,13 +166,12 @@ export default function EngineeringStudentsPage() {
         <section className="py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-12">
-              <p className="section-label mb-3">Track A</p>
               <h2 className="section-title text-3xl sm:text-4xl">Engineering Track</h2>
             </Reveal>
 
             {/* Explore EdgeX Courses */}
             <Reveal className="mb-6">
-              <h3 className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+              <h3 className="font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
                 Explore EdgeX Courses
               </h3>
             </Reveal>
@@ -184,10 +191,17 @@ export default function EngineeringStudentsPage() {
                       {course.code}
                     </span>
 
-                    <span className="mb-6 inline-flex w-fit items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                      <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
-                      {course.tag}
-                    </span>
+                    <div className="mb-6 flex flex-wrap items-center gap-2">
+                      <span className="inline-flex w-fit items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                        <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
+                        {course.tag}
+                      </span>
+                      {course.status && (
+                        <span className="inline-flex items-center rounded-full border border-[var(--accent)]/25 bg-[var(--accent-muted)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] text-[var(--accent)]">
+                          {course.status}
+                        </span>
+                      )}
+                    </div>
 
                     <h4 className="mb-2 max-w-[20ch] text-lg font-semibold leading-snug tracking-[-0.02em] text-[var(--text-primary)]">
                       {course.title}
@@ -213,7 +227,7 @@ export default function EngineeringStudentsPage() {
 
             {/* Book a 1:1 Session */}
             <Reveal className="mb-6">
-              <h3 className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+              <h3 className="font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
                 Book a 1:1 Session for personalized mentoring
               </h3>
             </Reveal>
