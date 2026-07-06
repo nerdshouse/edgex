@@ -104,18 +104,21 @@ const mbaCourses = [
 
 const sessions = [
   {
+    code: "M5",
     title: "1:1 Mock Interviews with Feedback",
     desc: "Full-length mock interviews with EdgeX mentors, followed by a structured, actionable feedback report.",
     href: "/contact",
     cta: "Book a session",
   },
   {
+    code: "M6",
     title: "1:1 CV Reviews",
     desc: "Line-by-line CV review to make your profile consulting- and placement-ready before applications open.",
     href: "/contact",
     cta: "Book a review",
   },
   {
+    code: "M7",
     title: "1:1 Career Consultation",
     desc: "One-on-one guidance on role targeting, firm selection, and building your placement-season strategy.",
     href: "/contact",
