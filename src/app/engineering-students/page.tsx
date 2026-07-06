@@ -38,66 +38,70 @@ const teamBehind = [
 // Tuned for engineering-student placement prep.
 const engineeringFaqs = [
   {
-    q: "Is EdgeX right for B.Tech / B.E. placements?",
-    a: "Yes. The curriculum is built for engineering students targeting non-core, non-tech roles - consulting, analytics, product, FMCG, and finance - and is taught from the interviewer's perspective so you prep the way recruiters actually evaluate you.",
+    q: "How are the Engineering courses different from the MBA courses?",
+    a: "The Engineering courses have been specifically designed for students transitioning into business careers from an engineering background. Unlike MBA students, engineers may have limited prior exposure to business concepts, management terminology, or structured business problem-solving. The curriculum therefore introduces these concepts progressively, using engineering-relevant examples and additional context wherever required. While the learning journey is adapted for engineers, the courses are designed to build the level of business thinking, structured problem-solving, and interview readiness expected for business placements.",
   },
   {
-    q: "Which roles and firms does the prep target?",
-    a: "Consulting, business analytics, product, and general management roles at firms like Accenture, PwC, Deloitte, ZS Associates, Mu Sigma, BCG, Bain, and McKinsey. The frameworks and mock rounds mirror how these companies screen campus candidates.",
+    q: "What is the difference between Placement Foundations and ConsultPro?",
+    a: "Placement Foundations is designed as the core interview preparation program for engineers aspiring to consulting, product management, analytics, strategy, operations, and other business roles. It covers structured problem-solving, behavioural interviews, HR interviews, business thinking, interview preparation strategy, and also includes two complimentary EdgeX GD Labs sessions for practical group discussion experience.\n\nConsultPro is a specialized program for students targeting consulting and strategy roles. It focuses on case interviews, guesstimates, consulting frameworks, structured thinking, communication, and rigorous case preparation.\n\nStudents targeting consulting firms are encouraged to consider the Placement Foundations + ConsultPro Combo, which combines both programs into one comprehensive preparation pathway.",
   },
   {
-    q: "Do you cover case interviews and guesstimates?",
-    a: "In depth. There's a dedicated module for structured problem-solving, a large guesstimate practice bank, and mock case rounds with detailed feedback so structuring becomes second nature before placement week.",
+    q: "I am targeting consulting. Should I only purchase ConsultPro?",
+    a: "ConsultPro is designed specifically for consulting interview preparation. However, consulting recruiters also evaluate behavioural interviews, communication, business judgement, leadership potential, and overall interview performance—areas that are covered extensively in Placement Foundations. Students seriously targeting consulting and strategy roles are therefore encouraged to consider the Placement Foundations + ConsultPro Combo for the most comprehensive preparation.",
   },
   {
-    q: "Is this a live or recorded course?",
-    a: "It is a hybrid format. As soon as you enroll you get instant access to recorded lectures, assignments, cheat sheets, and question banks to go through at your own pace. You can also join a live batch anytime within your access window, and book weekly GD slots whenever you feel ready.",
+    q: "I am not targeting consulting. Is Placement Foundations sufficient?",
+    a: "Yes. Placement Foundations has been designed as a role-agnostic interview preparation program for engineers aspiring to business careers. It is relevant for students targeting product management, analytics, finance, marketing, operations, general management, consulting, and other non-technical business roles. The concepts taught are transferable across a wide range of placement interviews.",
   },
   {
-    q: "Are mock interviews and GDs included?",
-    a: 'Weekly mock GD slots with peer cohorts and feedback are included. 1:1 mock interviews with detailed feedback reports are available as an add-on, and every student gets lifetime access to "The EdgeX Corporate Club" for networking.',
+    q: "Why are these courses designed around interview skills rather than specific companies?",
+    a: "While every recruiter has its own interview process, the underlying skills they assess are remarkably consistent—structured thinking, business judgement, communication, problem-solving, and professionalism. EdgeX focuses on developing these transferable skills, enabling students to perform confidently across interviews for consulting, product, analytics, operations, strategy, and other business roles.",
   },
   {
-    q: "Will my participation be anonymous?",
-    a: "Yes. Your enrollment is completely private and is not revealed to other students. GD participation is roll-number based, so your name and credentials are not shared with peers.",
+    q: "Why should I choose EdgeX instead of preparing through YouTube, AI tools or Casebooks?",
+    a: "YouTube videos, AI tools and Casebooks are excellent resources for learning individual concepts and practicing cases. However, successful interview preparation requires much more than isolated resources. EdgeX combines a structured curriculum with interviewer perspectives, guided case demonstrations, curated casebooks and learning resources, behavioural interview preparation, interview strategy, practical business examples, and live practice opportunities—bringing together everything required for business-focused placement preparation in one place.",
   },
   {
-    q: "How long is my access valid?",
-    a: "You receive 3-year extended access to all course materials, recordings, live batches, and GD slots - enough to cover your remaining college years and placement journey.",
+    q: "How is the curriculum designed?",
+    a: "EdgeX courses have been developed by combining practical industry experience, interviewer insights, structured interview preparation methodologies, and real placement preparation experience. Rather than compiling isolated interview tips, the curriculum has been designed as a progressive learning journey that builds concepts systematically. Throughout the development process, experienced recruiters, industry professionals, and external advisors were consulted to help validate the breadth and completeness of the curriculum.",
+  },
+  {
+    q: "Will the curriculum continue to be updated?",
+    a: "Yes. At EdgeX, curriculum development is an ongoing process rather than a one-time effort. We continuously review our courses to ensure the content remains current, relevant, and aligned with evolving recruitment practices and industry expectations. Based on student feedback, recruiter insights, and emerging interview trends, we regularly enhance existing modules, introduce new lectures, expand practice material, and refine the overall learning experience to deliver the highest quality preparation possible.",
   },
 ];
 
 const courses = [
   {
-    code: "A1",
-    tag: "Placement",
-    status: "Ongoing enrollments",
-    title: "Complete Placement Prep for Engineers",
-    desc: "End-to-end preparation for non-core placements - aptitude, case interviews, GD, HR rounds, and CV. Everything an engineer needs, in one track.",
+    tag: "Foundations (Role Agnostic)",
+    status: "Pre-launch Enrolments",
+    code: "E1",
+    title: "Placement Foundations for Engineers",
+    desc: "Core skills required for business-focused campus placements, from role-agnostic structured problem-solving and behavioural interviews to HR rounds, business fundamentals, and professional communication",
     href: "/contact",
   },
   {
-    code: "A2",
-    tag: "Consulting",
-    status: "Ongoing enrollments",
-    title: "Consulting Fundamentals for Engineers",
-    desc: "Structured problem-solving, guesstimates, and case frameworks for consulting-style interviews - taught from the interviewer's perspective.",
+    tag: "Consulting/Strategy/Business Analytics",
+    status: "Pre-launch Enrolments",
+    code: "E2",
+    title: "ConsultPro for Engineers",
+    desc: "Everything required to excel in consulting interviews, including advanced case preparation, guesstimates, consulting frameworks, structured thinking & communication, and case interview demonstrations.",
     href: "/contact",
   },
   {
-    code: "A3",
     tag: "Combo",
-    status: "Ongoing enrollments",
-    title: "Placement Essentials + Consulting Foundations Combo",
-    desc: "The best of both tracks bundled together for engineers targeting consulting, analytics, and product roles at a combined price.",
+    status: "Pre-launch Enrolments",
+    code: "E3",
+    title: "Placement Foundations + Consulting Pro Combo for Engineers",
+    desc: "Complete prep for engineers seeking business roles, combining role-agnostic interview foundations with advanced consulting and strategy interview preparation in one comprehensive program.",
     href: "/contact",
   },
   {
-    code: "A4",
     tag: "Practice",
-    status: "Ongoing enrollments",
-    title: "Virtual GD Labs for Engineers",
-    desc: "Live, moderated group discussion practice with peers from Tier 1 & 2 colleges and structured feedback on every round.",
+    status: "Ongoing",
+    code: "E4",
+    title: "EdgeX GD Labs",
+    desc: "Practice group discussions through live virtual sessions with targeted feedback, peer learning and realistic placement-style GD simulations.",
     href: "/contact",
   },
 ];
@@ -138,25 +142,24 @@ export default function EngineeringStudentsPage() {
 
           <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
-              <p className="section-label mb-5">Engineering Students</p>
+              <p className="section-label mb-5">Top B.Tech/B.E. Placements (Tier 1 & Tier 2)</p>
               <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-8 max-w-[18ch]">
-                Crack placement interviews with{" "}
-                <span className="text-[var(--accent)]">confidence.</span>
+                Crack placement interviews with confidence.
                 <span className="block text-[0.42em] font-normal tracking-[-0.01em] text-[var(--accent)] mt-3">
-                  Land the job you deserve.
+                  Curated courses for Engineers aspiring to consulting, analytics, strategy, operations, and other business careers.
                 </span>
               </h1>
               <p className="mb-6">
                 <span className="inline-block rounded-lg bg-[var(--accent)] px-3 py-1.5 text-white text-xl sm:text-2xl font-medium tracking-[-0.02em] leading-snug">
-                  Courses designed by experienced interviewers.
+                  Courses designed by experienced recruiters and senior corporate professionals.
                 </span>
               </p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[var(--text-secondary)] text-base sm:text-lg">
                 <span>Structured Curriculum</span>
                 <span className="text-[var(--border-hover)]" aria-hidden>|</span>
-                <span>Pre-Recorded Classes</span>
+                <span>Self-Paced Learning</span>
                 <span className="text-[var(--border-hover)]" aria-hidden>|</span>
-                <span>Mock GD Prep</span>
+                <span>Live GD & Interview Practice</span>
               </div>
             </PageEnter>
           </div>
@@ -166,13 +169,13 @@ export default function EngineeringStudentsPage() {
         <section className="py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-12">
-              <h2 className="section-title text-3xl sm:text-4xl">Engineering Track</h2>
+              <h2 className="section-title text-3xl sm:text-4xl">Business Roles Interview & GD prep for Engineers</h2>
             </Reveal>
 
             {/* Explore EdgeX Courses */}
             <Reveal className="mb-6">
               <h3 className="font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
-                Explore EdgeX Courses
+                Explore Courses
               </h3>
             </Reveal>
 
@@ -192,7 +195,7 @@ export default function EngineeringStudentsPage() {
                     </span>
 
                     <div className="mb-6 flex flex-wrap items-center gap-2">
-                      <span className="inline-flex w-fit items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                      <span className="inline-flex w-fit items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
                         <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
                         {course.tag}
                       </span>

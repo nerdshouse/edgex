@@ -57,7 +57,7 @@ export default function LiveBatchesPage() {
             </Reveal>
           </div>
         </section>
-        <EnrollBar deadline={site.liveBatches.startDate} />
+        <EnrollBar />
       </main>
       <Footer />
     </>

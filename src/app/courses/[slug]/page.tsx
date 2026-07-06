@@ -2,7 +2,7 @@
 
 import { notFound, usePathname } from "next/navigation";
 import Link from "next/link";
-import { use, useState } from "react";
+import { use, useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -10,15 +10,35 @@ import { motion, AnimatePresence, ease } from "@/components/Motion";
 import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import InstructorProfile from "@/components/InstructorProfile";
 import FAQ from "@/components/FAQ";
+import Reviews from "@/components/Reviews";
+import EnrollBar from "@/components/EnrollBar";
 import { getCourseBySlug } from "@/data/cohorts";
 
 function inr(amount: number) {
   return new Intl.NumberFormat("en-IN").format(amount);
 }
 
-function ModuleItem({ index, week, topics, details, lectures, assignments, moduleHours, isOpen, onToggle }: any) {
+function ModuleItem({ index, week, topics, details, lectures, assignments, moduleHours, isOpen, onToggle, onVisible }: any) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && onVisible) {
+          onVisible(index);
+        }
+      },
+      {
+        rootMargin: "-20% 0px -40% 0px"
+      }
+    );
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [index, onVisible]);
+
   return (
-    <div className="group flex items-stretch gap-3">
+    <div ref={ref} className="group flex items-stretch gap-3 min-h-[40px]">
       <span className="mt-0.5 relative overflow-hidden grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-sm font-semibold text-white tabular-nums transition-colors duration-300">
         <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:-translate-y-full">{index}</span>
         <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0">{index}</span>
@@ -55,7 +75,7 @@ function ModuleItem({ index, week, topics, details, lectures, assignments, modul
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="px-6 py-6 text-sm text-[var(--text-secondary)] border-t border-[var(--border)] bg-[var(--bg-card)]"
+                className="px-6 py-6 text-sm text-[var(--text-secondary)] border-t border-[var(--border)] bg-[var(--bg-card)] min-h-[35vh]"
               >
                 {details && <p className="mb-6 leading-relaxed text-[var(--text-primary)]">{details}</p>}
                 {topics && topics.length > 0 && (
@@ -106,6 +126,14 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
   const result = getCourseBySlug(slug);
   const [openModuleIndex, setOpenModuleIndex] = useState(1);
 
+  // Force scroll to top on mount, bypassing Next.js scroll restoration and CSS smooth scrolling
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
   if (!result) notFound();
   const { course, cohort } = result;
 
@@ -120,13 +148,9 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
     <>
       <Navbar />
       <main className="min-h-screen bg-[var(--bg)] pt-20">
-        {course.headline && (
-          <div className="bg-[var(--accent-muted)] text-[var(--accent)] py-3 px-5 text-center text-sm sm:text-base font-medium tracking-wide border-b border-[var(--border)]">
-            <div className="max-w-5xl mx-auto">{course.headline}</div>
-          </div>
-        )}
+
         {/* Section 1 — Modules included + info panel */}
-        <section className="py-14 sm:py-20 border-b border-[var(--border)]">
+        <section className="py-8 border-b border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
               <Link
@@ -139,8 +163,8 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
 
               {/* Title bar */}
               <div className="mb-10 sm:mb-12">
-                <h1 className="section-title text-[clamp(2rem,4.5vw,3.5rem)] mb-4">{course.title}</h1>
-                {course.desc && <p className="text-lg text-[var(--text-secondary)] max-w-3xl">{course.desc}</p>}
+                <h1 className="inline-block rounded-lg bg-[var(--accent)] px-3 py-1 text-white text-[clamp(2rem,4.5vw,3.5rem)] font-medium tracking-[-0.02em] leading-snug">{course.title}</h1>
+                <p className="text-xl text-[var(--text-secondary)] max-w-6xl mt-2">{course.desc}</p>
               </div>
 
               <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-14 items-start">
@@ -169,6 +193,7 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                           moduleHours={item.moduleHours}
                           isOpen={openModuleIndex === i + 1}
                           onToggle={() => setOpenModuleIndex(openModuleIndex === i + 1 ? -1 : i + 1)}
+                          onVisible={setOpenModuleIndex}
                         />
                       </StaggerItem>
                     ))}
@@ -183,16 +208,7 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                 </div>
 
                 {/* RIGHT — Info panel */}
-                <div className="flex flex-col gap-4">
-                  <div className="card rounded-xl px-6 py-6 text-center">
-                    <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      Price
-                    </div>
-                    <div className="text-3xl font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                      {price ? `₹${inr(price)}` : "On request"}
-                    </div>
-                  </div>
-
+                <div className="flex flex-col gap-4 lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto no-scrollbar pb-4">
                   <InfoCard label="Taught by" value={course.instructor} />
 
                   {course.inclusions && course.inclusions.length > 0 && (
@@ -218,12 +234,21 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                     <InfoCard value="Lifetime Access to the EdgeX Corporate Club" />
                   )}
 
-                  {/* <Link
+                  <div className="card rounded-xl px-6 py-6 text-center">
+                    <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                      Price
+                    </div>
+                    <div className="text-3xl font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                      {price ? `₹${inr(price)}` : "On request"}
+                    </div>
+                  </div>
+
+                  <Link
                     href="/contact"
                     className="btn-primary mt-1 block rounded-full px-6 py-3 text-center text-sm"
                   >
                     Enroll in this course →
-                  </Link> */}
+                  </Link>
                 </div>
               </div>
             </PageEnter>
@@ -274,13 +299,13 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
 
                 <div className="relative pl-6 sm:pl-8">
                   {/* Vertical line */}
-                  <div className="absolute left-[11px] sm:left-[7px] top-2 bottom-2 w-px bg-[var(--border)]" aria-hidden />
+                  <div className="absolute left-[9px] sm:left-[7px] top-2 bottom-2 w-px bg-[var(--border)]" aria-hidden />
 
                   <ul className="flex flex-col gap-10">
                     {course.journey.map((step, i) => (
                       <li key={i} className="relative">
                         {/* Dot */}
-                        <div className="absolute -left-[24px] sm:-left-[30px] top-1.5 h-3 w-3 rounded-full bg-[var(--accent)] ring-4 ring-[var(--bg-secondary)]" aria-hidden />
+                        <div className="absolute -left-[20px] sm:-left-[30px] top-1.5 h-3 w-3 rounded-full bg-[var(--accent)] ring-4 ring-[var(--bg-secondary)]" aria-hidden />
 
                         <div className="flex flex-col gap-1.5">
                           <h3 className="text-[15px] sm:text-base font-medium text-[var(--text-primary)] leading-snug">
@@ -301,9 +326,11 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
           </section>
         )}
 
+        <Reviews />
         {course.faqs && course.faqs.length > 0 && (
           <FAQ faqs={course.faqs} />
         )}
+        <EnrollBar href={course.enrollHref} />
       </main>
       <Footer />
     </>

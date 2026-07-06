@@ -103,7 +103,7 @@ export default function CohortPage({ params }: { params: Promise<{ slug: string 
             </Stagger>
           </div>
         </section>
-        <EnrollBar deadline={cohort.nextBatch} />
+        <EnrollBar />
       </main>
       <Footer />
     </>

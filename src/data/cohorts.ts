@@ -206,8 +206,7 @@ export const cohorts: Cohort[] = [
       {
         slug: "placement-foundations-2026",
         title: "Placement Foundations for B-Schools - 2026",
-        headline: "Build core skills required across MBA placements, covering comprehensive modules critical to all business interviews",
-        // desc: "Build core skills required across MBA placements, covering comprehensive modules critical to all business interviews",
+        desc: "Build core skills required across MBA placements, covering comprehensive modules critical to all business interviews",
         duration: "24 Months",
         lessons: 34,
         hours: 29,
@@ -216,6 +215,7 @@ export const cohorts: Cohort[] = [
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
         price: 4999,
+        enrollHref: "https://classplusapp.com/diy/courses/course-overview?id=817173",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -269,7 +269,7 @@ export const cohorts: Cohort[] = [
       {
         slug: "consulting-advanced-2026",
         title: "Consulting Pro for B-Schools - 2026",
-        headline: "TBD",
+        desc: "TBD",
         duration: "24 Months",
         lessons: 39,
         hours: 33,
@@ -337,7 +337,7 @@ export const cohorts: Cohort[] = [
       {
         slug: "placement-combo-2026",
         title: "Consulting + Placement Essentials Combo 2026",
-        headline: "TBD",
+        desc: "TBD",
         duration: "24 Months",
         lessons: 65,
         hours: 42,
@@ -429,7 +429,7 @@ export const cohorts: Cohort[] = [
       {
         slug: "gd-labs",
         title: "EdgeX GD Labs",
-        headline: "TBD",
+        desc: "TBD",
         duration: "Flexible",
         lessons: 2,
         hours: 1,
