@@ -21,7 +21,7 @@ export default function VideoPlayer({ youtubeId, caption, runtime, className }: 
           {playing ? (
             <iframe
               className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+              src={``}
               title={caption}
               allow="accelerated-output; autoplay; encrypted-media; picture-in-picture"
               allowFullScreen
@@ -36,7 +36,7 @@ export default function VideoPlayer({ youtubeId, caption, runtime, className }: 
               {/* thumbnail */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`}
+                src={``}
                 alt={caption}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 onError={(e) => {

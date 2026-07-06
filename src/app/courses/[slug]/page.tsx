@@ -1,6 +1,6 @@
 "use client";
 
-import { notFound } from "next/navigation";
+import { notFound, usePathname } from "next/navigation";
 import Link from "next/link";
 import { use, useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -8,58 +8,74 @@ import Footer from "@/components/Footer";
 import VideoPlayer from "@/components/VideoPlayer";
 import { motion, AnimatePresence, ease } from "@/components/Motion";
 import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
-import EnrollBar from "@/components/EnrollBar";
+import InstructorProfile from "@/components/InstructorProfile";
+import FAQ from "@/components/FAQ";
 import { getCourseBySlug } from "@/data/cohorts";
 
 function inr(amount: number) {
   return new Intl.NumberFormat("en-IN").format(amount);
 }
 
-/** One numbered, expandable module row — the "orange module" from the design. */
-function ModuleItem({ index, week, topics }: { index: number; week: string; topics: string[] }) {
-  const [open, setOpen] = useState(false);
+function ModuleItem({ index, week, topics, details, lectures, assignments, moduleHours, isOpen, onToggle }: any) {
   return (
-    <div className="flex items-stretch gap-3">
-      <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-sm font-semibold text-white tabular-nums">
-        {index}
+    <div className="group flex items-stretch gap-3">
+      <span className="mt-0.5 relative overflow-hidden grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--accent)] text-sm font-semibold text-white tabular-nums transition-colors duration-300">
+        <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:-translate-y-full">{index}</span>
+        <span className="absolute inset-0 flex items-center justify-center translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0">{index}</span>
       </span>
-      <div className="flex-1 overflow-hidden rounded-lg border border-[var(--border)] transition-colors duration-200 hover:border-[var(--border-hover)]">
+      <div className="flex-1 overflow-hidden rounded-lg border border-[var(--border)] transition-colors duration-300 group-hover:border-[var(--border-hover)]">
         <button
-          onClick={() => setOpen(!open)}
-          className="flex w-full items-center justify-between gap-4 bg-[var(--bg-card)] px-5 py-4 text-left transition-colors duration-200 hover:bg-[var(--bg-secondary)]"
+          onClick={onToggle}
+          className="flex w-full items-center justify-between gap-4 bg-[var(--bg-card)] px-5 py-4 text-left transition-colors duration-300 group-hover:bg-[var(--bg-secondary)]"
         >
-          <span className="text-sm font-medium text-[var(--text-primary)]">{week}</span>
-          <motion.span
-            animate={{ rotate: open ? 180 : 0 }}
-            transition={{ duration: 0.2, ease }}
-            className="shrink-0 text-[var(--text-muted)]"
-          >
-            ▾
-          </motion.span>
+          <div className="relative overflow-hidden w-full">
+            <span className="block text-sm font-medium text-[var(--text-primary)] transition-transform duration-500 ease-out group-hover:-translate-y-[110%]">{week}</span>
+            <span className="absolute inset-0 text-sm font-medium text-[var(--text-primary)] translate-y-[110%] transition-transform duration-500 ease-out group-hover:translate-y-0" aria-hidden>{week}</span>
+          </div>
+          <div className="relative h-4 w-4 shrink-0 text-[var(--text-muted)]">
+            <span className="absolute top-1/2 left-0 w-full h-[1.5px] -translate-y-1/2 bg-current" />
+            <motion.span
+              animate={{ rotate: isOpen ? 90 : 0, opacity: isOpen ? 0 : 1 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute top-0 left-1/2 h-full w-[1.5px] -translate-x-1/2 bg-current"
+            />
+          </div>
         </button>
-        <AnimatePresence initial={false}>
-          {open && (
+        <AnimatePresence>
+          {isOpen && (
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25, ease }}
+              initial={{ height: 0 }}
+              animate={{ height: "auto" }}
+              exit={{ height: 0 }}
+              transition={{ type: "spring", stiffness: 120, damping: 20 }}
               className="overflow-hidden"
             >
-              <ul className="flex flex-col gap-2 border-t border-[var(--border)] px-5 py-4">
-                {topics.map((t, i) => (
-                  <motion.li
-                    key={t}
-                    initial={{ opacity: 0, x: -6 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.03, duration: 0.2 }}
-                    className="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"
-                  >
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" />
-                    {t}
-                  </motion.li>
-                ))}
-              </ul>
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="px-6 py-6 text-sm text-[var(--text-secondary)] border-t border-[var(--border)] bg-[var(--bg-card)]"
+              >
+                {details && <p className="mb-6 leading-relaxed text-[var(--text-primary)]">{details}</p>}
+                {topics && topics.length > 0 && (
+                  <ul className="flex flex-col gap-2 mb-6">
+                    {topics.map((t: string, i: number) => (
+                      <li key={i} className="flex items-start gap-2.5">
+                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {(lectures || assignments || moduleHours) && (
+                  <div className="flex flex-wrap gap-4 pt-4 border-t border-[var(--border)] text-xs font-medium text-[var(--text-muted)] uppercase tracking-[0.05em]">
+                    {lectures && <span>{lectures} Lectures</span>}
+                    {assignments && <span>{assignments} Assignments</span>}
+                    {moduleHours && <span>{moduleHours} Hours</span>}
+                  </div>
+                )}
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -86,38 +102,45 @@ function InfoCard({ label, value }: { label?: string; value: string }) {
 
 export default function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
+  const pathname = usePathname();
   const result = getCourseBySlug(slug);
+  const [openModuleIndex, setOpenModuleIndex] = useState(1);
+
   if (!result) notFound();
   const { course, cohort } = result;
 
   const price = course.price ?? cohort.price;
   const access = course.access ?? `${cohort.duration}`;
 
+  const isFromMbaStudents = pathname?.startsWith("/mba-students");
+  const backHref = isFromMbaStudents ? "/mba-students" : `/cohorts/${cohort.slug}`;
+  const backText = isFromMbaStudents ? "MBA Students" : cohort.title;
+
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[var(--bg)] pt-28">
+      <main className="min-h-screen bg-[var(--bg)] pt-20">
+        {course.headline && (
+          <div className="bg-[var(--accent-muted)] text-[var(--accent)] py-3 px-5 text-center text-sm sm:text-base font-medium tracking-wide border-b border-[var(--border)]">
+            <div className="max-w-5xl mx-auto">{course.headline}</div>
+          </div>
+        )}
         {/* Section 1 — Modules included + info panel */}
         <section className="py-14 sm:py-20 border-b border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
               <Link
-                href={`/cohorts/${cohort.slug}`}
+                href={backHref}
                 className="link-hover group mb-8 inline-flex items-center gap-1.5 text-xs text-[var(--text-muted)] hover:text-[var(--text-primary)]"
               >
                 <span className="transition-transform duration-200 group-hover:-translate-x-0.5">←</span>
-                {cohort.title}
+                {backText}
               </Link>
 
               {/* Title bar */}
               <div className="mb-10 sm:mb-12">
-                <div className="mb-4 flex flex-wrap items-center gap-2.5 font-mono text-[10px] uppercase tracking-[0.14em]">
-                  <span className="rounded-full bg-[var(--accent-muted)] px-2.5 py-1 text-[var(--accent)]">
-                    {course.tag}
-                  </span>
-                  <span className="text-[var(--text-muted)]">{course.level}</span>
-                </div>
-                <h1 className="section-title text-[clamp(2rem,4.5vw,3.5rem)]">{course.title}</h1>
+                <h1 className="section-title text-[clamp(2rem,4.5vw,3.5rem)] mb-4">{course.title}</h1>
+                {course.desc && <p className="text-lg text-[var(--text-secondary)] max-w-3xl">{course.desc}</p>}
               </div>
 
               <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-14 items-start">
@@ -133,19 +156,29 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                     </span>
                   </div>
 
-                  <Stagger className="flex flex-col gap-3">
+                  <Stagger className="flex flex-col gap-6 relative">
                     {course.curriculum.map((item, i) => (
-                      <StaggerItem key={item.week}>
-                        <ModuleItem index={i + 1} week={item.week} topics={item.topics} />
+                      <StaggerItem key={item.week} className="z-10">
+                        <ModuleItem
+                          index={i + 1}
+                          week={item.week}
+                          topics={item.topics}
+                          details={item.details}
+                          lectures={item.lectures}
+                          assignments={item.assignments}
+                          moduleHours={item.moduleHours}
+                          isOpen={openModuleIndex === i + 1}
+                          onToggle={() => setOpenModuleIndex(openModuleIndex === i + 1 ? -1 : i + 1)}
+                        />
                       </StaggerItem>
                     ))}
                   </Stagger>
 
-                  {course.notCovered && (
-                    <p className="mt-6 rounded-lg border border-dashed border-[var(--border)] bg-[var(--bg-secondary)] px-4 py-3 text-[13px] text-[var(--text-muted)]">
-                      <span className="font-medium text-[var(--text-secondary)]">Not covered: </span>
-                      {course.notCovered}
-                    </p>
+                  {(course.callout || course.notCovered) && (
+                    <div className="mt-6 rounded-lg border border-dashed border-[var(--border)] bg-[var(--bg-secondary)] px-5 py-4 text-[13px] text-[var(--text-secondary)] shadow-sm relative z-20">
+                      <span className="font-semibold text-[var(--text-primary)]">Note: </span>
+                      {course.callout || course.notCovered}
+                    </div>
                   )}
                 </div>
 
@@ -161,22 +194,46 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                   </div>
 
                   <InfoCard label="Taught by" value={course.instructor} />
-                  <InfoCard label="Access" value={access} />
-                  <InfoCard value="Lifetime Access to the EdgeX Corporate Club" />
 
-                  <Link
+                  {course.inclusions && course.inclusions.length > 0 && (
+                    <div className="card rounded-xl px-6 py-5 text-center flex flex-col gap-4">
+                      {course.inclusions.map((inc: any, i: number) => (
+                        <div key={i}>
+                          <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                            {inc.category}
+                          </div>
+                          <div className="text-[13px] font-medium leading-snug text-[var(--text-primary)]">
+                            {inc.access}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {course.addons && course.addons.length > 0 ? (
+                    course.addons.map((addon: string, i: number) => (
+                      <InfoCard key={i} label="Add Ons" value={addon} />
+                    ))
+                  ) : (
+                    <InfoCard value="Lifetime Access to the EdgeX Corporate Club" />
+                  )}
+
+                  {/* <Link
                     href="/contact"
                     className="btn-primary mt-1 block rounded-full px-6 py-3 text-center text-sm"
                   >
                     Enroll in this course →
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </PageEnter>
           </div>
         </section>
 
-        {/* Section 2 — Course trailer & demo class videos */}
+        {/* Section 2 — Instructor profile */}
+        <InstructorProfile />
+
+        {/* Section 3 — Course trailer & demo class videos */}
         <section className="py-14 sm:py-20 border-b border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
@@ -205,28 +262,48 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
           </div>
         </section>
 
-        {/* What you'll learn */}
-        <section className="py-14 sm:py-20">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <Reveal className="max-w-3xl">
-              <h2 className="mb-6 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                What you&apos;ll learn
-              </h2>
-              <div className="card rounded-xl p-6">
-                <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {course.outcomes.map((o) => (
-                    <li key={o} className="flex items-start gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
-                      <span className="text-sm text-[var(--text-secondary)]">{o}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        {/* Section 4 — What to expect (Journey/Timeline) */}
+        {course.journey && course.journey.length > 0 && (
+          <section className="py-14 sm:py-20 border-t border-[var(--border)] bg-[var(--bg-secondary)]">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8">
+              <Reveal className="max-w-3xl">
+                <p className="section-label mb-3">Timeline</p>
+                <h2 className="mb-10 text-2xl sm:text-3xl font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                  What to expect when you join
+                </h2>
 
-        <EnrollBar deadline={cohort.nextBatch} />
+                <div className="relative pl-6 sm:pl-8">
+                  {/* Vertical line */}
+                  <div className="absolute left-[11px] sm:left-[7px] top-2 bottom-2 w-px bg-[var(--border)]" aria-hidden />
+
+                  <ul className="flex flex-col gap-10">
+                    {course.journey.map((step, i) => (
+                      <li key={i} className="relative">
+                        {/* Dot */}
+                        <div className="absolute -left-[24px] sm:-left-[30px] top-1.5 h-3 w-3 rounded-full bg-[var(--accent)] ring-4 ring-[var(--bg-secondary)]" aria-hidden />
+
+                        <div className="flex flex-col gap-1.5">
+                          <h3 className="text-[15px] sm:text-base font-medium text-[var(--text-primary)] leading-snug">
+                            {step.title}
+                          </h3>
+                          {step.timeframe && (
+                            <span className="inline-flex w-fit items-center rounded-md border border-[var(--border)] bg-[var(--bg-card)] px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.06em] text-[var(--text-secondary)] shadow-sm">
+                              {step.timeframe}
+                            </span>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            </div>
+          </section>
+        )}
+
+        {course.faqs && course.faqs.length > 0 && (
+          <FAQ faqs={course.faqs} />
+        )}
       </main>
       <Footer />
     </>
