@@ -47,9 +47,8 @@ export default function FAQ({ faqs = site.faqs }: { faqs?: readonly FaqItem[] })
                   aria-expanded={isOpen}
                 >
                   <span
-                    className={`index-num shrink-0 pt-0.5 transition-colors duration-200 ${
-                      isOpen ? "text-[var(--accent)]" : ""
-                    }`}
+                    className={`index-num shrink-0 pt-0.5 transition-colors duration-200 ${isOpen ? "text-[var(--accent)]" : ""
+                      }`}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>

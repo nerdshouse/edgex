@@ -73,28 +73,28 @@ const mbaCourses = [
     title: "B-School Placement Essentials",
     desc: "The core placement toolkit - cases, guesstimates, HR rounds, and CV prep mapped to B-school hiring cycles.",
     meta: "Placement track",
-    href: "/cohorts",
+    href: "/mba-students/courses/placement-foundations-2026",
   },
   {
     tag: "Advanced",
     title: "Consulting Advanced for B-Schools",
     desc: "Deep consulting frameworks, industry deep-dives, and structured problem-solving for strategy and consulting roles.",
     meta: "Consulting track",
-    href: "/cohorts",
+    href: "/mba-students/courses/consulting-advanced-2026",
   },
   {
     tag: "Combo",
     title: "B-School Placement Essentials + Consulting Advanced",
     desc: "Placement Essentials and Consulting Advanced together - the complete prep stack at a bundled price.",
     meta: "Best value",
-    href: "/cohorts",
+    href: "/mba-students/courses/placement-combo-2026",
   },
   {
     tag: "GD Labs",
     title: "EdgeX GD Labs",
     desc: "Live group-discussion labs with peer cohorts and interviewer-grade feedback on every round.",
     meta: "Live practice",
-    href: "/cohorts",
+    href: "/mba-students/courses/gd-labs",
   },
 ];
 
