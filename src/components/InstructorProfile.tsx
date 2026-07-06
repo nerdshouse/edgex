@@ -16,10 +16,10 @@ function ContentFrame({
 }) {
   return (
     <figure>
-      <div className="flex items-center justify-between mb-4">
+      {/* <div className="flex items-center justify-between mb-4">
         <span className="index-num">Fig. {index}</span>
         <span className="index-num hidden sm:block">{label}</span>
-      </div>
+      </div> */}
       <Reveal className="tick-frame">
         <span className="tick-b" aria-hidden />
         <div className="overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg)]">

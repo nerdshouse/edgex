@@ -1,8 +1,7 @@
 export interface Course {
   slug: string;
   title: string;
-  headline?: string;
-  desc?: string;
+  desc: string;
   duration: string;
   lessons: number;
   hours: number;
@@ -39,6 +38,8 @@ export interface Course {
   journey?: { title: string; timeframe?: string }[];
   /** Course-specific FAQs */
   faqs?: { q: string; a: string }[];
+  /** Custom checkout link (e.g. Classplus) */
+  enrollHref?: string;
 }
 
 export interface Cohort {

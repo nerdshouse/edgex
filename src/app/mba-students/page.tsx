@@ -16,32 +16,32 @@ const teacher = site.instructorProfile;
 // Overlaps with the homepage FAQs, but tuned for MBA placement season.
 const mbaFaqs = [
   {
-    q: "Is EdgeX right for MBA summer and final placements?",
-    a: "Yes. The curriculum is built around B-school placement cycles - cases, guesstimates, group discussions, and behavioral rounds - so you can prep for both summer internships and final placements from the interviewer's perspective.",
+    q: "What is the difference between Placement Foundations and ConsultPro?",
+    a: "Placement Foundations is designed as the core interview preparation program for MBA placements across consulting, product, finance, marketing, operations, analytics, and other business roles. It covers structured problem-solving, behavioural interviews, HR interviews, business thinking, interview preparation strategy, and also includes two complimentary EdgeX GD Labs sessions for practical group discussion experience.\n\nConsultPro is a specialized program for students targeting consulting and strategy roles. It focuses on case interviews, guesstimates, consulting frameworks, structured thinking, communication, and rigorous case preparation.\n\nStudents targeting consulting firms are encouraged to consider the Placement Foundations + ConsultPro Combo, which combines both programs into one comprehensive preparation pathway.",
   },
   {
-    q: "Which roles and firms does the prep target?",
-    a: "Consulting, strategy, business analytics, product, and general management roles. The frameworks and mock rounds are modeled on how top consulting and strategy firms actually evaluate candidates.",
+    q: "I am targeting consulting. Should I only purchase ConsultPro?",
+    a: "ConsultPro is designed specifically for consulting interview preparation. However, consulting recruiters also evaluate behavioural interviews, communication, business judgement, and overall interview performance- areas that are covered extensively in Placement Foundations. For students seriously targeting consulting and strategy roles, we generally recommend the Placement Foundations + ConsultPro Combo for the most comprehensive preparation.",
   },
   {
-    q: "Do you cover case interviews and guesstimates?",
-    a: "In depth. There's a dedicated module for structured problem-solving, a large guesstimate practice bank, and mock case rounds with detailed feedback so structuring becomes second nature before placement week.",
+    q: "I am not targeting consulting. Is Placement Foundations sufficient?",
+    a: "Yes. Placement Foundations has been designed as a role-agnostic interview preparation program and is relevant for all MBA students targeting consulting, product management, finance, marketing, operations, analytics, general management, and other business roles. The concepts taught are transferable across a wide range of placement interviews.",
   },
   {
-    q: "Is this a live or recorded course?",
-    a: "It is a hybrid format. As soon as you enroll you get instant access to 40+ recorded lectures, assignments, cheat sheets, and question banks to go through at your own pace. You can also join a live batch anytime within your access window, and book weekly GD slots whenever you feel ready.",
+    q: "Why are these courses designed around interview skills rather than specific companies?",
+    a: "While every recruiter has its own interview process, the underlying skills they assess are remarkably consistent- structured thinking, business judgement, communication, problem-solving, and professionalism. EdgeX focuses on developing these transferable skills, enabling students to perform confidently across consulting, product, finance, marketing, operations, analytics, and other business interviews.",
   },
   {
-    q: "Are mock interviews and GDs included?",
-    a: 'Weekly mock GD slots with peer cohorts and feedback are included. 1:1 mock interviews with detailed feedback reports are available as an add-on, and every student gets lifetime access to "The EdgeX Corporate Club" for networking.',
+    q: "Why should I choose EdgeX instead of preparing through YouTube, AI tools or Casebooks?",
+    a: "YouTube videos, AI tools and Casebooks are excellent resources for learning individual concepts and practicing cases. However, successful interview preparation requires much more than isolated resources. EdgeX combines a structured curriculum with interviewer perspectives, guided case demonstrations, curated casebooks and learning resources, behavioural interview preparation, interview strategy, practical business examples, and live practice opportunities- bringing everything required for placement preparation together in one place.",
   },
   {
-    q: "Will my participation be anonymous?",
-    a: "Yes. Your enrollment is completely private and is not revealed to other students. GD participation is roll-number based, so your name and credentials are not shared with peers.",
+    q: "How is the curriculum of courses designed?",
+    a: "EdgeX courses have been developed by combining practical industry experience, interviewer insights, structured interview preparation methodologies, and real placement preparation experience. Rather than compiling isolated interview tips, the curriculum has been designed as a progressive learning journey that builds concepts systematically. Throughout the development process, experienced recruiters, industry professionals, and external advisors were consulted to help validate the breadth and completeness of the curriculum.",
   },
   {
-    q: "How long is my access valid?",
-    a: "You receive 3-year extended access to all course materials, recordings, live batches, and GD slots - enough to cover your entire MBA and placement journey.",
+    q: "Will the curriculum and lectures continue to be updated?",
+    a: "Yes. At EdgeX, curriculum development is an ongoing process rather than a one-time effort. We continuously review our courses to ensure the content remains current, relevant, and aligned with evolving recruitment practices and industry expectations. Based on student feedback, recruiter insights, and emerging interview trends, we regularly enhance existing modules, introduce new lectures, expand practice material, and refine the overall learning experience to deliver the highest quality preparation possible.",
   },
 ];
 
@@ -69,49 +69,56 @@ const teamBehind = [
 
 const mbaCourses = [
   {
-    tag: "Package",
-    title: "B-School Placement Essentials",
-    desc: "The core placement toolkit - cases, guesstimates, HR rounds, and CV prep mapped to B-school hiring cycles.",
-    meta: "Placement track",
+    tag: "Foundations (Role Agnostic)",
+    status: "Pre-launch Enrolments",
+    code: "M1",
+    title: "Placement Foundations for B-Schools",
+    desc: "Core skills required for all MBA placements, focusing on role-agnostic Structured Problem-Solving, Leadership Principles, General Management & Behavioural Interviews, HR rounds, Business Thinking, Structured Communication, Professional Conduct, and Placement prep strategy. Complimentary Mock GDs",
     href: "/mba-students/courses/placement-foundations-2026",
   },
   {
-    tag: "Advanced",
-    title: "Consulting Advanced for B-Schools",
-    desc: "Deep consulting frameworks, industry deep-dives, and structured problem-solving for strategy and consulting roles.",
-    meta: "Consulting track",
+    tag: "Consulting/Strategy/Business Analytics",
+    status: "Pre-launch Enrolments",
+    code: "M2",
+    title: "ConsultPro for B-Schools",
+    desc: "Everything required to excel in Consulting and Strategy interviews, including advanced Case Prep, Guesstimates, Core Consulting Frameworks and their applications, Structured Thinking & Communication. Also includes multiple case interview demonstrations with T1 B-School Alums.",
     href: "/mba-students/courses/consulting-advanced-2026",
   },
   {
     tag: "Combo",
-    title: "B-School Placement Essentials + Consulting Advanced",
-    desc: "Placement Essentials and Consulting Advanced together - the complete prep stack at a bundled price.",
-    meta: "Best value",
+    status: "Pre-launch Enrolments",
+    code: "M3",
+    title: "Placement Foundations + ConsultPro Combo for B-Schools",
+    desc: "Complete preparation for MBA placements, combining role-agnostic Interview Foundations with Advanced Consulting and Strategy interview prep in one comprehensive program.",
     href: "/mba-students/courses/placement-combo-2026",
   },
   {
-    tag: "GD Labs",
+    tag: "Practice",
+    status: "Ongoing",
+    code: "M4",
     title: "EdgeX GD Labs",
-    desc: "Live group-discussion labs with peer cohorts and interviewer-grade feedback on every round.",
-    meta: "Live practice",
+    desc: "Practice group discussions through live virtual sessions with targeted feedback, peer learning and realistic placement-style GD simulations.",
     href: "/mba-students/courses/gd-labs",
   },
 ];
 
 const sessions = [
   {
+    code: "M5",
     title: "1:1 Mock Interviews with Feedback",
     desc: "Full-length mock interviews with EdgeX mentors, followed by a structured, actionable feedback report.",
     href: "/contact",
     cta: "Book a session",
   },
   {
+    code: "M6",
     title: "1:1 CV Reviews",
     desc: "Line-by-line CV review to make your profile consulting- and placement-ready before applications open.",
     href: "/contact",
     cta: "Book a review",
   },
   {
+    code: "M7",
     title: "1:1 Career Consultation",
     desc: "One-on-one guidance on role targeting, firm selection, and building your placement-season strategy.",
     href: "/contact",
@@ -124,113 +131,122 @@ export default function MBAStudentsPage() {
     <>
       <Navbar />
       <main className="dot-page min-h-screen">
-        <section className="relative overflow-hidden border-b border-[var(--border)] pt-44 pb-16 sm:pt-52 sm:pb-24">
+        {/* Hero - informational only, no CTAs */}
+        <section className="relative overflow-hidden pt-44 pb-16 sm:pt-52 sm:pb-24 border-b border-[var(--border)]">
           {/* editorial backdrop — glow only; dots come from the page background */}
           <div className="absolute inset-0 pointer-events-none" aria-hidden>
             <div className="hero-glow absolute inset-x-0 top-0 h-[62%]" />
           </div>
 
-          <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
+          <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
-              <p className="section-label mb-6">MBA Students</p>
-              <h1 className="section-title text-[clamp(2.25rem,5.5vw,4rem)] mb-6 text-balance">
-                Ace your summer internship &amp;{" "}
-                <span className="text-[var(--accent)]">final placements.</span>
+              <p className="section-label mb-5">Premier B-School Placements (Tier 1)</p>
+              <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-8 max-w-[23ch]">
+                Learn how Global Corporates actually evaluate MBA candidates.
+                <span className="block text-[0.42em] font-normal tracking-[-0.01em] text-[var(--accent)] mt-3">Prepare with experts. Perform with confidence. Ace your placements.</span>
               </h1>
-              <p className="mb-9">
-                <span className="inline-block rounded-lg bg-[rgb(96,4,4)] px-3 py-1.5 text-white text-base sm:text-lg font-medium leading-relaxed text-balance">
-                  Focused interview preparation and consulting readiness, taught by ISB &amp; IIM alumni.
+              <p className="mb-6">
+                <span className="inline-block rounded-lg bg-[var(--accent)] px-3 py-1.5 text-white text-xl sm:text-2xl font-medium tracking-[-0.02em] leading-snug">
+                  Courses designed by senior corporate professionals & experienced interviewers.
                 </span>
               </p>
-
-              <div className="flex flex-wrap justify-center gap-2.5 mb-10">
-                {["Structured curriculum", "Pre-recorded classes", "Mock GD prep"].map((chip) => (
-                  <span
-                    key={chip}
-                    className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--bg-card)] px-4 py-1.5 text-sm font-medium text-[var(--text-primary)] shadow-[var(--shadow-card)]"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
-                    {chip}
-                  </span>
-                ))}
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[var(--text-secondary)] text-base sm:text-lg">
+                <span>Structured Curriculum</span>
+                <span className="text-[var(--border-hover)]" aria-hidden>|</span>
+                <span>Self-Paced Learning</span>
+                <span className="text-[var(--border-hover)]" aria-hidden>|</span>
+                <span>Live GD & Interview Practice</span>
               </div>
-
-              <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] mb-16">
-                {mbaCourses.map((course) => (
-                  <StaggerItem key={course.title} className="h-full">
-                    <Link
-                      href={course.href}
-                      className="group relative flex h-full flex-col bg-[var(--bg-card)] p-7 text-left sm:p-9 transition-colors duration-300 hover:bg-[var(--accent-muted)]"
-                    >
-                      <span className="mb-6 inline-flex w-fit items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                        <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
-                        {course.tag}
-                      </span>
-
-                      <h3 className="mb-2 max-w-[20ch] text-lg font-semibold leading-snug tracking-[-0.02em] text-[var(--text-primary)]">
-                        {course.title}
-                      </h3>
-                      <p className="mb-9 max-w-[44ch] text-sm leading-relaxed text-[var(--text-secondary)]">
-                        {course.desc}
-                      </p>
-
-                      <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
-                        <span className="relative">
-                          View course
-                          <span
-                            className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 group-hover:scale-x-100"
-                            aria-hidden
-                          />
-                        </span>
-                        <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                      </span>
-                    </Link>
-                  </StaggerItem>
-                ))}
-              </Stagger>
             </PageEnter>
           </div>
         </section>
 
+        {/* Section 2 - MBA Track */}
         <section className="py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <Reveal className="mb-8">
-              <p className="section-label mb-3">Personalized mentoring</p>
-              <h2 className="section-title text-2xl sm:text-3xl">Book a 1:1 Session</h2>
+            <Reveal className="mb-12">
+              <h2 className="section-title text-3xl sm:text-4xl">Interview & GD prep for B-School Placements</h2>
+            </Reveal>
+
+            {/* Explore EdgeX Courses */}
+            <Reveal className="mb-6">
+              <h3 className="font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+                Explore Courses
+              </h3>
+            </Reveal>
+
+            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] mb-16">
+              {mbaCourses.map((course) => (
+                <StaggerItem key={course.code} className="h-full">
+                  <Link
+                    href={course.href}
+                    className="group relative flex h-full flex-col bg-[var(--bg-card)] p-7 sm:p-9 transition-colors duration-300 hover:bg-[var(--accent-muted)]"
+                  >
+                    {/* oversized ghost index */}
+                    <span
+                      className="pointer-events-none absolute right-6 top-4 font-mono text-6xl font-bold leading-none tracking-tight text-[var(--text-primary)]/[0.05] transition-all duration-300 group-hover:text-[var(--accent)]/25"
+                      aria-hidden
+                    >
+                      {course.code}
+                    </span>
+
+                    <div className="mb-6 flex flex-wrap items-center gap-2">
+                      <span className="inline-flex w-fit items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                        <span className="h-1 w-1 rounded-full bg-[var(--accent)]" aria-hidden />
+                        {course.tag}
+                      </span>
+                      {course.status && (
+                        <span className="inline-flex items-center rounded-full border border-[var(--accent)]/25 bg-[var(--accent-muted)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] text-[var(--accent)]">
+                          {course.status}
+                        </span>
+                      )}
+                    </div>
+
+                    <h4 className="mb-2 max-w-[20ch] text-lg font-semibold leading-snug tracking-[-0.02em] text-[var(--text-primary)]">
+                      {course.title}
+                    </h4>
+                    <p className="mb-9 max-w-[44ch] text-sm leading-relaxed text-[var(--text-secondary)]">
+                      {course.desc}
+                    </p>
+
+                    <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
+                      <span className="relative">
+                        View course
+                        <span
+                          className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 group-hover:scale-x-100"
+                          aria-hidden
+                        />
+                      </span>
+                      <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </span>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </Stagger>
+
+            {/* Book a 1:1 Session */}
+            <Reveal className="mb-6">
+              <h3 className="font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+                Book a 1:1 Session for personalized mentoring
+              </h3>
             </Reveal>
 
             <Stagger className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {sessions.map((item, i) => (
-                <StaggerItem key={item.title}>
+              {sessions.map((item) => (
+                <StaggerItem key={item.code}>
                   <Link
                     href={item.href}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)]/40 hover:shadow-[0_18px_44px_-18px_rgba(96,4,4,0.45)]"
+                    className="group card flex flex-col rounded-xl p-6 h-full hover:border-[var(--border-hover)] transition-colors"
                   >
-                    {/* accent bar that grows on hover */}
-                    <span
-                      className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
-                      style={{ background: "linear-gradient(90deg, #600404, #7d0606)" }}
-                      aria-hidden
-                    />
-                    <div className="mb-5 flex items-center justify-between">
-                      <span
-                        className="grid h-10 w-10 place-items-center rounded-xl text-sm font-semibold text-white shadow-[0_8px_20px_-8px_rgba(96,4,4,0.7)] transition-transform duration-300 group-hover:scale-110"
-                        style={{ background: "linear-gradient(155deg, #2a0808 0%, #600404 100%)" }}
-                        aria-hidden
-                      >
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="index-num shrink-0">1:1</span>
-                    </div>
-                    <h3 className="mb-2 text-base font-semibold tracking-[-0.02em] text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--accent)]">
+                    <h4 className="text-base font-semibold text-[var(--text-primary)] tracking-[-0.02em] mb-2 group-hover:text-[var(--accent)] transition-colors duration-200">
                       {item.title}
-                    </h3>
-                    <p className="flex-1 text-sm leading-relaxed text-[var(--text-secondary)]">
+                    </h4>
+                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed flex-1">
                       {item.desc}
                     </p>
-                    <div className="mt-5 flex items-center justify-between border-t border-[var(--border)] pt-4">
-                      <span className="text-sm font-semibold text-[var(--accent)]">{item.cta}</span>
-                      <span className="text-[var(--accent)] transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>→</span>
+                    <div className="mt-5 pt-4 border-t border-[var(--border)] flex items-center justify-between">
+                      <span className="text-sm font-medium text-[var(--accent)]">Book now</span>
+                      <span className="text-[var(--accent)] text-sm group-hover:translate-x-0.5 transition-transform duration-200">→</span>
                     </div>
                   </Link>
                 </StaggerItem>
