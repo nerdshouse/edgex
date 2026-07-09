@@ -120,8 +120,8 @@ function InfoCard({ label, value }: { label?: string; value: string }) {
   );
 }
 
-export default function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
+export default function CoursePage({ params }: { params: Promise<{ category: string, slug: string }> }) {
+  const { category, slug } = use(params);
   const pathname = usePathname();
   const result = getCourseBySlug(slug);
   const [openModuleIndex, setOpenModuleIndex] = useState(1);
@@ -140,9 +140,13 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
   const price = course.price ?? cohort.price;
   const access = course.access ?? `${cohort.duration}`;
 
-  const isFromMbaStudents = pathname?.startsWith("/mba-students");
-  const backHref = isFromMbaStudents ? "/mba-students" : `/cohorts/${cohort.slug}`;
-  const backText = isFromMbaStudents ? "MBA Students" : cohort.title;
+  let backHref = `/${category}`;
+  let backText = category.replace(/-/g, ' ').toUpperCase();
+
+  if (category === "cohorts") {
+    backHref = `/cohorts/${cohort.slug}`;
+    backText = cohort.title;
+  }
 
   return (
     <>
@@ -226,12 +230,10 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                     </div>
                   )}
 
-                  {course.addons && course.addons.length > 0 ? (
+                  {course.addons && course.addons.length > 0 && (
                     course.addons.map((addon: string, i: number) => (
                       <InfoCard key={i} label="Add Ons" value={addon} />
                     ))
-                  ) : (
-                    <InfoCard value="Lifetime Access to the EdgeX Corporate Club" />
                   )}
 
                   <div className="card rounded-xl px-6 py-6 text-center">
@@ -244,7 +246,9 @@ export default function CoursePage({ params }: { params: Promise<{ slug: string 
                   </div>
 
                   <Link
-                    href="/contact"
+                    href={course.enrollHref || "/contact"}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-primary mt-1 block rounded-full px-6 py-3 text-center text-sm"
                   >
                     Enroll in this course →
