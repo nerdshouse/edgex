@@ -73,7 +73,7 @@ export default function CohortPage({ params }: { params: Promise<{ slug: string 
               {cohort.courses.map((course) => (
                 <StaggerItem key={course.slug}>
                   <Link
-                    href={`/courses/${course.slug}`}
+                    href={`/cohorts/courses/${course.slug}`}
                     className="group card flex flex-col sm:flex-row sm:items-center justify-between rounded-xl p-5 sm:p-6 gap-4"
                   >
                     <div className="flex-1">

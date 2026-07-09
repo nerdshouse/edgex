@@ -1,5 +1,7 @@
 "use client";
 
+import { use } from "react";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
@@ -10,40 +12,9 @@ import FAQ from "@/components/FAQ";
 import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { site } from "@/data/site";
 import { externalAdvisorsSection } from "@/data/team";
+import { categoryData } from "@/data/categories";
 
 const teacher = site.instructorProfile;
-
-// Overlaps with the homepage FAQs, but tuned for MBA placement season.
-const mbaFaqs = [
-  {
-    q: "What is the difference between Placement Foundations and ConsultPro?",
-    a: "Placement Foundations is designed as the core interview preparation program for MBA placements across consulting, product, finance, marketing, operations, analytics, and other business roles. It covers structured problem-solving, behavioural interviews, HR interviews, business thinking, interview preparation strategy, and also includes two complimentary EdgeX GD Labs sessions for practical group discussion experience.\n\nConsultPro is a specialized program for students targeting consulting and strategy roles. It focuses on case interviews, guesstimates, consulting frameworks, structured thinking, communication, and rigorous case preparation.\n\nStudents targeting consulting firms are encouraged to consider the Placement Foundations + ConsultPro Combo, which combines both programs into one comprehensive preparation pathway.",
-  },
-  {
-    q: "I am targeting consulting. Should I only purchase ConsultPro?",
-    a: "ConsultPro is designed specifically for consulting interview preparation. However, consulting recruiters also evaluate behavioural interviews, communication, business judgement, and overall interview performance- areas that are covered extensively in Placement Foundations. For students seriously targeting consulting and strategy roles, we generally recommend the Placement Foundations + ConsultPro Combo for the most comprehensive preparation.",
-  },
-  {
-    q: "I am not targeting consulting. Is Placement Foundations sufficient?",
-    a: "Yes. Placement Foundations has been designed as a role-agnostic interview preparation program and is relevant for all MBA students targeting consulting, product management, finance, marketing, operations, analytics, general management, and other business roles. The concepts taught are transferable across a wide range of placement interviews.",
-  },
-  {
-    q: "Why are these courses designed around interview skills rather than specific companies?",
-    a: "While every recruiter has its own interview process, the underlying skills they assess are remarkably consistent- structured thinking, business judgement, communication, problem-solving, and professionalism. EdgeX focuses on developing these transferable skills, enabling students to perform confidently across consulting, product, finance, marketing, operations, analytics, and other business interviews.",
-  },
-  {
-    q: "Why should I choose EdgeX instead of preparing through YouTube, AI tools or Casebooks?",
-    a: "YouTube videos, AI tools and Casebooks are excellent resources for learning individual concepts and practicing cases. However, successful interview preparation requires much more than isolated resources. EdgeX combines a structured curriculum with interviewer perspectives, guided case demonstrations, curated casebooks and learning resources, behavioural interview preparation, interview strategy, practical business examples, and live practice opportunities- bringing everything required for placement preparation together in one place.",
-  },
-  {
-    q: "How is the curriculum of courses designed?",
-    a: "EdgeX courses have been developed by combining practical industry experience, interviewer insights, structured interview preparation methodologies, and real placement preparation experience. Rather than compiling isolated interview tips, the curriculum has been designed as a progressive learning journey that builds concepts systematically. Throughout the development process, experienced recruiters, industry professionals, and external advisors were consulted to help validate the breadth and completeness of the curriculum.",
-  },
-  {
-    q: "Will the curriculum and lectures continue to be updated?",
-    a: "Yes. At EdgeX, curriculum development is an ongoing process rather than a one-time effort. We continuously review our courses to ensure the content remains current, relevant, and aligned with evolving recruitment practices and industry expectations. Based on student feedback, recruiter insights, and emerging interview trends, we regularly enhance existing modules, introduce new lectures, expand practice material, and refine the overall learning experience to deliver the highest quality preparation possible.",
-  },
-];
 
 const teamBehind = [
   {
@@ -67,66 +38,15 @@ const teamBehind = [
   },
 ];
 
-const mbaCourses = [
-  {
-    tag: "Foundations (Role Agnostic)",
-    status: "Pre-launch Enrolments",
-    code: "M1",
-    title: "Placement Foundations for B-Schools",
-    desc: "Core skills required for all MBA placements, focusing on role-agnostic Structured Problem-Solving, Leadership Principles, General Management & Behavioural Interviews, HR rounds, Business Thinking, Structured Communication, Professional Conduct, and Placement prep strategy. Complimentary Mock GDs",
-    href: "/mba-students/courses/placement-foundations-2026",
-  },
-  {
-    tag: "Consulting/Strategy/Business Analytics",
-    status: "Pre-launch Enrolments",
-    code: "M2",
-    title: "ConsultPro for B-Schools",
-    desc: "Everything required to excel in Consulting and Strategy interviews, including advanced Case Prep, Guesstimates, Core Consulting Frameworks and their applications, Structured Thinking & Communication. Also includes multiple case interview demonstrations with T1 B-School Alums.",
-    href: "/mba-students/courses/consulting-advanced-2026",
-  },
-  {
-    tag: "Combo",
-    status: "Pre-launch Enrolments",
-    code: "M3",
-    title: "Placement Foundations + ConsultPro Combo for B-Schools",
-    desc: "Complete preparation for MBA placements, combining role-agnostic Interview Foundations with Advanced Consulting and Strategy interview prep in one comprehensive program.",
-    href: "/mba-students/courses/placement-combo-2026",
-  },
-  {
-    tag: "Practice",
-    status: "Ongoing",
-    code: "M4",
-    title: "EdgeX GD Labs",
-    desc: "Practice group discussions through live virtual sessions with targeted feedback, peer learning and realistic placement-style GD simulations.",
-    href: "/mba-students/courses/gd-labs",
-  },
-];
+export default function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+  const { category } = use(params);
+  
+  const data = categoryData[category];
+  
+  if (!data) {
+    notFound();
+  }
 
-const sessions = [
-  {
-    code: "M5",
-    title: "1:1 Mock Interviews with Feedback",
-    desc: "Full-length mock interviews with EdgeX mentors, followed by a structured, actionable feedback report.",
-    href: "/contact",
-    cta: "Book a session",
-  },
-  {
-    code: "M6",
-    title: "1:1 CV Reviews",
-    desc: "Line-by-line CV review to make your profile consulting- and placement-ready before applications open.",
-    href: "/contact",
-    cta: "Book a review",
-  },
-  {
-    code: "M7",
-    title: "1:1 Career Consultation",
-    desc: "One-on-one guidance on role targeting, firm selection, and building your placement-season strategy.",
-    href: "/contact",
-    cta: "Book a call",
-  },
-];
-
-export default function MBAStudentsPage() {
   return (
     <>
       <Navbar />
@@ -140,43 +60,46 @@ export default function MBAStudentsPage() {
 
           <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
             <PageEnter>
-              <p className="section-label mb-5">Premier B-School Placements (Tier 1)</p>
+              <p className="section-label mb-5">{data.hero.label}</p>
               <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-8 max-w-[23ch]">
-                Learn how Global Corporates actually evaluate MBA candidates.
-                <span className="block text-[0.42em] font-normal tracking-[-0.01em] text-[var(--accent)] mt-3">Prepare with experts. Perform with confidence. Ace your placements.</span>
+                {data.hero.title}
+                <span className="block text-[0.42em] font-normal tracking-[-0.01em] text-[var(--accent)] mt-3">{data.hero.subtitle}</span>
               </h1>
               <p className="mb-6">
                 <span className="inline-block rounded-lg bg-[var(--accent)] px-3 py-1.5 text-white text-xl sm:text-2xl font-medium tracking-[-0.02em] leading-snug">
-                  Courses designed by senior corporate professionals & experienced interviewers.
+                  {data.hero.highlight}
                 </span>
               </p>
               <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[var(--text-secondary)] text-base sm:text-lg">
-                <span>Structured Curriculum</span>
-                <span className="text-[var(--border-hover)]" aria-hidden>|</span>
-                <span>Self-Paced Learning</span>
-                <span className="text-[var(--border-hover)]" aria-hidden>|</span>
-                <span>Live GD & Interview Practice</span>
+                {data.hero.features.map((feature, idx) => (
+                  <span key={idx} className="flex items-center gap-3">
+                    <span>{feature}</span>
+                    {idx < data.hero.features.length - 1 && (
+                      <span className="text-[var(--border-hover)]" aria-hidden>|</span>
+                    )}
+                  </span>
+                ))}
               </div>
             </PageEnter>
           </div>
         </section>
 
-        {/* Section 2 - MBA Track */}
+        {/* Section 2 - Track */}
         <section className="py-16 sm:py-24">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <Reveal className="mb-12">
-              <h2 className="section-title text-3xl sm:text-4xl">Interview & GD prep for B-School Placements</h2>
+              <h2 className="section-title text-3xl sm:text-4xl">{data.coursesTitle}</h2>
             </Reveal>
 
             {/* Explore EdgeX Courses */}
             <Reveal className="mb-6">
               <h3 className="font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
-                Explore Courses
+                {data.coursesSubtitle}
               </h3>
             </Reveal>
 
             <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] mb-16">
-              {mbaCourses.map((course) => (
+              {data.courses.map((course) => (
                 <StaggerItem key={course.code} className="h-full">
                   <Link
                     href={course.href}
@@ -227,12 +150,12 @@ export default function MBAStudentsPage() {
             {/* Book a 1:1 Session */}
             <Reveal className="mb-6">
               <h3 className="font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
-                Book a 1:1 Session for personalized mentoring
+                {data.sessionsTitle}
               </h3>
             </Reveal>
 
-            <Stagger className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {sessions.map((item) => (
+            <Stagger className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${data.sessions.length > 3 ? '4' : '3'} gap-4`}>
+              {data.sessions.map((item) => (
                 <StaggerItem key={item.code}>
                   <Link
                     href={item.href}
@@ -245,7 +168,7 @@ export default function MBAStudentsPage() {
                       {item.desc}
                     </p>
                     <div className="mt-5 pt-4 border-t border-[var(--border)] flex items-center justify-between">
-                      <span className="text-sm font-medium text-[var(--accent)]">Book now</span>
+                      <span className="text-sm font-medium text-[var(--accent)]">{item.cta || "Book now"}</span>
                       <span className="text-[var(--accent)] text-sm group-hover:translate-x-0.5 transition-transform duration-200">→</span>
                     </div>
                   </Link>
@@ -351,7 +274,7 @@ export default function MBAStudentsPage() {
 
         <Reviews />
 
-        <FAQ faqs={mbaFaqs} />
+        <FAQ faqs={data.faqs} />
       </main>
       <Footer />
     </>

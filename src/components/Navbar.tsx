@@ -108,7 +108,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.97 }}
             transition={{ duration: 0.2, ease }}
-            className="pointer-events-auto lg:hidden mx-auto mt-2 w-[min(calc(100vw-2rem),22rem)] nav-pill rounded-2xl p-2"
+            className="pointer-events-auto lg:hidden mx-auto mt-2 w-[min(calc(100vw-2rem),22rem)] bg-[var(--bg-card)] border border-[var(--border)] shadow-[var(--shadow-nav)] rounded-2xl p-2"
           >
             <div className="flex flex-col">
               {site.nav.map((l, i) => (
