@@ -1,4 +1,4 @@
-import { mbaFaqs, engineeringFaqs, professionalFaqs } from "./cohorts";
+import { mbaFaqs, engineeringFaqs, professionalFaqs } from "./faqs";
 import { SessionMentor, defaultMentors } from "./sessions";
 
 export interface CourseListing {
@@ -169,7 +169,7 @@ export const categoryData: Record<string, CategoryData> = {
     sessionsTitle: "Book a 1:1 Session for personalized mentoring",
     sessions: [
       {
-        code: "A5",
+        code: "E5",
         slug: "mock-interviews",
         title: "1:1 Mock Interviews with Feedback",
         desc: "One-on-one mock interviews with an experienced interviewer, followed by detailed, actionable feedback.",
@@ -178,7 +178,7 @@ export const categoryData: Record<string, CategoryData> = {
         mentors: defaultMentors,
       },
       {
-        code: "A6",
+        code: "E6",
         slug: "cv-reviews",
         title: "1:1 CV Reviews",
         desc: "A personal review of your CV with line-by-line suggestions to make it shortlist-worthy for your target roles.",
@@ -187,7 +187,7 @@ export const categoryData: Record<string, CategoryData> = {
         mentors: defaultMentors,
       },
       {
-        code: "A7",
+        code: "E7",
         slug: "career-consultation",
         title: "1:1 Career Consultation",
         desc: "A dedicated session to map your profile to the right roles, companies, and preparation plan.",
@@ -237,7 +237,7 @@ export const categoryData: Record<string, CategoryData> = {
     sessionsTitle: "Core services & Mentoring",
     sessions: [
       {
-        code: "W4",
+        code: "L4",
         slug: "cv-reviews",
         title: "1:1 CV Prep Support & Reviews",
         desc: "Craft a compelling, interview-ready CV with personalized guidance on positioning your experiences for your target roles",
@@ -246,7 +246,7 @@ export const categoryData: Record<string, CategoryData> = {
         mentors: defaultMentors,
       },
       {
-        code: "W5",
+        code: "L5",
         slug: "mock-interviews",
         title: "1:1 Mock Interview with Feedback",
         desc: "Simulate real interviews and receive actionable feedback to strengthen your communication, confidence, and interview performance.",
@@ -255,7 +255,7 @@ export const categoryData: Record<string, CategoryData> = {
         mentors: defaultMentors,
       },
       {
-        code: "W6",
+        code: "L6",
         slug: "essay-writing",
         title: "Essay Writing Support for B-Schools",
         desc: "Develop authentic and impactful application essays with personalized guidance through every stage of the writing process.",
@@ -264,7 +264,7 @@ export const categoryData: Record<string, CategoryData> = {
         mentors: defaultMentors,
       },
       {
-        code: "W7",
+        code: "L7",
         slug: "career-consultation",
         title: "1:1 Career Guidance Consultation",
         desc: "Get personalized guidance on career decisions, job transitions, MBA planning, and interview preparation from experienced industry professionals.",

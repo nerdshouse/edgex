@@ -134,7 +134,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
 
                     <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
                       <span className="relative">
-                        View course
+                        {["M4", "E4"].includes(course.code) ? "Explore" : "View course"}
                         <span
                           className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-300 group-hover:scale-x-100"
                           aria-hidden
@@ -168,7 +168,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
                       {item.desc}
                     </p>
                     <div className="mt-5 pt-4 border-t border-[var(--border)] flex items-center justify-between">
-                      <span className="text-sm font-medium text-[var(--accent)]">{item.cta || "Book now"}</span>
+                      <span className="text-sm font-medium text-[var(--accent)]">Book a Session</span>
                       <span className="text-[var(--accent)] text-sm group-hover:translate-x-0.5 transition-transform duration-200">→</span>
                     </div>
                   </Link>

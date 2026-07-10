@@ -14,20 +14,28 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[var(--bg)] pt-28">
-        <section className="py-20 sm:py-28 border-b border-[var(--border)]">
+      <main className="min-h-screen bg-[var(--bg)] pt-20">
+        <section className="py-20 border-b border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <PageEnter className="max-w-3xl">
+            <PageEnter className="max-w-4xl">
               <p className="section-label mb-5">About EdgeX Academy</p>
               <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-7">
-                Built by ISB & IIM alums for placement{" "}
-                <span className="serif-i text-[var(--accent)]">success</span>
+                Built by{" "}
+                <span className="text-[var(--accent)]">ISB &amp; IIM Alumni</span>{" "}
+                for Corporate Career Success.
               </h1>
-              <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-4">
-                {site.footer.mission}
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-4 text-justify">
+                EdgeX Academy was founded by ISB and IIM alumni to bridge the gap between academic
+                learning and the skills leading recruiters actually evaluate. Our programs combine
+                structured learning, real-world business experience, and interviewer perspectives to
+                help MBA students, engineering students, and working professionals prepare
+                confidently for corporate business careers.
               </p>
-              <p className="text-[var(--text-secondary)] text-lg leading-relaxed font-medium">
-                {site.footer.missionBold}
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed text-justify">
+                From consulting and strategy to analytics, operations, product, marketing, finance,
+                and general management, EdgeX is built around one belief — interview success comes
+                from mastering transferable business skills, not memorizing company-specific
+                questions.
               </p>
             </PageEnter>
           </div>

@@ -37,10 +37,10 @@ export default function Footer() {
         <Stagger className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-24">
           <StaggerItem>
             <p className="section-label mb-6">EdgeX Academy</p>
-            <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-[240px] mb-3">
+            <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-[280px] text-justify mb-3">
               {site.footer.mission}
             </p>
-            <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-[240px] font-medium">
+            <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-[280px] text-justify font-medium">
               {site.footer.missionBold}
             </p>
           </StaggerItem>

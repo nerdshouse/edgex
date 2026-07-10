@@ -12,6 +12,7 @@ import InstructorProfile from "@/components/InstructorProfile";
 import FAQ from "@/components/FAQ";
 import Reviews from "@/components/Reviews";
 import EnrollBar from "@/components/EnrollBar";
+import BrochureModal from "@/components/BrochureModal";
 import { getCourseBySlug } from "@/data/cohorts";
 
 function inr(amount: number) {
@@ -125,6 +126,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
   const pathname = usePathname();
   const result = getCourseBySlug(slug);
   const [openModuleIndex, setOpenModuleIndex] = useState(1);
+  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
 
   // Force scroll to top on mount, bypassing Next.js scroll restoration and CSS smooth scrolling
   useEffect(() => {
@@ -138,6 +140,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
   const { course, cohort } = result;
 
   const price = course.price ?? cohort.price;
+  const isGDLabs = slug.includes("gd-labs");
   const access = course.access ?? `${cohort.duration}`;
 
   let backHref = `/${category}`;
@@ -176,11 +179,11 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                 <div>
                   <div className="mb-6 flex items-baseline gap-3">
                     <h2 className="text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                      Modules Included
+                      {isGDLabs ? "Inclusions" : "Modules Included"}
                     </h2>
                     <span className="h-px flex-1 bg-[var(--border)]" aria-hidden />
                     <span className="index-num shrink-0 tabular-nums">
-                      {course.curriculum.length} modules
+                      {course.curriculum.length} {isGDLabs ? "items" : "modules"}
                     </span>
                   </div>
 
@@ -212,23 +215,39 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                 </div>
 
                 {/* RIGHT — Info panel */}
-                <div className="flex flex-col gap-4 lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto no-scrollbar pb-4">
-                  <InfoCard label="Taught by" value={course.instructor} />
+                <div className="flex flex-col gap-3 lg:sticky lg:top-20 lg:max-h-[calc(100vh-4rem)] lg:overflow-y-auto no-scrollbar pb-4">
+                  {!isGDLabs && <InfoCard label="Taught by" value={course.instructor} />}
 
-                  {course.inclusions && course.inclusions.length > 0 && (
-                    <div className="card rounded-xl px-6 py-5 text-center flex flex-col gap-4">
-                      {course.inclusions.map((inc: any, i: number) => (
-                        <div key={i}>
-                          <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                            {inc.category}
-                          </div>
-                          <div className="text-[13px] font-medium leading-snug text-[var(--text-primary)]">
-                            {inc.access}
-                          </div>
-                        </div>
-                      ))}
+                  <div className="card rounded-xl px-5 py-4 text-center flex flex-col gap-3">
+                    <div>
+                      <div className="mb-1 font-mono text-[12px] tracking-[0.14em] text-[var(--primary)] font-semibold">
+                        Course Access
+                      </div>
+                      <div className="text-[13px] font-medium leading-snug text-[var(--text-primary)]">
+                        {isGDLabs ? (
+                          "Students may book sessions as and when they feel ready. New slots are released every weekend and can be booked at least one week in advance."
+                        ) : (
+                          <>24 Months <span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span> Instant Access upon enrolment</>
+                        )}
+                      </div>
                     </div>
-                  )}
+
+                    {course.inclusions && course.inclusions.length > 0 && (
+                      <>
+                        <div className="w-8 h-1 bg-[var(--border)] mx-auto" />
+                        {course.inclusions.map((inc: any, i: number) => (
+                          <div key={i}>
+                            <div className="mb-1 font-mono text-[12px] tracking-[0.14em] text-[var(--primary)] font-semibold">
+                              {inc.category}
+                            </div>
+                            <div className="text-[13px] font-medium leading-snug text-[var(--text-primary)]">
+                              {inc.access}
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )}
+                  </div>
 
                   {course.addons && course.addons.length > 0 && (
                     course.addons.map((addon: string, i: number) => (
@@ -236,7 +255,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                     ))
                   )}
 
-                  <div className="card rounded-xl px-6 py-6 text-center">
+                  <div className="card rounded-xl px-5 py-5 text-center">
                     <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
                       Price
                     </div>
@@ -253,6 +272,13 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                   >
                     Enroll in this course →
                   </Link>
+
+                  <button
+                    onClick={() => setIsBrochureOpen(true)}
+                    className="text-[13px] text-center text-[var(--text-secondary)] hover:text-[var(--primary)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)] transition-colors"
+                  >
+                    Download Brochure
+                  </button>
                 </div>
               </div>
             </PageEnter>
@@ -260,36 +286,38 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
         </section>
 
         {/* Section 2 — Instructor profile */}
-        <InstructorProfile />
+        {!isGDLabs && <InstructorProfile />}
 
         {/* Section 3 — Course trailer & demo class videos */}
-        <section className="py-14 sm:py-20 border-b border-[var(--border)]">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-              <Reveal>
-                <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                  Course Trailer
-                </h2>
-                <VideoPlayer
-                  youtubeId={course.trailerId ?? "dQw4w9WgXcQ"}
-                  caption={`${course.title} — trailer`}
-                  runtime="Trailer"
-                />
-              </Reveal>
+        {!isGDLabs && (
+          <section className="py-14 sm:py-20 border-b border-[var(--border)]">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+                <Reveal>
+                  <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                    Course Trailer
+                  </h2>
+                  <VideoPlayer
+                    youtubeId={course.trailerId ?? "dQw4w9WgXcQ"}
+                    caption={`${course.title} — trailer`}
+                    runtime="Trailer"
+                  />
+                </Reveal>
 
-              <Reveal delay={0.1}>
-                <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                  Demo Class
-                </h2>
-                <VideoPlayer
-                  youtubeId={course.demoId ?? "dQw4w9WgXcQ"}
-                  caption={`${course.title} — demo class`}
-                  runtime="Demo"
-                />
-              </Reveal>
+                <Reveal delay={0.1}>
+                  <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                    Demo Class
+                  </h2>
+                  <VideoPlayer
+                    youtubeId={course.demoId ?? "dQw4w9WgXcQ"}
+                    caption={`${course.title} — demo class`}
+                    runtime="Demo"
+                  />
+                </Reveal>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Section 4 — What to expect (Journey/Timeline) */}
         {course.journey && course.journey.length > 0 && (
@@ -320,6 +348,11 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                               {step.timeframe}
                             </span>
                           )}
+                          {step.desc && (
+                            <p className="text-sm text-[var(--text-secondary)] leading-relaxed mt-1">
+                              {step.desc}
+                            </p>
+                          )}
                         </div>
                       </li>
                     ))}
@@ -334,8 +367,14 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
         {course.faqs && course.faqs.length > 0 && (
           <FAQ faqs={course.faqs} />
         )}
-        <EnrollBar href={course.enrollHref} />
+        <EnrollBar href={course.enrollHref || "/contact"} />
       </main>
+      
+      <BrochureModal 
+        isOpen={isBrochureOpen} 
+        onClose={() => setIsBrochureOpen(false)} 
+        courseSlug={slug} 
+      />
       <Footer />
     </>
   );

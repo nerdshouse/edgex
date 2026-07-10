@@ -19,11 +19,20 @@ export default function Logo({
       } ${className}`}
     >
       <Image
-        src={logo.src}
+        src={logo.lightSrc}
         alt={logo.alt}
-        width={isNav ? 100 : 120}
-        height={32}
-        className="h-7 w-auto object-contain"
+        width={isNav ? 140 : 160}
+        height={50}
+        className="h-9 w-auto object-contain dark:hidden scale-125"
+        priority={isNav}
+      />
+      <Image
+        src={logo.darkSrc}
+
+        alt={logo.alt}
+        width={isNav ? 140 : 160}
+        height={50}
+        className="h-9 w-auto object-contain hidden dark:block scale-125"
         priority={isNav}
       />
     </Link>
