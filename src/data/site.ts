@@ -13,7 +13,7 @@ export const site = {
 
   footer: {
     mission:
-      "EdgeX Academy is founded by ISB & IIM alums to help students prepare for their most important career moves.",
+      "EdgeX Academy was founded by ISB and IIM alumni to bridge the gap between academic learning and the skills leading recruiters actually evaluate. Our programs combine structured learning, real-world business experience, and interviewer perspectives to help MBA students, engineering students, and working professionals prepare confidently for corporate business careers.",
     missionBold:
       "Our mission is to provide high-quality mentorship and real world knowledge to all our students to enable their professional success.",
   },
@@ -38,13 +38,13 @@ export const site = {
   ],
 
   hero: {
-    title: "Prepare for Your Dream Job with EdgeX",
+    title: "Prepare for Corporate Business Careers with EdgeX",
     subtitle:
-      "India's Largest Learning Platform for Corporate Aspirants & Working Professionals",
+      "Placement & Interview preparation designed for consulting, strategy, analytics, operations, product management and other corporate business roles.",
     badge: "Founded by ISB & IIM Alums",
     audiences: [
       {
-        title: "Placement prep for MBA Students",
+        title: "MBA Students",
         href: "/mba-students",
         items: [
           "Interview Prep Courses",
@@ -56,7 +56,7 @@ export const site = {
         ],
       },
       {
-        title: "Placement prep for Engineering Students",
+        title: "Engineering Students",
         href: "/engineering-students",
         items: [
           "Interview Prep Courses",
@@ -68,7 +68,7 @@ export const site = {
         ],
       },
       {
-        title: "Lateral Interviews for Working Professionals",
+        title: "Working Professionals",
         href: "/working-professionals",
         items: [
           "Lateral Interview Prep",
@@ -124,16 +124,16 @@ export const site = {
     title: "Featured Courses",
     courses: [
       {
-        title: "Complete Placement Prep for Engineers",
-        href: "/engineering-students",
+        title: "Consulting Pro for B-Schools",
+        href: "/mba-students/courses/consulting-advanced-2026",
       },
       {
-        title: "Placement Essentials for B-Schools",
-        href: "/mba-students",
+        title: "Placement Foundations for B-Schools",
+        href: "/mba-students/courses/placement-foundations-2026",
       },
       {
-        title: "Consulting Advanced for B Schools",
-        href: "/mba-students",
+        title: "Placement Foundations for Engineers",
+        href: "/engineering-students/courses/placement-foundations-engineers",
       },
     ],
   },
@@ -149,7 +149,7 @@ export const site = {
     headline: "Learn from someone who has been on both ends of the table for Top Global Firms.",
     headlineAccent: "both ends of the table",
     interviewed: {
-      label: "Interviewed 100+ Engineers for top firms",
+      label: "Interviewed 100+ MBA \ Engineering students for top firms",
       roles: [
         { company: "PwC Strategy&", role: "Management Consultant" },
         { company: "BCG", role: "Business Analyst" },
@@ -478,6 +478,7 @@ export const site = {
 } as const;
 
 export const logo = {
-  src: "/media/logo.png",
+  lightSrc: "/media/EdX-Light-Logo.png",
+  darkSrc: "/media/EdX-Dark-Logo.png",
   alt: "EdgeX Academy",
 };

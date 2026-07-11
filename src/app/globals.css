@@ -330,6 +330,38 @@ body::after {
 .tick-frame > .tick-b::before { bottom: -8px; left: -8px; border-bottom-width: 2px; border-left-width: 2px; }
 .tick-frame > .tick-b::after  { bottom: -8px; right: -8px; border-bottom-width: 2px; border-right-width: 2px; }
 
+/* ── Hero credential badge shimmer ─────────────────────────────────────── */
+@keyframes badge-shimmer {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  60%, 100% { transform: translateX(250%) skewX(-15deg); }
+}
+.badge-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.badge-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(96, 4, 4, 0.12) 50%,
+    transparent 100%
+  );
+  width: 40%;
+  animation: badge-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+.dark .badge-shimmer::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+}
+
 /* ── Hero background – red radial glow ──────────────────────────────────── */
 .hero-glow {
   background: radial-gradient(

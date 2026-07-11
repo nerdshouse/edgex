@@ -43,8 +43,8 @@ export default function Hero() {
             {hero.subtitle}
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex justify-center mb-12 sm:mb-14">
-            <span className="inline-flex items-center rounded-full border-2 border-[var(--accent)] bg-[var(--accent-muted)] px-5 py-2.5 text-sm font-medium text-[var(--text-primary)] tracking-[-0.01em]">
+          <motion.div variants={fadeUp} className="flex justify-center mb-12">
+            <span className="badge-shimmer inline-flex items-center rounded-md border-2 border-[var(--accent)]/30 bg-[var(--bg-secondary)] px-5 py-2.5 text-lg font-medium text-[var(--text-primary)] shadow-[0_2px_12px_rgba(96,4,4,0.08)]">
               {hero.badge}
             </span>
           </motion.div>
@@ -58,62 +58,20 @@ export default function Hero() {
           transition={{ delayChildren: 0.15 }}
         >
           {hero.audiences.map((audience, i) => (
-            <motion.div
-              key={audience.href}
-              variants={fadeUp}
-              className="h-[280px] sm:h-[300px]"
-            >
+            <motion.div key={audience.href} variants={fadeUp}>
               <Link
                 href={audience.href}
-                aria-label={`${audience.title} — explore pathway`}
-                className="flip-card group block h-full rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+                aria-label={`${audience.title} — explore course`}
+                className="group flex flex-col justify-around rounded-xl bg-[var(--bg-card)] border border-[var(--border)] p-6 sm:p-8 h-[220px] sm:h-[240px] shadow-sm transition-colors duration-300 hover:bg-[var(--accent-muted)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
-                <div className="flip-inner rounded-xl">
-                  {/* FRONT — solid maroon, title + arrow */}
-                  <div className="flip-face flex flex-col justify-between rounded-xl bg-[var(--accent)] p-6 sm:p-7 text-left text-white shadow-[0_8px_32px_var(--accent-muted)]">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/55">
-                      0{i + 1}
-                    </span>
-                    <div>
-                      <h2 className="text-xl sm:text-2xl font-semibold leading-snug tracking-[-0.02em]">
-                        {audience.title}
-                      </h2>
-                      <span className="mt-5 inline-flex items-center gap-2.5 text-sm font-medium text-white/90">
-                        Explore pathway
-                        <span
-                          aria-hidden
-                          className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-base transition-transform duration-200 group-hover:translate-x-0.5"
-                        >
-                          →
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* BACK — what's included (revealed on hover) */}
-                  <div className="flip-face flip-back flex flex-col rounded-xl border border-[var(--border)] bg-[var(--bg-card)] p-6 sm:p-7 text-left shadow-[var(--shadow-card)]">
-                    <span className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--accent)]">
-                      What&apos;s included
-                    </span>
-                    <ul className="flex flex-1 flex-col gap-2.5">
-                      {audience.items.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-2.5 text-sm text-[var(--text-secondary)]"
-                        >
-                          <span
-                            className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]"
-                            aria-hidden
-                          />
-                          <span className="leading-snug">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)]">
-                      View pathway
-                      <span aria-hidden>→</span>
-                    </span>
-                  </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-semibold leading-snug text-[var(--text-primary)] mb-4">
+                    {audience.title}
+                  </h2>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)]">
+                    Explore course
+                    <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </span>
                 </div>
               </Link>
             </motion.div>

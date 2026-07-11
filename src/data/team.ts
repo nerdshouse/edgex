@@ -61,7 +61,7 @@ export const team = {
       name: "Satyam Mudaliar",
       role: "External Advisor",
       initials: "SM",
-      image: "/media/team/advisors/satyam-mudaliar.png",
+      image: "/media/team/advisors/satyam-mudaliar2.png",
       tags: ["IIT Bombay Co'15"],
     },
     {
@@ -135,7 +135,7 @@ export const externalAdvisorsSection = {
       name: "Satyam Mudaliar",
       credential: "IIT Bombay Co'15",
       focus: "Corporate Strategy",
-      image: "/media/team/advisors/satyam-mudaliar.png",
+      image: "/media/team/advisors/satyam-mudaliar2.png",
       initials: "SM",
     },
     {

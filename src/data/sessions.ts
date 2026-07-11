@@ -10,12 +10,12 @@ export const defaultMentors: SessionMentor[] = [
     name: "Punita Shrivastava",
     credential: "Co-Founder & Lead Instructor",
     image: "/media/team/punita.png",
-    calendlyLink: "#", // To be updated
+    calendlyLink: "https://meetpro.club/PunitaShrivastava",
   },
   {
     name: "Anshul Kothari",
     credential: "Co-Founder",
     image: "/media/team/anshul.png",
-    calendlyLink: "#", // To be updated
+    calendlyLink: "https://meetpro.club/Anshulkothari",
   },
 ];

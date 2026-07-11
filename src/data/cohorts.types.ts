@@ -35,7 +35,7 @@ export interface Course {
   /** YouTube id for the demo class video. */
   demoId?: string;
   /** Timeline/journey of what happens when a user joins the course. */
-  journey?: { title: string; timeframe?: string }[];
+  journey?: { title: string; timeframe?: string; desc?: string }[];
   /** Course-specific FAQs */
   faqs?: { q: string; a: string }[];
   /** Custom checkout link (e.g. Classplus) */
