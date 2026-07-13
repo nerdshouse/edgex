@@ -119,12 +119,18 @@ export default function Footer() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="relative flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-[var(--border)] gap-3">
-            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-              © 2026 EdgeX Academy - All rights reserved
-            </p>
-            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-              {site.contact.location} / {site.domain}
+          <div className="relative flex flex-col items-center pt-6 border-t border-[var(--border)] gap-4">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                © {new Date().getFullYear()} EdgeX Academy - All rights reserved
+              </p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                {site.contact.location} / {site.domain}
+              </p>
+            </div>
+            <p className="font-mono text-[12px] uppercase text-[var(--text-muted)]/60 text-center mt-2 sm:-mt-4">
+              Experience, Engineered by <br className="sm:hidden" />
+              <a href="https://nerdshouse.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-primary)] transition-colors hover:underline underline-offset-4">Nerdshouse Technologies LLP</a>
             </p>
           </div>
         </Reveal>
