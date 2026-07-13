@@ -20,8 +20,8 @@ function Word({
   const opacity = useTransform(progress, range, [0.18, 1]);
   return (
     <span className="relative mr-[0.32em]">
-      <span className="absolute inset-0 select-none opacity-20 text-white">{word}</span>
-      <motion.span style={{ opacity }} className="text-white">
+      <span className="absolute inset-0 select-none opacity-15 text-[var(--text-primary)]">{word}</span>
+      <motion.span style={{ opacity }} className="text-[var(--text-primary)]">
         {word}
       </motion.span>
     </span>
@@ -33,11 +33,11 @@ function ScrollParagraph({ text }: { text: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.75", "start 0.2"],
+    offset: ["start 0.8", "end 0.5"],
   });
   const words = text.split(" ");
   return (
-    <p ref={ref} className="flex flex-wrap mt-6 max-w-3xl text-[1.7rem] leading-relaxed">
+    <p ref={ref} className="flex flex-wrap mt-6 max-w-3xl text-[clamp(1.2rem,4vw,1.7rem)] leading-relaxed">
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
@@ -62,48 +62,11 @@ export default function DesignedFor() {
 
         <Reveal className="tick-frame">
           <span className="tick-b" aria-hidden />
-          {/* hairline gradient edge → premium top-lit border */}
-          <div className="rounded-[1.75rem] bg-gradient-to-b from-white/[0.14] to-white/[0.03] p-px">
-            {/* Inverted editorial feature block - stays dark in both themes */}
-            <div className="relative overflow-hidden rounded-[calc(1.75rem-1px)] bg-[linear-gradient(165deg,#7a0505_0%,#600404_50%,#4a0303_100%)] text-white">
-              {/* red glow wash, top-left */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -left-[15%] -top-[30%] h-[40rem] w-[40rem] rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.03) 45%, transparent 70%)",
-                }}
-              />
-              {/* cool counter-glow, bottom-right, for depth */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -bottom-[35%] -right-[10%] h-[34rem] w-[34rem] rounded-full"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 65%)",
-                }}
-              />
-              {/* faint dot grid */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px)",
-                  backgroundSize: "28px 28px",
-                  maskImage:
-                    "radial-gradient(ellipse 70% 60% at 82% 8%, #000 15%, transparent 72%)",
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse 70% 60% at 82% 8%, #000 15%, transparent 72%)",
-                }}
-              />
-
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--bg-card)] shadow-sm">
               <div className="relative px-6 sm:px-12 lg:px-16 py-14 sm:py-18">
                 {/* Heading */}
                 <motion.h2
-                  className="section-title text-[clamp(1.6rem,3.2vw,2.5rem)] max-w-3xl"
-                  style={{ color: "#fafaf8" }}
+                  className="section-title text-[clamp(1.6rem,3.2vw,2.5rem)] max-w-3xl text-[var(--accent)]!"
                   initial={reduce ? false : { opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-48px" }}
@@ -115,14 +78,13 @@ export default function DesignedFor() {
 
                 {/* Subheading — scroll-driven word reveal */}
                 {reduce ? (
-                  <p className="mt-6 max-w-2xl text-[1.125rem] leading-relaxed text-white/55">
+                  <p className="mt-6 max-w-2xl text-[1.125rem] leading-relaxed text-[var(--text-secondary)]">
                     {SUBHEADING}
                   </p>
                 ) : (
                   <ScrollParagraph text={SUBHEADING} />
                 )}
               </div>
-            </div>
           </div>
         </Reveal>
       </div>

@@ -149,7 +149,7 @@ export const site = {
     headline: "Learn from someone who has been on both ends of the table for Top Global Firms.",
     headlineAccent: "both ends of the table",
     interviewed: {
-      label: "Interviewed 100+ MBA \ Engineering students for top firms",
+      label: "Interviewed 100+ MBA & Engineering students for top firms",
       roles: [
         { company: "PwC Strategy&", role: "Management Consultant" },
         { company: "BCG", role: "Business Analyst" },
@@ -357,7 +357,7 @@ export const site = {
   instructor: {
     name: "Punita Shrivastava",
     role: "Lead Instructor & Founder",
-    bio: "EdgeX Foundations is designed and created by Punita, drawing from her experience cracking several interviews and interviewing hundreds of candidates. She incorporates inputs from her network of IIM, IIT, and NIT alumni.",
+    bio: "Former Management Consultant with over a decade of corporate experience. Punita has prepared for, cracked, and conducted interviews across leading organizations, bringing real interviewer perspectives into every EdgeX program.\nEvery course is personally designed by her and continuously refined with inputs from experienced recruiters, industry professionals, and alumni from leading institutions.",
     initials: "PS",
   },
 
@@ -380,40 +380,32 @@ export const site = {
 
   faqs: [
     {
-      q: "Who is the lead instructor?",
-      a: "The course is taught end-to-end by Punita Shrivastava. EdgeX Foundations is designed and created by Punita, drawing from her own experience of cracking several interviews and interviewing hundreds of candidates. She has also taken inputs from her network of IIM, IIT, & NIT Alums to incorporate varied perspectives.",
+      q: "Who are EdgeX programs designed for?",
+      a: "EdgeX specializes in interview preparation for corporate business careers. Our programs are designed for MBA students, engineering students aspiring for business roles, and working professionals preparing for lateral opportunities across consulting, strategy, general management, analytics, operations, product, marketing, finance, and other business functions.",
     },
     {
-      q: "Is this a live or recorded course?",
-      a: "It is a hybrid format, the best of both worlds. As soon as you enroll, you get instant access to 40+ recorded lectures, assignments, cheat sheets and question banks that you can go through at your own pace. On top of that, you can enroll into a live 3-month batch anytime within your 3-year window. Similarly, there are multiple slots for GDs that are scheduled every week, you can book your slots whenever you feel ready for them.",
+      q: "Are your courses live or self-paced?",
+      a: "All EdgeX programs follow a hybrid learning model. The core curriculum is delivered through high-quality self-paced recorded lectures, allowing you to learn anytime at your own pace. Depending on the course, students may also receive access to live doubt-clearing sessions conducted by the EdgeX team.\n\nIn addition, EdgeX GD Labs are conducted live over Zoom, where students participate in moderated Group Discussion simulations with peers from their own cohort. Students may also book one-to-one services such as mock interviews, CV reviews, career guidance, and MBA application support whenever they require personalized assistance.",
     },
     {
-      q: "How long is the course valid for?",
-      a: "You receive 3-year extended access to all course materials and recordings.",
+      q: "Do you offer offline classroom programs?",
+      a: "No. EdgeX is currently an online-first learning platform. All courses, live sessions, Group Discussion Labs, and mentoring activities are conducted virtually, allowing students and working professionals from across India to participate without geographical constraints.",
     },
     {
-      q: "Are mock interviews included?",
-      a: '1:1 Mock Interviews are available as an optional add-on. However, all students get exclusive lifetime access to "The EdgeX Corporate Club" for networking events.',
+      q: "Which course or cohort should I choose?",
+      a: "EdgeX offers separate learning pathways for MBA students, Engineering students, and Working Professionals. Each curriculum is tailored to the experience level and interview expectations of that cohort while covering the business interview skills most relevant to their career stage. Simply choose the pathway that best matches your current profile.",
     },
     {
-      q: "When will I get access to recorded modules?",
-      a: "Instantly! As soon as you enroll, all recorded course material is available in your EdgeX portal, ready to watch at your own pace.",
+      q: "Are the courses suitable for technical or software engineering interviews?",
+      a: "Our programs are specifically designed for corporate business roles rather than technical hiring processes. They are ideal for consulting, strategy, analytics, operations, product, finance, marketing, and other business functions. Technical assessments such as coding interviews, system design, software engineering interviews, or other domain-specific technical evaluations are not covered.",
     },
     {
-      q: "When do LIVE Batches start?",
-      a: "Live Batches are starting on 13th of June 2026. Current third year students are encouraged to enroll asap to reserve their seats for the LIVE batches.",
+      q: "Today, most students prepare using advice from seniors. Why do we need EdgeX?",
+      a: "Most interview preparation today is built around advice from seniors, recent alumni, and scattered online resources. While these can be extremely helpful, they naturally reflect the perspective of someone who has recently gone through the process themselves. Developing a deeper understanding of what recruiters consistently evaluate across companies, industries, and roles comes only through years of corporate experience, interviewing candidates, mentoring professionals, and observing hiring decisions over time.\n\nEdgeX was created to bridge this information gap. Our mission is to make practical corporate knowledge and interviewer perspectives accessible in a structured way, connecting students and working professionals with insights developed through years of industry experience rather than a single interview journey.",
     },
     {
-      q: "Will my participation be anonymous?",
-      a: "Absolutely. Your enrollment is completely private and will not be revealed to other students. GD participation is roll-number based and candidate's actual name and credentials are not shared.",
-    },
-    {
-      q: "Who will I have the GD with?",
-      a: "GDs are conducted on ZOOM (video conferences) with 6~8 students from various Tier 1 & 2 colleges in India. While your participation is anonymous, it is mandatory to have your video ON during the GD. Admin aims to pair students from similar cohorts/colleges against each other for best close to real-world simulation.",
-    },
-    {
-      q: "Who will conduct the GDs?",
-      a: "GDs are moderated by Teaching Assistants. All GD sessions are recorded - EdgeX faculty goes through the recordings later to assess your performance and provide you a detailed written feedback.",
+      q: "How are EdgeX courses different from other interview preparation resources?",
+      a: "EdgeX courses are not simply collections of interview tips or recorded lectures. Every program is designed as a structured learning journey that develops the skills leading recruiters consistently evaluate across business interviews.\n\nThe curriculum combines practical business concepts, structured problem-solving methodologies, behavioural interview preparation, consulting frameworks, interviewer perspectives, curated learning resources, guided demonstrations, assignments, and practical examples drawn from real corporate scenarios. The courses are continuously reviewed and refined with inputs from experienced recruiters, corporate professionals, and industry advisors to ensure the content remains practical, relevant, and aligned with evolving hiring practices.",
     },
   ],
 

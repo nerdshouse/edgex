@@ -73,7 +73,7 @@ export default function FAQ({ faqs = site.faqs }: { faqs?: readonly FaqItem[] })
                       transition={{ duration: 0.25, ease }}
                       className="overflow-hidden"
                     >
-                      <p className="px-5 sm:px-6 pb-5 sm:pb-6 pl-[3.25rem] sm:pl-[3.75rem] text-[var(--text-secondary)] text-sm sm:text-[15px] leading-[1.7]">
+                      <p className="px-5 sm:px-6 pb-5 sm:pb-6 pl-[3.25rem] sm:pl-[3.75rem] text-[var(--text-secondary)] text-sm sm:text-[15px] leading-[1.7] whitespace-pre-wrap">
                         {faq.a}
                       </p>
                     </motion.div>

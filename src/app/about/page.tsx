@@ -89,10 +89,10 @@ export default function AboutPage() {
               <h2 className="section-title text-3xl sm:text-4xl mb-5">
                 {coreTeamSection.title}
               </h2>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
+              {/* <p className="text-[var(--text-secondary)] leading-relaxed">
                 From live batch schedules to GD moderation and written feedback, the core team
                 keeps every cohort on track.
-              </p>
+              </p> */}
             </Reveal>
             <Stagger className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
               {coreTeamSection.members.map((member) => (
@@ -131,7 +131,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-14 bg-[var(--bg)]">
+        {/* <section className="py-14 bg-[var(--bg)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 text-center">
             <Reveal>
               <h2 className="section-title text-2xl sm:text-3xl mb-4">Ready to prepare seriously?</h2>
@@ -143,7 +143,7 @@ export default function AboutPage() {
               </Link>
             </Reveal>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </>

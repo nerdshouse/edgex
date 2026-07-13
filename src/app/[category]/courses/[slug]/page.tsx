@@ -10,7 +10,7 @@ import { motion, AnimatePresence, ease } from "@/components/Motion";
 import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import InstructorProfile from "@/components/InstructorProfile";
 import FAQ from "@/components/FAQ";
-import Reviews from "@/components/Reviews";
+// import Reviews from "@/components/Reviews";
 import EnrollBar from "@/components/EnrollBar";
 import BrochureModal from "@/components/BrochureModal";
 import { getCourseBySlug } from "@/data/cohorts";
@@ -140,6 +140,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
   const { course, cohort } = result;
 
   const price = course.price ?? cohort.price;
+  const originalPrice = course.originalPrice ?? cohort.originalPrice;
   const isGDLabs = slug.includes("gd-labs");
   const access = course.access ?? `${cohort.duration}`;
 
@@ -169,11 +170,66 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
               </Link>
 
               {/* Title bar */}
-              <div className="mb-10 sm:mb-12">
+              <div className="mb-10">
                 <h1 className="inline-block rounded-lg bg-[var(--accent)] px-3 py-1 text-white text-[clamp(2rem,4.5vw,3.5rem)] font-medium tracking-[-0.02em] leading-snug">{course.title}</h1>
                 <p className="text-xl text-[var(--text-secondary)] max-w-6xl mt-2">{course.desc}</p>
               </div>
+              {course.inclusions && course.inclusions.length > 0 && (
+                <div className="mb-4">
+                  <div className="mb-6 flex items-baseline gap-3">
+                    <h2 className="text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                      Inclusions
+                    </h2>
+                    <span className="h-px flex-1 bg-[var(--border)]" aria-hidden />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    {course.inclusions.map((inc: any, i: number) => {
+                      let accessText = inc.access;
+                      if (inc.category.toLowerCase().includes("pre-recorded") || inc.category.toLowerCase().includes("pre recorded")) {
+                        const totalModules = course.curriculum?.length || 0;
+                        const totalLectures = course.curriculum?.reduce((acc: number, mod: any) => acc + (mod.lectures || 0), 0) || 0;
+                        const totalAssignments = course.curriculum?.reduce((acc: number, mod: any) => acc + (mod.assignments || 0), 0) || 0;
+                        
+                        const parts = [];
+                        if (totalModules > 0) parts.push(`${totalModules} Modules`);
+                        if (totalLectures > 0) parts.push(`${totalLectures} Lectures`);
+                        if (totalAssignments > 0) parts.push(`${totalAssignments} Assignments & Learning Resources`);
+                        
+                        if (parts.length > 0) {
+                          accessText = parts.join(", ");
+                        }
+                      }
 
+                      let categoryText = inc.category;
+                      if (categoryText.toLowerCase().includes("gd labs")) {
+                        categoryText = "2 Complimentary EdgeX GD Labs slots";
+                      }
+
+                      return (
+                        <div key={i} className="flex flex-col gap-2 items-start">
+                          <h3 className="font-semibold text-white bg-[var(--accent)] text-base px-3 py-1.5 rounded-lg">
+                            {categoryText}
+                          </h3>
+                          <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{accessText}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              <div className="mb-10 w-full bg-[var(--bg-card)] border border-[var(--border)] rounded-lg px-5 py-3 text-center shadow-sm">
+                <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
+                  <span className="font-semibold text-[var(--text-primary)]">Course Access: </span>
+                  <span>
+                    {isGDLabs ? (
+                      "Students may book sessions as and when they feel ready. New slots are released every weekend and can be booked at least one week in advance."
+                    ) : (
+                      <>24 Months <span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span> Instant Access upon enrolment</>
+                    )}
+                  </span>
+                </p>
+              </div>
               <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-14 items-start">
                 {/* LEFT — Modules Included */}
                 <div>
@@ -218,49 +274,30 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                 <div className="flex flex-col gap-3 lg:sticky lg:top-20 lg:max-h-[calc(100vh-4rem)] lg:overflow-y-auto no-scrollbar pb-4">
                   {!isGDLabs && <InfoCard label="Taught by" value={course.instructor} />}
 
-                  <div className="card rounded-xl px-5 py-4 text-center flex flex-col gap-3">
-                    <div>
-                      <div className="mb-1 font-mono text-[12px] tracking-[0.14em] text-[var(--primary)] font-semibold">
-                        Course Access
-                      </div>
-                      <div className="text-[13px] font-medium leading-snug text-[var(--text-primary)]">
-                        {isGDLabs ? (
-                          "Students may book sessions as and when they feel ready. New slots are released every weekend and can be booked at least one week in advance."
-                        ) : (
-                          <>24 Months <span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span> Instant Access upon enrolment</>
-                        )}
-                      </div>
-                    </div>
-
-                    {course.inclusions && course.inclusions.length > 0 && (
-                      <>
-                        <div className="w-8 h-1 bg-[var(--border)] mx-auto" />
-                        {course.inclusions.map((inc: any, i: number) => (
-                          <div key={i}>
-                            <div className="mb-1 font-mono text-[12px] tracking-[0.14em] text-[var(--primary)] font-semibold">
-                              {inc.category}
-                            </div>
-                            <div className="text-[13px] font-medium leading-snug text-[var(--text-primary)]">
-                              {inc.access}
-                            </div>
-                          </div>
-                        ))}
-                      </>
-                    )}
-                  </div>
-
                   {course.addons && course.addons.length > 0 && (
                     course.addons.map((addon: string, i: number) => (
                       <InfoCard key={i} label="Add Ons" value={addon} />
                     ))
                   )}
 
-                  <div className="card rounded-xl px-5 py-5 text-center">
-                    <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      Price
+                  <div className="card rounded-xl px-5 py-5 text-center relative overflow-hidden">
+                    {originalPrice && price && originalPrice > price && (
+                      <div className="absolute top-0 right-0 bg-[var(--accent)] text-white text-[12px] font-bold px-2.5 py-1 rounded-bl-lg">
+                        {Math.round(((originalPrice - price) / originalPrice) * 100)}% OFF
+                      </div>
+                    )}
+                    <div className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                      {originalPrice ? "Pre-Launch Price" : "Price"}
                     </div>
-                    <div className="text-3xl font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                      {price ? `₹${inr(price)}` : "On request"}
+                    <div className="flex flex-col items-center justify-center">
+                      {originalPrice && price && originalPrice > price && (
+                        <div className="text-md font-medium text-[var(--text-muted)] line-through decoration-red-500/50 decoration-2 mb-0.5">
+                          ₹{inr(originalPrice)}
+                        </div>
+                      )}
+                      <div className="text-3xl font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                        {price ? `₹${inr(price)}` : "On request"}
+                      </div>
                     </div>
                   </div>
 
@@ -363,17 +400,17 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
           </section>
         )}
 
-        <Reviews />
+        {/* <Reviews /> */}
         {course.faqs && course.faqs.length > 0 && (
           <FAQ faqs={course.faqs} />
         )}
         <EnrollBar href={course.enrollHref || "/contact"} />
       </main>
-      
-      <BrochureModal 
-        isOpen={isBrochureOpen} 
-        onClose={() => setIsBrochureOpen(false)} 
-        courseSlug={slug} 
+
+      <BrochureModal
+        isOpen={isBrochureOpen}
+        onClose={() => setIsBrochureOpen(false)}
+        courseSlug={slug}
       />
       <Footer />
     </>

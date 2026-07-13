@@ -7,7 +7,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CompanySlider from "@/components/CompanySlider";
-import Reviews from "@/components/Reviews";
+// import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { site } from "@/data/site";
@@ -272,7 +272,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
           </div>
         </section>
 
-        <Reviews />
+        {/* <Reviews /> */}
 
         <FAQ faqs={data.faqs} />
       </main>

@@ -14,7 +14,7 @@ export const team = {
     {
       name: "Punita Shrivastava",
       role: "Co-Founder & Lead Instructor",
-      bio: "Ex-Management Consultant and now a Placement & Interview Coach. EdgeX courses are designed and created by Punita, drawing from her experience cracking several interviews and interviewing hundreds of candidates. She incorporates inputs from her network of IIM, IIT, and NIT alumni.",
+      bio: "Former Management Consultant with over a decade of corporate experience. Punita has prepared for, cracked, and conducted interviews across leading organizations, bringing real interviewer perspectives into every EdgeX program.\nEvery course is personally designed by her and continuously refined with inputs from experienced recruiters, industry professionals, and alumni from leading institutions.",
       initials: "PS",
       image: "/media/team/punita.png",
       tags: ["ISB Co'20", "Ex-Management Consultant", "Placement & Interview Coach"],
@@ -22,10 +22,10 @@ export const team = {
     {
       name: "Anshul Kothari",
       role: "Co-Founder",
-      bio: "Operations & supply chain professional. Former member of the Indian Swimming Team (Asian Games and Commonwealth Games Finalist), Anshul brings the discipline of elite sport and years of industry experience to how EdgeX programs are built and run.",
+      bio: "Operations & Supply Chain leader. ISB interview panelist and B-school admissions mentor with extensive experience supporting MBA applicants through interviews and application essays.\nA former member of the Indian Swimming Team and an accomplished public speaker, Anshul brings the discipline of elite sport, leadership under pressure, and the standards of professional communication and executive presence that are integral to every EdgeX program.",
       initials: "AK",
       image: "/media/team/anshul.png",
-      tags: ["ISB Co'18", "Indian Swimming Team", "Operations & Supply Chain"],
+      tags: ["ISB Co'18", "Operations & Supply Chain", "Indian Swimming Team"],
     },
   ],
   advisors: [

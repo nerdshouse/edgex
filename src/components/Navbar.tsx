@@ -85,7 +85,7 @@ export default function Navbar() {
       <div className="pointer-events-auto lg:hidden mx-auto w-fit">
         <div className={`nav-pill flex items-center gap-2 rounded-full py-2 pl-3 pr-2${scrolled ? " nav-pill--scrolled" : ""}`}>
           <Logo />
-          <div className="flex items-center gap-1 pl-2 border-l border-[var(--border)]">
+          <div className="flex items-center gap-1 pl-1">
             <ThemeToggle />
             <button
               onClick={() => setOpen(!open)}
