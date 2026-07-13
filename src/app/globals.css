@@ -21,9 +21,9 @@
 }
 
 .dark {
-  --accent: #600404;
-  --accent-hover: #7d0606;
-  --accent-muted: rgba(96, 4, 4, 0.09);
+  --accent: #e5484d;
+  --accent-hover: #f2686b;
+  --accent-muted: rgba(229, 72, 77, 0.12);
 
   --bg: #0b0b0a;
   --bg-secondary: #121211;
