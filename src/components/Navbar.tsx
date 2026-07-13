@@ -73,8 +73,6 @@ export default function Navbar() {
           <ThemeToggle />
           <a
             href={site.loginUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="btn-primary hidden lg:inline text-[13px] px-4 py-1.5 rounded-full"
           >
             Login
@@ -132,8 +130,6 @@ export default function Navbar() {
               ))}
               <a
                 href={site.loginUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="btn-primary mt-1 text-sm px-4 py-3 rounded-xl text-center"
               >
                 Login

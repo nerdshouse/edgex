@@ -19,6 +19,7 @@ export interface SessionListing {
   href: string;
   cta?: string;
   mentors?: SessionMentor[];
+  journey?: { title: string; timeframe?: string; desc?: string }[];
 }
 
 export interface FaqItem {
@@ -41,6 +42,44 @@ export interface CategoryData {
   sessions: SessionListing[];
   faqs: FaqItem[];
 }
+
+const commonMockInterview = {
+  title: "1:1 Mock Interviews with Feedback",
+  desc: "Full-length mock interviews with EdgeX mentors, followed by a structured, actionable feedback report.",
+  longDesc: "Experience a personalized 60-minute interview simulation designed around your target companies and roles. Before the session, we collect details about your résumé, target firms, interview stage, and specific areas you'd like to improve to design a mock interview that closely reflects the interviews you're preparing for.\n\nThe first 45 minutes are dedicated to a realistic one-on-one interview, where you'll be assessed just as you would be in an actual corporate interview. The final 15 minutes are an intensive feedback and coaching session where your mentor walks you through your strengths, improvement areas, communication style, structuring, problem-solving approach, executive presence, and interview strategy. Together, you'll develop a personalized action plan so you know exactly what to improve before your next interview.",
+  mentors: defaultMentors,
+  journey: [
+    { title: "Book Your Session", desc: "Choose your preferred mentor and a convenient interview slot." },
+    { title: "Complete Your Interview Brief", timeframe: "WITHIN 24 HOURS" },
+    { title: "45-Minute Personalized Mock Interview", timeframe: "AT YOUR SCHEDULED SLOT", desc: "Participate in a realistic interview simulation tailored to your target roles and companies." },
+    { title: "15-Minute Feedback & Action Planning", timeframe: "IMMEDIATELY AFTER THE INTERVIEW", desc: "Review your performance with your mentor, identify priority improvement areas, and leave with a personalized action plan for your upcoming interviews." }
+  ]
+};
+
+const commonCvReview = {
+  title: "1:1 CV Reviews",
+  desc: "Line-by-line CV review to make your profile consulting- and placement-ready before applications open.",
+  longDesc: "Receive a personalized 20-minute CV review tailored to your placement goals. Before the session, we collect your résumé along with details about your target companies, roles, and career objectives so we can evaluate your profile against the opportunities you're preparing for.\n\nDuring the live session, your mentor reviews your CV line by line, identifying areas to strengthen your impact, clarity, structure, positioning, and overall effectiveness. You'll receive targeted recommendations on how to better showcase your experience, projects, achievements, and leadership, ensuring your CV aligns with the expectations of recruiters for your target roles.",
+  mentors: defaultMentors,
+  journey: [
+    { title: "Book Your Session", desc: "Choose your preferred mentor and a convenient time slot." },
+    { title: "Complete Your CV Brief", timeframe: "BOOK AT LEAST 72 HOURS IN ADVANCE", desc: "Upload your résumé and share your target companies, roles, and any specific areas where you'd like feedback." },
+    { title: "Personalized 20-Minute CV Review", timeframe: "AT YOUR SCHEDULED SLOT", desc: "Meet with your mentor for a live, line-by-line review of your résumé with practical suggestions and improvements." }
+  ]
+};
+
+const commonCareerConsultation = {
+  title: "1:1 Career Consultation",
+  desc: "One-on-one guidance on role targeting, firm selection, and building your placement-season strategy.",
+  longDesc: "Receive a comprehensive 60-minute one-to-one career strategy consultation tailored to your professional goals. Before the session, we gather information about your academic background, work experience, career aspirations, target roles, and the specific challenges or decisions you'd like to discuss, allowing your mentor to prepare for a highly personalized discussion.\n\nDuring the session, we'll work together to evaluate your strengths, identify development areas, discuss suitable career paths, assess your readiness for different opportunities, and build a practical strategy for achieving your goals. Whether you're deciding between career options, planning a transition into consulting or other business roles, preparing for placements or lateral interviews, considering higher education, or simply looking for objective guidance from an experienced corporate professional, the session is designed to provide practical, actionable direction tailored to your individual circumstances.",
+  mentors: defaultMentors,
+  journey: [
+    { title: "Book Your Session", desc: "Choose your preferred mentor and a convenient consultation slot." },
+    { title: "Complete Your Career Brief", timeframe: "BOOK AT LEAST 72 HOURS IN ADVANCE", desc: "Share your academic or professional background, career goals, target roles, and the topics or questions you'd like to discuss during the session." },
+    { title: "60-Minute Career Strategy Consultation", timeframe: "AT YOUR SCHEDULED SLOT", desc: "Participate in a comprehensive one-to-one discussion focused on your career aspirations, opportunities, challenges, and long-term strategy." },
+    { title: "Personalized Career Action Plan", desc: "Leave with practical recommendations, clear next steps, and a structured roadmap to help you move confidently towards your career goals." }
+  ]
+};
 
 export const categoryData: Record<string, CategoryData> = {
   "mba-students": {
@@ -89,36 +128,9 @@ export const categoryData: Record<string, CategoryData> = {
     ],
     sessionsTitle: "Book a 1:1 Session for personalized mentoring",
     sessions: [
-      {
-        code: "M5",
-        slug: "mock-interviews",
-        title: "1:1 Mock Interviews with Feedback",
-        desc: "Full-length mock interviews with EdgeX mentors, followed by a structured, actionable feedback report.",
-        longDesc: "Experience a realistic, high-pressure interview environment tailored to your target role. Receive immediate, actionable feedback on your structuring, communication, and problem-solving skills.",
-        href: "/mba-students/sessions/mock-interviews",
-        cta: "Book a session",
-        mentors: defaultMentors,
-      },
-      {
-        code: "M6",
-        slug: "cv-reviews",
-        title: "1:1 CV Reviews",
-        desc: "Line-by-line CV review to make your profile consulting- and placement-ready before applications open.",
-        longDesc: "Get your resume evaluated by industry experts. We'll help you highlight your impact, quantify your achievements, and ensure your profile passes the stringent shortlisting criteria of top firms.",
-        href: "/mba-students/sessions/cv-reviews",
-        cta: "Book a review",
-        mentors: defaultMentors,
-      },
-      {
-        code: "M7",
-        slug: "career-consultation",
-        title: "1:1 Career Consultation",
-        desc: "One-on-one guidance on role targeting, firm selection, and building your placement-season strategy.",
-        longDesc: "Unsure about which roles fit your profile? Discuss your career aspirations with our mentors to build a personalized roadmap for your upcoming placement season.",
-        href: "/mba-students/sessions/career-consultation",
-        cta: "Book a call",
-        mentors: defaultMentors,
-      },
+      { code: "M5", slug: "mock-interviews", href: "/mba-students/sessions/mock-interviews", cta: "Book a session", ...commonMockInterview },
+      { code: "M6", slug: "cv-reviews", href: "/mba-students/sessions/cv-reviews", cta: "Book a review", ...commonCvReview },
+      { code: "M7", slug: "career-consultation", href: "/mba-students/sessions/career-consultation", cta: "Book a call", ...commonCareerConsultation },
     ],
     faqs: mbaFaqs,
   },
@@ -168,33 +180,9 @@ export const categoryData: Record<string, CategoryData> = {
     ],
     sessionsTitle: "Book a 1:1 Session for personalized mentoring",
     sessions: [
-      {
-        code: "E5",
-        slug: "mock-interviews",
-        title: "1:1 Mock Interviews with Feedback",
-        desc: "One-on-one mock interviews with an experienced interviewer, followed by detailed, actionable feedback.",
-        longDesc: "Experience a realistic, high-pressure interview environment tailored to your target role. Receive immediate, actionable feedback on your structuring, communication, and problem-solving skills.",
-        href: "/engineering-students/sessions/mock-interviews",
-        mentors: defaultMentors,
-      },
-      {
-        code: "E6",
-        slug: "cv-reviews",
-        title: "1:1 CV Reviews",
-        desc: "A personal review of your CV with line-by-line suggestions to make it shortlist-worthy for your target roles.",
-        longDesc: "Get your resume evaluated by industry experts. We'll help you highlight your impact, quantify your achievements, and ensure your profile passes the stringent shortlisting criteria of top firms.",
-        href: "/engineering-students/sessions/cv-reviews",
-        mentors: defaultMentors,
-      },
-      {
-        code: "E7",
-        slug: "career-consultation",
-        title: "1:1 Career Consultation",
-        desc: "A dedicated session to map your profile to the right roles, companies, and preparation plan.",
-        longDesc: "Unsure about which roles fit your profile? Discuss your career aspirations with our mentors to build a personalized roadmap for your upcoming placement season.",
-        href: "/engineering-students/sessions/career-consultation",
-        mentors: defaultMentors,
-      },
+      { code: "E5", slug: "mock-interviews", href: "/engineering-students/sessions/mock-interviews", ...commonMockInterview },
+      { code: "E6", slug: "cv-reviews", href: "/engineering-students/sessions/cv-reviews", ...commonCvReview },
+      { code: "E7", slug: "career-consultation", href: "/engineering-students/sessions/career-consultation", ...commonCareerConsultation },
     ],
     faqs: engineeringFaqs,
   },
@@ -236,6 +224,10 @@ export const categoryData: Record<string, CategoryData> = {
     ],
     sessionsTitle: "Core services & Mentoring",
     sessions: [
+      { code: "L4", slug: "mock-interviews", href: "/working-professionals/sessions/mock-interviews", cta: "Book a session", ...commonMockInterview },
+      { code: "L5", slug: "cv-reviews", href: "/working-professionals/sessions/cv-reviews", cta: "Book a review", ...commonCvReview },
+      { code: "L6", slug: "career-consultation", href: "/working-professionals/sessions/career-consultation", cta: "Book a call", ...commonCareerConsultation },
+      /*
       {
         code: "L4",
         slug: "cv-reviews",
@@ -272,6 +264,7 @@ export const categoryData: Record<string, CategoryData> = {
         href: "/working-professionals/sessions/career-consultation",
         mentors: defaultMentors,
       },
+      */
     ],
     faqs: professionalFaqs,
   },
