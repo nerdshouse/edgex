@@ -1,27 +1,55 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, useReducedMotion } from "./Motion";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [tip, setTip] = useState<{ x: number; y: number } | null>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
   const reduce = useReducedMotion();
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return <div className="w-8 h-8" />;
 
   const isDark = theme === "dark";
+  const label = isDark ? "Light mode" : "Dark mode";
+
+  // The nav pill uses overflow-hidden, so an absolutely-positioned tooltip
+  // would be clipped. Anchor a fixed-position tooltip to the button instead.
+  const showTip = () => {
+    const r = btnRef.current?.getBoundingClientRect();
+    if (r) setTip({ x: r.left + r.width / 2, y: r.bottom + 8 });
+  };
+  const hideTip = () => setTip(null);
 
   return (
     <motion.button
+      ref={btnRef}
       onClick={() => setTheme(isDark ? "light" : "dark")}
+      onHoverStart={showTip}
+      onHoverEnd={hideTip}
+      onFocus={showTip}
+      onBlur={hideTip}
       whileHover={reduce ? undefined : { scale: 1.05 }}
       whileTap={reduce ? undefined : { scale: 0.95 }}
-      className="w-8 h-8 rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-200"
-      aria-label="Toggle theme"
+      className="relative w-8 h-8 rounded-full flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-200"
+      aria-label={`Switch to ${label.toLowerCase()}`}
     >
+      {tip &&
+        createPortal(
+          <span
+            role="tooltip"
+            style={{ left: tip.x, top: tip.y }}
+            className="pointer-events-none fixed -translate-x-1/2 whitespace-nowrap rounded-md border border-[var(--border)] bg-[var(--bg-card)] px-2 py-1 text-xs text-[var(--text-primary)] shadow-[var(--shadow-card)] z-[60]"
+          >
+            {label}
+          </span>,
+          document.body
+        )}
       <motion.span
         key={theme}
         initial={reduce ? false : { opacity: 0, rotate: -30 }}
