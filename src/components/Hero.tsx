@@ -44,25 +44,25 @@ export default function Hero() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex justify-center mb-12">
-            <span className="badge-shimmer inline-flex items-center rounded-md border-2 border-[var(--accent)]/30 bg-[var(--bg-secondary)] px-5 py-2.5 text-lg font-medium text-[var(--text-primary)] shadow-[0_2px_12px_rgba(96,4,4,0.08)]">
+            <span className="badge-shimmer inline-flex items-center rounded-lg bg-[var(--accent)] px-5 py-2.5 text-xl font-medium text-white tracking-[-0.01em] shadow-[0_2px_12px_rgba(96,4,4,0.25)]">
               {hero.badge}
             </span>
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-px overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--border)] max-w-6xl mx-auto shadow-sm"
           variants={reduce ? undefined : stagger}
           initial="hidden"
           animate="show"
           transition={{ delayChildren: 0.15 }}
         >
           {hero.audiences.map((audience, i) => (
-            <motion.div key={audience.href} variants={fadeUp}>
+            <motion.div key={audience.href} variants={fadeUp} className="h-full">
               <Link
                 href={audience.href}
                 aria-label={`${audience.title} — explore course`}
-                className="group flex flex-col justify-around rounded-xl bg-[var(--bg-card)] border border-[var(--border)] p-6 sm:p-8 h-[220px] sm:h-[240px] shadow-sm transition-colors duration-300 hover:bg-[var(--accent-muted)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+                className="group relative flex h-full flex-col justify-around bg-[var(--bg-card)] p-6 sm:p-8 min-h-[220px] sm:min-h-[240px] transition-colors duration-300 hover:bg-[var(--accent-muted)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
                 <div>
                   <h2 className="text-xl sm:text-2xl font-semibold leading-snug text-[var(--text-primary)] mb-4">

@@ -20,6 +20,7 @@ export interface Course {
   }[];
   /** Course-level price in INR. Falls back to the cohort price when unset. */
   price?: number;
+  originalPrice?: number;
   /** Access summary, e.g. "24 Months, Mock Virtual GD slots every weekend". */
   access?: string;
   /** Detailed inclusions for RHS panel */

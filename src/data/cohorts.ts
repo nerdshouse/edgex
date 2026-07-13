@@ -2,7 +2,7 @@ import type { Course, Cohort } from "./cohorts.types";
 
 export type { Course, Cohort } from "./cohorts.types";
 
-import { mbaFaqs, m1Faqs, m2Faqs, m3Faqs, m4Faqs, e1Faqs, e2Faqs, engineeringFaqs, professionalFaqs } from "./faqs";
+import { mbaFaqs, m1Faqs, m2Faqs, m3Faqs, m4Faqs, e1Faqs, e2Faqs, engineeringFaqs, professionalFaqs, l1Faqs, l2Faqs, l3Faqs } from "./faqs";
 
 export const cohorts: Cohort[] = [
   {
@@ -206,7 +206,8 @@ export const cohorts: Cohort[] = [
         tag: "Placement",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 4999,
+        price: 4299,
+        originalPrice: 4999,
         enrollHref: "https://www.edgex.co.in/courses/859366",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -269,7 +270,8 @@ export const cohorts: Cohort[] = [
         tag: "Consulting",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 7999,
+        price: 6799,
+        originalPrice: 7999,
         enrollHref: "https://www.edgex.co.in/courses/854646",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -338,7 +340,8 @@ export const cohorts: Cohort[] = [
         tag: "Combo",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 11000,
+        price: 8999,
+        originalPrice: 12999,
         enrollHref: "https://www.edgex.co.in/courses/869497",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -431,7 +434,7 @@ export const cohorts: Cohort[] = [
         tag: "Practice",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 2000,
+        price: 1999,
         enrollHref: "https://www.edgex.co.in/courses/869500",
         callout: "EdgeX team tries to pair studnets preparing for similar firms in a group. TAs get your details over a google form to understand your goals",
         journey: [
@@ -480,7 +483,8 @@ export const cohorts: Cohort[] = [
         tag: "Placement",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 2999,
+        price: 2499,
+        originalPrice: 2999,
         enrollHref: "https://www.edgex.co.in/courses/779003",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -543,7 +547,8 @@ export const cohorts: Cohort[] = [
         tag: "Consulting",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 5999,
+        price: 4999,
+        originalPrice: 5999,
         enrollHref: "https://www.edgex.co.in/courses/869650",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -612,7 +617,8 @@ export const cohorts: Cohort[] = [
         tag: "Combo",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 7999,
+        price: 6299,
+        originalPrice: 8999,
         enrollHref: "https://www.edgex.co.in/courses/869651",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -704,7 +710,7 @@ export const cohorts: Cohort[] = [
         tag: "Practice",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 2000,
+        price: 1999,
         enrollHref: "https://www.edgex.co.in/courses/817173",
         inclusions: [],
         callout: "Advanced Case Prep for Management, Strategy and General Consulting Interviews. Also useful for those looking for structured problem solving practice for non-consulting roles",
@@ -754,7 +760,8 @@ export const cohorts: Cohort[] = [
         tag: "Foundations",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 6999,
+        price: 4999,
+        originalPrice: 5999,
         enrollHref: "https://www.edgex.co.in/courses/869674",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -767,7 +774,7 @@ export const cohorts: Cohort[] = [
           { title: "You are added to the EdgeX Corporate Club", timeframe: "within 7 days" }
         ],
         outcomes: [],
-        faqs: professionalFaqs,
+        faqs: l1Faqs,
         curriculum: [
           {
             week: "Interview Fundamentals & Preparation Strategy",
@@ -805,7 +812,7 @@ export const cohorts: Cohort[] = [
       },
       {
         slug: "consulting-advanced-professionals",
-        title: "Consulting Pro for B-Schools - 2026",
+        title: "ConsultPro for Lateral Interviews",
         desc: "Everything required to excel in Consulting and Strategy interviews, including advanced Case Prep, Guesstimates, Core Consulting Frameworks and their applications, Structured Thinking & Communication.",
         duration: "24 Months",
         lessons: 39,
@@ -814,7 +821,8 @@ export const cohorts: Cohort[] = [
         tag: "Consulting",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 8999,
+        price: 7599,
+        originalPrice: 8999,
         enrollHref: "https://www.edgex.co.in/courses/869682",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -828,7 +836,7 @@ export const cohorts: Cohort[] = [
           { title: "You are added to the EdgeX Corporate Club", timeframe: "within 7 days" }
         ],
         outcomes: [],
-        faqs: professionalFaqs,
+        faqs: l2Faqs,
         curriculum: [
           {
             week: "Structured Problem Solving & Core Business Frameworks",
@@ -873,7 +881,7 @@ export const cohorts: Cohort[] = [
       },
       {
         slug: "placement-combo-professionals",
-        title: "Consulting + Placement Essentials Combo 2026 for Laterals",
+        title: "Interview Essentials + Consulting Pro Combo for Lateral Interviews",
         desc: "Complete preparation for lateral interviews, combining role-agnostic interview foundations with advanced consulting and strategy interview preparation in one comprehensive program.",
         duration: "24 Months",
         lessons: 65,
@@ -882,7 +890,8 @@ export const cohorts: Cohort[] = [
         tag: "Combo",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 12000,
+        price: 9999,
+        originalPrice: 14998,
         enrollHref: "https://www.edgex.co.in/courses/869696",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
@@ -895,7 +904,7 @@ export const cohorts: Cohort[] = [
           { title: "You are added to the EdgeX Corporate Club", timeframe: "within 7 days" }
         ],
         outcomes: [],
-        faqs: professionalFaqs,
+        faqs: l3Faqs,
         curriculum: [
           {
             week: "Structured Problem Solving & Core Business Frameworks",

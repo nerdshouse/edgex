@@ -8,10 +8,9 @@ import { PageEnter, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { site } from "@/data/site";
 
 const topics = [
-  "Live batch & GD slots",
-  "Demo class access",
-  "Mock interview add-on",
-  "Corporate training",
+  "Courses",
+  "EdgeX GD Labs",
+  "1:1 Sessions",
   "Other",
 ];
 

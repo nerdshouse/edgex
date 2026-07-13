@@ -140,7 +140,7 @@ function ReviewColumn({
   return (
     <div className="vmarquee h-full">
       <div
-        className={`vmarquee-track${reverse ? " vmarquee-track--reverse" : ""}`}
+        className={`vmarquee-track${reverse ? " vmarquee-track--reverse" : ""} max-sm:![animation-duration:20s]`}
         style={{ animationDuration: `${duration}s` }}
       >
         {[0, 1].map((copy) => (
@@ -179,7 +179,7 @@ export default function Reviews() {
         </motion.div>
 
         <div
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:h-[600px]"
+          className={`grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${!reduce ? "h-[600px]" : ""}`}
           aria-label="Student reviews"
         >
           {columns.map((items, c) => (

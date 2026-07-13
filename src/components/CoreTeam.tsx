@@ -42,9 +42,9 @@ export function CoreTeamCard({ member }: { member: CoreTeamMember }) {
           <span className="h-px w-4 shrink-0 bg-[var(--accent)]" aria-hidden />
           <p className="text-sm text-[var(--text-muted)]">{member.role}</p>
         </div>
-        {member.focus ? (
+        {/* {member.focus ? (
           <p className="mt-1 text-sm font-medium text-[var(--text-secondary)]">{member.focus}</p>
-        ) : null}
+        ) : null} */}
       </div>
     </article>
   );

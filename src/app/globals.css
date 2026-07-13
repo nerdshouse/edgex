@@ -346,20 +346,12 @@ body::after {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(96, 4, 4, 0.12) 50%,
+    rgba(255, 255, 255, 0.35) 50%,
     transparent 100%
   );
   width: 40%;
   animation: badge-shimmer 3s ease-in-out infinite;
   pointer-events: none;
-}
-.dark .badge-shimmer::after {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.35) 50%,
-    transparent 100%
-  );
 }
 
 /* ── Hero background – red radial glow ──────────────────────────────────── */
