@@ -21,7 +21,7 @@ export default function AboutPage() {
               <p className="section-label mb-5">About EdgeX Academy</p>
               <h1 className="section-title text-[clamp(2.5rem,6vw,4.75rem)] mb-7">
                 Built by{" "}
-                <span className="text-[var(--accent)]">ISB &amp; IIM Alumni</span>{" "}
+                <span className="text-[var(--accent)]">ISB &amp; IIM Alums</span>{" "}
                 for Corporate Career Success.
               </h1>
               <p className="text-[var(--text-secondary)] text-lg leading-relaxed mb-4 text-justify">
@@ -106,13 +106,10 @@ export default function AboutPage() {
 
         <section className="py-16 sm:py-20 border-b border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <Reveal>
-                <p className="section-label mb-3">EdgeX Foundations</p>
-                <h2 className="section-title text-3xl sm:text-4xl mb-5">
-                  India&apos;s most comprehensive placement prep program
-                </h2>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="section-label mb-3">EdgeX Academy</p>
+                <p className="text-[var(--text-secondary)] leading-relaxed text-justify">
                   {site.seo.description}
                 </p>
               </Reveal>

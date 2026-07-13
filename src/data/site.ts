@@ -21,7 +21,7 @@ export const site = {
   seo: {
     title: "EdgeX Academy | Interview and GD Coaching and online courses",
     description:
-      "EdgeX Foundations is India's most comprehensive placement interview preparation course for students targeting non-core, non-tech business and managerial roles. Stop winging your placement interviews - start preparing systematically.",
+      `Everything you need for your next corporate career move.​ Whether you're preparing for campus placements, transitioning from engineering into business roles, switching jobs as a working professional, or applying to leading business schools, EdgeX brings structured learning, expert mentorship, and practical interview preparation together under one platform.`,
     ogImage: "/media/og-image.png",
   },
 
@@ -462,10 +462,10 @@ export const site = {
   ],
 
   audiences: [
-    "B.Tech, B.E, BBA, B.Com and MBA students",
-    "IITs, NITs, BITS, VIT, Manipal, DTU, NSUT, and top colleges",
-    "Consulting, analytics, product, FMCG, and finance roles",
-    "BCG, McKinsey, Deloitte, Amazon, Razorpay, HUL, Goldman Sachs & more",
+    "MBA Placement Preparation",
+    "Engineering Placement Preparation(Business Roles)",
+    "Lateral Interview Preparation for Working Professionals",
+    "Consulting & Strategy Interview Preparation",
   ],
 } as const;
 

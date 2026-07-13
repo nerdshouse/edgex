@@ -17,8 +17,6 @@ export default function EnrollBar({
       >
         <Link
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
           className="btn-primary flex items-center gap-1.5 text-sm font-semibold px-5 py-2.5 whitespace-nowrap rounded-full"
         >
           Enroll Now →

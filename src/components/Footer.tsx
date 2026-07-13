@@ -13,7 +13,12 @@ const footerLinks = {
   Company: [
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
-    { label: "Login", href: site.loginUrl, external: true },
+    { label: "Login", href: site.loginUrl },
+  ],
+  Legal: [
+    { label: "Terms of Use", href: "/terms-of-use" },
+    { label: "Refund Policy", href: "/refund-policy" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
   ],
 };
 
@@ -34,21 +39,25 @@ export default function Footer() {
         }}
       />
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 pt-20 pb-8">
-        <Stagger className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-24">
-          <StaggerItem>
+        <Stagger className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-6 gap-y-12 mb-16 md:mb-24">
+          {/* About Section */}
+          <StaggerItem className="col-span-2 md:col-span-4 lg:col-span-2 pr-0 lg:pr-8">
             <p className="section-label mb-6">EdgeX Academy</p>
-            <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-[280px] text-justify mb-3">
-              {site.footer.mission}
-            </p>
-            <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-[280px] text-justify font-medium">
-              {site.footer.missionBold}
-            </p>
+            <div className="max-w-2xl lg:max-w-none">
+              <p className="text-[var(--text-muted)] text-sm leading-relaxed text-justify mb-3">
+                {site.footer.mission}
+              </p>
+              <p className="text-[var(--text-secondary)] text-sm leading-relaxed text-justify font-medium">
+                {site.footer.missionBold}
+              </p>
+            </div>
           </StaggerItem>
 
+          {/* Map through Links */}
           {Object.entries(footerLinks).map(([section, items]) => (
-            <StaggerItem key={section}>
-              <div className="index-num mb-6">{section}</div>
-              <ul className="flex flex-col gap-3">
+            <StaggerItem key={section} className="col-span-1">
+              <div className="index-num mb-4">{section}</div>
+              <ul className="flex flex-col gap-2">
                 {items.map((item) => (
                   <li key={item.label}>
                     {"external" in item && item.external ? (
@@ -74,7 +83,8 @@ export default function Footer() {
             </StaggerItem>
           ))}
 
-          <StaggerItem>
+          {/* Contact Section */}
+          <StaggerItem className="col-span-1">
             <div className="index-num mb-6">Contact</div>
             <ul className="flex flex-col gap-3 text-sm text-[var(--text-secondary)]">
               <li>

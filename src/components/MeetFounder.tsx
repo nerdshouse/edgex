@@ -9,7 +9,7 @@ function FounderCard({ founder }: { founder: (typeof team.founders)[number] }) {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
-    <article className="relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] shadow-[var(--shadow-card)] p-7 sm:p-9 transition-all duration-200 hover:border-[var(--border-hover)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
+    <article className="relative h-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] shadow-[var(--shadow-card)] p-7 transition-all duration-200 hover:border-[var(--border-hover)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.06)]">
       {/* oversized ghost initials watermark */}
       <span
         aria-hidden
@@ -52,7 +52,7 @@ function FounderCard({ founder }: { founder: (typeof team.founders)[number] }) {
           </div>
 
           {founder.bio ? (
-            <p className="mt-5 text-sm leading-relaxed text-[var(--text-secondary)]">{founder.bio}</p>
+            <p className="mt-5 text-sm leading-relaxed text-[var(--text-secondary)] text-justify">{founder.bio}</p>
           ) : null}
 
           {founder.tags ? (
@@ -86,7 +86,7 @@ export default function MeetFounder() {
 
         <Stagger className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
           {team.founders.map((founder) => (
-            <StaggerItem key={founder.name}>
+            <StaggerItem key={founder.name} className="h-full">
               <FounderCard founder={founder} />
             </StaggerItem>
           ))}

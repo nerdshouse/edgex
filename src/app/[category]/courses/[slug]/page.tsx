@@ -189,12 +189,12 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                         const totalModules = course.curriculum?.length || 0;
                         const totalLectures = course.curriculum?.reduce((acc: number, mod: any) => acc + (mod.lectures || 0), 0) || 0;
                         const totalAssignments = course.curriculum?.reduce((acc: number, mod: any) => acc + (mod.assignments || 0), 0) || 0;
-                        
+
                         const parts = [];
                         if (totalModules > 0) parts.push(`${totalModules} Modules`);
                         if (totalLectures > 0) parts.push(`${totalLectures} Lectures`);
                         if (totalAssignments > 0) parts.push(`${totalAssignments} Assignments & Learning Resources`);
-                        
+
                         if (parts.length > 0) {
                           accessText = parts.join(", ");
                         }
@@ -225,7 +225,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                     {isGDLabs ? (
                       "Students may book sessions as and when they feel ready. New slots are released every weekend and can be booked at least one week in advance."
                     ) : (
-                      <>24 Months <span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span> Instant Access upon enrolment</>
+                      <>24 Months <span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>Instant Access upon course Launch (August 10th, 2026)</>
                     )}
                   </span>
                 </p>
@@ -303,8 +303,6 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
 
                   <Link
                     href={course.enrollHref || "/contact"}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="btn-primary mt-1 block rounded-full px-6 py-3 text-center text-sm"
                   >
                     Enroll in this course →
