@@ -208,7 +208,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 4299,
         originalPrice: 4999,
-        enrollHref: "https://www.edgex.co.in/courses/859366",
+        enrollHref: "https://dtkhkw.courses.store/859366",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -272,7 +272,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 6799,
         originalPrice: 7999,
-        enrollHref: "https://www.edgex.co.in/courses/854646",
+        enrollHref: "https://dtkhkw.courses.store/854646",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -342,7 +342,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 8999,
         originalPrice: 12999,
-        enrollHref: "https://www.edgex.co.in/courses/869497",
+        enrollHref: "https://dtkhkw.courses.store/869497",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -435,7 +435,7 @@ export const cohorts: Cohort[] = [
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
         price: 1999,
-        enrollHref: "https://www.edgex.co.in/courses/869500",
+        enrollHref: "https://dtkhkw.courses.store/869500",
         callout: "EdgeX team tries to pair studnets preparing for similar firms in a group. TAs get your details over a google form to understand your goals",
         journey: [
           { title: "You Enroll in EdgeX GD Labs", timeframe: "Immediately after purchase" },
@@ -485,7 +485,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 2499,
         originalPrice: 2999,
-        enrollHref: "https://www.edgex.co.in/courses/779003",
+        enrollHref: "https://dtkhkw.courses.store/779003",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -549,7 +549,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 4999,
         originalPrice: 5999,
-        enrollHref: "https://www.edgex.co.in/courses/869650",
+        enrollHref: "https://dtkhkw.courses.store/869650",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -619,7 +619,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 6299,
         originalPrice: 8999,
-        enrollHref: "https://www.edgex.co.in/courses/869651",
+        enrollHref: "https://dtkhkw.courses.store/869651",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -711,7 +711,7 @@ export const cohorts: Cohort[] = [
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
         price: 1999,
-        enrollHref: "https://www.edgex.co.in/courses/817173",
+        enrollHref: "https://dtkhkw.courses.store/817173",
         inclusions: [],
         callout: "Advanced Case Prep for Management, Strategy and General Consulting Interviews. Also useful for those looking for structured problem solving practice for non-consulting roles",
         journey: [
@@ -762,7 +762,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 4999,
         originalPrice: 5999,
-        enrollHref: "https://www.edgex.co.in/courses/869674",
+        enrollHref: "https://dtkhkw.courses.store/869674",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" }
@@ -823,7 +823,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 7599,
         originalPrice: 8999,
-        enrollHref: "https://www.edgex.co.in/courses/869682",
+        enrollHref: "https://dtkhkw.courses.store/869682",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" }
@@ -892,7 +892,7 @@ export const cohorts: Cohort[] = [
         instructorRole: "Lead Instructor",
         price: 9999,
         originalPrice: 14998,
-        enrollHref: "https://www.edgex.co.in/courses/869696",
+        enrollHref: "https://dtkhkw.courses.store/869696",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" }
