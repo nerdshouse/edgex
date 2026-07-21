@@ -35,6 +35,8 @@ export interface Course {
   trailerId?: string;
   /** YouTube id for the demo class video. */
   demoId?: string;
+  /** Google Drive link for the course brochure. */
+  brochureUrl?: string;
   /** Timeline/journey of what happens when a user joins the course. */
   journey?: { title: string; timeframe?: string; desc?: string }[];
   /** Course-specific FAQs */

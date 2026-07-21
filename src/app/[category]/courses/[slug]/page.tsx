@@ -225,7 +225,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                     {isGDLabs ? (
                       "Students may book sessions as and when they feel ready. New slots are released every weekend and can be booked at least one week in advance."
                     ) : (
-                      <>24 Months <span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>Instant Access upon course Launch (August 10th, 2026)</>
+                      <>24 Months<span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>Instant Access upon course Launch (August 12th, 2026)&nbsp;|&nbsp;Access to all course updates</>
                     )}
                   </span>
                 </p>
@@ -305,15 +305,17 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                     href={course.enrollHref || "/contact"}
                     className="btn-primary mt-1 block rounded-full px-6 py-3 text-center text-sm"
                   >
-                    Enroll in this course →
+                    {isGDLabs ? "Enroll in this program →" : "Enroll in this course →"}
                   </Link>
 
-                  <button
-                    onClick={() => setIsBrochureOpen(true)}
-                    className="text-[13px] text-center text-[var(--text-secondary)] hover:text-[var(--primary)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)] transition-colors"
-                  >
-                    Download Brochure
-                  </button>
+                  {!isGDLabs && (
+                    <button
+                      onClick={() => setIsBrochureOpen(true)}
+                      className="text-[13px] text-center text-[var(--text-secondary)] hover:text-[var(--primary)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)] transition-colors"
+                    >
+                      Download Brochure
+                    </button>
+                  )}
                 </div>
               </div>
             </PageEnter>
@@ -324,31 +326,35 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
         {!isGDLabs && <InstructorProfile />}
 
         {/* Section 3 — Course trailer & demo class videos */}
-        {!isGDLabs && (
+        {!isGDLabs && (course.trailerId || course.demoId) && (
           <section className="py-14 sm:py-20 border-b border-[var(--border)]">
             <div className="max-w-7xl mx-auto px-5 sm:px-8">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-                <Reveal>
-                  <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                    Course Trailer
-                  </h2>
-                  <VideoPlayer
-                    youtubeId={course.trailerId ?? "dQw4w9WgXcQ"}
-                    caption={`${course.title} — trailer`}
-                    runtime="Trailer"
-                  />
-                </Reveal>
+              <div className={`grid grid-cols-1 gap-6 ${(!course.trailerId || !course.demoId) ? "max-w-4xl mx-auto" : "md:grid-cols-2 md:gap-8"}`}>
+                {course.trailerId && (
+                  <Reveal>
+                    <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                      Course Overview
+                    </h2>
+                    <VideoPlayer
+                      youtubeId={course.trailerId}
+                      caption={`${course.title} — overview`}
+                      runtime="Overview"
+                    />
+                  </Reveal>
+                )}
 
-                <Reveal delay={0.1}>
-                  <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
-                    Demo Class
-                  </h2>
-                  <VideoPlayer
-                    youtubeId={course.demoId ?? "dQw4w9WgXcQ"}
-                    caption={`${course.title} — demo class`}
-                    runtime="Demo"
-                  />
-                </Reveal>
+                {course.demoId && (
+                  <Reveal delay={0.1}>
+                    <h2 className="mb-5 text-lg font-semibold tracking-[-0.02em] text-[var(--text-primary)]">
+                      Course Trailer
+                    </h2>
+                    <VideoPlayer
+                      youtubeId={course.demoId}
+                      caption={`${course.title} — trailer`}
+                      runtime="Trailer"
+                    />
+                  </Reveal>
+                )}
               </div>
             </div>
           </section>
@@ -409,6 +415,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
         isOpen={isBrochureOpen}
         onClose={() => setIsBrochureOpen(false)}
         courseSlug={slug}
+        brochureUrl={course.brochureUrl}
       />
       <Footer />
     </>

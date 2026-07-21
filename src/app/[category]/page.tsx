@@ -216,18 +216,36 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
                     </blockquote>
 
                     <div className="mt-auto">
-                      <p className="mb-3 inline-block rounded-md bg-[var(--accent-muted)] px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--accent)]">
-                        {teacher.interviewed.label}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {teacher.interviewed.roles.map((r) => (
-                          <span
-                            key={r.company}
-                            className="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)]"
-                          >
-                            {r.company}
-                          </span>
-                        ))}
+                      <div className="mb-6">
+                        <p className="mb-3 inline-block rounded-md bg-[var(--accent-muted)] px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--accent)]">
+                          {teacher.interviewed.label}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {teacher.interviewed.roles.map((r) => (
+                            <span
+                              key={r.company}
+                              className="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)]"
+                            >
+                              {r.company}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="pt-6 border-t border-[var(--border)]">
+                        <p className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--text-muted)] mb-3">
+                          {teacher.otherOffers.label}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {teacher.otherOffers.companies.map((c) => (
+                            <span
+                              key={c}
+                              className="rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] px-2.5 py-1 text-xs font-medium text-[var(--text-secondary)]"
+                            >
+                              {c}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>

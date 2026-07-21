@@ -37,7 +37,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 text-balance max-w-2xl mx-auto"
+            className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 text-balance max-w-4xl mx-auto"
             variants={fadeUp}
           >
             {hero.subtitle}
