@@ -13,7 +13,7 @@ export const site = {
 
   footer: {
     mission:
-      "EdgeX Academy was founded by ISB and IIM alumni to bridge the gap between academic learning and the skills leading recruiters actually evaluate. Our programs combine structured learning, real-world business experience, and interviewer perspectives to help MBA students, engineering students, and working professionals prepare confidently for corporate business careers.",
+      "EdgeX Academy is founded by ISB and IIM alumni to bridge the gap between academic learning and the skills leading recruiters actually evaluate. Our programs combine structured learning, real-world business experience, and interviewer perspectives to help MBA students, engineering students, and working professionals prepare confidently for corporate business careers.",
     missionBold:
       "Our mission is to provide high-quality mentorship and real world knowledge to all our students to enable their professional success.",
   },
@@ -40,7 +40,7 @@ export const site = {
   hero: {
     title: "Prepare for Corporate Business Careers with EdgeX",
     subtitle:
-      "Placement & Interview preparation designed for consulting, strategy, analytics, operations, product management and other corporate business roles.",
+      "Placement & Lateral Interview preparation designed for Consulting, Strategy, Operations, Growth, General Management, Category & Revenue, Product Management, Analytics and other business roles",
     badge: "Founded by ISB & IIM Alums",
     audiences: [
       {
@@ -124,7 +124,7 @@ export const site = {
     title: "Featured Courses",
     courses: [
       {
-        title: "Consulting Pro for B-Schools",
+        title: "ConsultPro for B-Schools",
         href: "/mba-students/courses/consulting-advanced-2026",
       },
       {
@@ -381,7 +381,7 @@ export const site = {
   faqs: [
     {
       q: "Who are EdgeX programs designed for?",
-      a: "EdgeX specializes in interview preparation for corporate business careers. Our programs are designed for MBA students, engineering students aspiring for business roles, and working professionals preparing for lateral opportunities across consulting, strategy, general management, analytics, operations, product, marketing, finance, and other business functions.",
+      a: "EdgeX specializes in interview preparation for corporate business careers. Our programs are designed for MBA students, Engineering students aspiring for business roles, and working professionals preparing for lateral opportunities across consulting, strategy, general management, analytics, operations, product, marketing, growth, category, and other business functions.",
     },
     {
       q: "Are your courses live or self-paced?",
@@ -397,7 +397,7 @@ export const site = {
     },
     {
       q: "Are the courses suitable for technical or software engineering interviews?",
-      a: "Our programs are specifically designed for corporate business roles rather than technical hiring processes. They are ideal for consulting, strategy, analytics, operations, product, finance, marketing, and other business functions. Technical assessments such as coding interviews, system design, software engineering interviews, or other domain-specific technical evaluations are not covered.",
+      a: "Our programs are specifically designed for corporate business roles rather than technical or core engineering hiring processes. They are ideal for consulting, strategy, analytics, operations, product, growth, category, marketing, and other business functions. Technical assessments such as coding interviews, system design, software engineering interviews, or other domain-specific technical evaluations are not covered.",
     },
     {
       q: "Today, most students prepare using advice from seniors. Why do we need EdgeX?",

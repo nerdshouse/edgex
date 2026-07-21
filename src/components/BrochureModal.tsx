@@ -7,9 +7,10 @@ interface BrochureModalProps {
   isOpen: boolean;
   onClose: () => void;
   courseSlug: string;
+  brochureUrl?: string;
 }
 
-export default function BrochureModal({ isOpen, onClose, courseSlug }: BrochureModalProps) {
+export default function BrochureModal({ isOpen, onClose, courseSlug, brochureUrl }: BrochureModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -19,6 +20,17 @@ export default function BrochureModal({ isOpen, onClose, courseSlug }: BrochureM
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      const timer = setTimeout(() => {
+        setSuccess(false);
+        setError("");
+        setFormData({ fullName: "", email: "", phone: "", college: "" });
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -59,6 +71,10 @@ export default function BrochureModal({ isOpen, onClose, courseSlug }: BrochureM
     }
 
     setLoading(true);
+    let popup: Window | null = null;
+    if (brochureUrl) {
+      popup = window.open("about:blank", "_blank");
+    }
 
     try {
       const response = await fetch("/api/brochure", {
@@ -74,24 +90,19 @@ export default function BrochureModal({ isOpen, onClose, courseSlug }: BrochureM
       setSuccess(true);
       
       // Trigger download
-      const link = document.createElement("a");
-      link.href = "/media/brochure/brochure.pdf";
-      link.download = `EdgeX-Brochure-${courseSlug}.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Close after a brief delay
-      setTimeout(() => {
-        onClose();
-        // Reset state for next time
-        setTimeout(() => {
-          setSuccess(false);
-          setFormData({ fullName: "", email: "", phone: "", college: "" });
-        }, 500);
-      }, 3000);
+      if (brochureUrl && popup) {
+        popup.location.href = brochureUrl;
+      } else if (!brochureUrl) {
+        const link = document.createElement("a");
+        link.href = "/media/brochure/Brochure.pdf";
+        link.download = `EdgeX-Brochure-${courseSlug}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
 
     } catch (err: any) {
+      if (popup) popup.close();
       setError(err.message || "An unexpected error occurred.");
     } finally {
       setLoading(false);
@@ -140,9 +151,17 @@ export default function BrochureModal({ isOpen, onClose, courseSlug }: BrochureM
                   </svg>
                 </div>
                 <h4 className="text-lg font-medium text-[var(--text-primary)]">Details Submitted!</h4>
-                <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                  Your download will begin automatically.
-                </p>
+                <div className="mt-5">
+                  <a
+                    href={brochureUrl || "/media/brochure/Brochure.pdf"}
+                    target={brochureUrl ? "_blank" : undefined}
+                    download={!brochureUrl ? `EdgeX-Brochure-${courseSlug}.pdf` : undefined}
+                    rel={brochureUrl ? "noopener noreferrer" : undefined}
+                    className="text-sm font-semibold text-[var(--accent)] underline underline-offset-2 hover:text-[var(--primary)] transition-colors"
+                  >
+                    Click here if it didn't open
+                  </a>
+                </div>
               </div>
             ) : (
               <>

@@ -21,7 +21,7 @@ export default function VideoPlayer({ youtubeId, caption, runtime, className }: 
           {playing ? (
             <iframe
               className="absolute inset-0 h-full w-full"
-              src={``}
+              src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
               title={caption}
               allow="accelerated-output; autoplay; encrypted-media; picture-in-picture"
               allowFullScreen

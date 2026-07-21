@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, MotionValue, useReducedMotion } from "
 import { Reveal } from "./Reveal";
 
 const SUBHEADING =
-  "EdgeX specializes in interview preparation for corporate business roles across consulting, strategy, general management, analytics, operations, product, marketing, finance, and other business functions. Whether you're an MBA student, an engineer transitioning into business, or a working professional preparing for your next opportunity, our programs are designed around the skills that leading recruiters consistently evaluate across business interviews.";
+  "EdgeX specializes in interview preparation for corporate business roles across Consulting, Strategy, General Management, Operations, Growth, General Management, Category & Revenue, Product Management, Analytics and other business functions. Whether you're an MBA student, an Engineer transitioning into business, or a Working Professional preparing for your next lateral switch , our programs are designed around the skills that leading recruiters consistently evaluate across business interviews.";
 
 /* ── Word — opacity driven by scroll progress ── */
 function Word({

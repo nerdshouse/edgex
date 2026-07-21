@@ -198,7 +198,7 @@ export const cohorts: Cohort[] = [
       {
         slug: "placement-foundations-2026",
         title: "Placement Foundations for B-Schools - 2026",
-        desc: "The complete interview foundation for MBA placements, covering structured problem solving, business judgement, behavioural interviews, communication, and interview strategy across business roles.",
+        desc: "Industry-agnostic Interview essentials for all MBA placements, covering detailed structured problem solving and its applications in interviews, behavioural interviews, leadership principles, professional conduct & communication, and interview strategy for business roles across Growth, Category, Marketing, Operations, Product Management, Business Analytics, Customer Experience, and General Management",
         duration: "24 Months",
         lessons: 34,
         hours: 29,
@@ -209,6 +209,8 @@ export const cohorts: Cohort[] = [
         price: 4299,
         originalPrice: 4999,
         enrollHref: "https://dtkhkw.courses.store/859366",
+        trailerId: "DToU9DR_5LQ",
+        brochureUrl: "https://drive.google.com/file/d/1DnmBCXp15zmWG5QENib9Rm41D28W3zVo/view?usp=drive_link",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -226,43 +228,43 @@ export const cohorts: Cohort[] = [
         faqs: m1Faqs,
         curriculum: [
           { 
-            week: "Interview Fundamentals & Preparation Strategy", 
-            topics: [],
-            details: "Build a structured approach to interview preparation by understanding how interviewers evaluate candidates and what differentiates top performers. Learn effective preparation strategies, communication principles, interview-day readiness, professional demeanor and the strategic use of your résumé to guide conversations. The module also explores role-specific expectations across different corporate functions and provides practical frameworks to help you prepare with clarity and confidence for various business roles.",
-            lectures: 7,
-            assignments: 5,
-            moduleHours: 5
-          },
-          { 
             week: "Structured Problem Solving & Functional Applications", 
             topics: [],
-            details: "Develop a systematic approach to solving varied business and analytical problems using structured thinking frameworks such as MECE, top-down decomposition, issue trees, value chain analysis, hypothesis-driven reasoning, first-principles thinking, and user-centric analysis. Apply these techniques across a range of functional scenarios including product management, user journeys, marketing analytics, customer segmentation, operations, pricing, and business decision-making to communicate clear, logical, and well-structured solutions.",
-            lectures: 12,
+            details: "Structured problem-solving methodologies and their applications across various business scenarios in functions such as Growth, Category Management, Marketing, Operations, Product Management, Business Analytics, Customer Experience, and General Management. Includes practical examples from a wide range of industries.",
+            lectures: 10,
             assignments: 5,
             moduleHours: 10
           },
           { 
-            week: "Leadership Principles, General Management, & Behavioral Assessment", 
+            week: "Leadership Principles, General Management & Behavioral Assessment", 
             topics: [],
-            details: "Develop a structured approach to behavioral interviews by understanding how interviewers evaluate leadership traits and professional qualities through targeted questions and pressure-testing techniques. Learn how to identify, prepare, and communicate evidence-based stories that demonstrate ownership, professional judgment, bias for action, integrity, growth mindset, customer focus, collaboration, resilience, and learning agility. Master techniques to articulate individual impact and team scenarios, navigate follow-up questions, and consistently present yourself as a high-potential candidate. The principles discussed are representative of the leadership traits assessed by leading organizations across consulting, technology, product, and corporate roles.",
-            lectures: 10,
-            assignments: 10,
-            moduleHours: 10
+            details: "Leadership principles and behavioural competencies evaluated across business interviews, including evidence-based storytelling, leadership experiences, stakeholder management, professional judgement, communication, and behavioural interview strategy. Includes detailed question compendiums covering the professional qualities commonly assessed across organizations.",
+            lectures: 7,
+            assignments: 5,
+            moduleHours: 6
           },
           { 
             week: "Navigating HR & Hiring Manager Interviews", 
             topics: [],
-            details: "Develop a strategic understanding of HR and hiring manager interviews by learning the distinct objectives, evaluation criteria, and decision-making processes behind each stage. Explore how organizations assess cultural fit, motivation, communication, professionalism, and long-term potential, while identifying common pitfalls and interview \"no-nos\" that can negatively impact hiring outcomes.",
+            details: "Objectives, evaluation criteria, and interview strategies for HR and hiring manager interviews, including recruiter expectations, career motivation, professional judgement, executive communication, and handling challenging interview situations.",
             lectures: 5,
             assignments: 2,
             moduleHours: 4
+          },
+          { 
+            week: "Interview Excellence & Placement Readiness", 
+            topics: [],
+            details: "Essential strategies for interview preparation and placement success, including focused company and role research, CV positioning, interview mindset, professional presence, group discussion performance, placement-day execution, and interview best practices.",
+            lectures: 6,
+            assignments: 2,
+            moduleHours: 5
           }
         ]
       },
       {
         slug: "consulting-advanced-2026",
-        title: "Consulting Pro for B-Schools - 2026",
-        desc: "The complete consulting interview preparation program, covering case interviews, guesstimates, structured thinking, business frameworks, and executive communication.",
+        title: "ConsultPro for B-Schools - 2026",
+        desc: "A complete prep program for Management Consulting and Strategy interviews at premier B-Schools, covering Case Interviews, Guesstimates, Structured thinking & Business Problem Solving, essential consulting frameworks, industry value chains, consulting communication & interview demonstrations by senior corporate professionals from Tier-1 B-Schools.",
         duration: "24 Months",
         lessons: 39,
         hours: 33,
@@ -273,6 +275,9 @@ export const cohorts: Cohort[] = [
         price: 6799,
         originalPrice: 7999,
         enrollHref: "https://dtkhkw.courses.store/854646",
+        trailerId: "3kgwHmeoefE",
+        demoId: "LE6ni4gNYZQ",
+        brochureUrl: "https://drive.google.com/file/d/1lT6gbya1l9QID3uqM6EX_VjD25IgUPoE/view?usp=drive_link",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -289,10 +294,10 @@ export const cohorts: Cohort[] = [
         faqs: m2Faqs,
         curriculum: [
           {
-            week: "Structured Problem Solving & Core Business Frameworks",
+            week: "Business Foundations & Value Chains, Structured Problem Solving and Core Strategic Frameworks",
             topics: [],
-            details: "Develop the structured thinking and analytical toolkit used in consulting and strategy roles. Learn MECE principles, issue trees, hypothesis-driven problem solving, benchmarking, income statement analysis, and core business frameworks including Porter's Five Forces, Value Chain, BCG Matrix, the Pareto Principle and more. The module also covers industry value chains and applies these concepts to practical business scenarios. (PESTLE - diff b/w various financial statements)",
-            lectures: 10,
+            details: "Develop the structured thinking and analytical toolkit used in consulting and strategy roles. Learn MECE principles, issue trees, hypothesis-driven problem solving, benchmarking, income statement analysis, and core business frameworks including Porter’s Five Forces, Value Chain, BCG Matrix, the Pareto Principle and more. The module also covers industry value chains and applies these concepts to practical business scenarios.",
+            lectures: 8,
             assignments: 2,
             moduleHours: 7
           },
@@ -300,15 +305,15 @@ export const cohorts: Cohort[] = [
             week: "Case Interview Excellence",
             topics: [],
             details: "Master the structured approach to solving consulting case interviews across profitability, market entry, growth strategy, pricing, operations, M&A, and other common business scenarios. Learn how to ask insightful clarifying questions, develop robust frameworks, synthesize findings, and communicate recommendations with the confidence expected by top consulting firms.",
-            lectures: 12,
+            lectures: 7,
             assignments: 4,
-            moduleHours: 10
+            moduleHours: 6
           },
           {
             week: "Guesstimates & Quantitative Reasoning",
             topics: [],
             details: "Develop a systematic approach to tackling estimation problems using logical assumptions, structured decomposition, and quantitative reasoning. Learn proven techniques to solve market sizing and guesstimate questions while clearly communicating your thought process under interview conditions.",
-            lectures: 8,
+            lectures: 5,
             assignments: 6,
             moduleHours: 8
           },
@@ -316,23 +321,23 @@ export const cohorts: Cohort[] = [
             week: "Consulting Readiness & Executive Presence",
             topics: [],
             details: "Go beyond case solving to develop the professional skills expected of successful consulting candidates. Learn networking strategies, interview etiquette, executive communication, and stakeholder management while understanding how to navigate the consulting recruitment process. The module also includes advanced storytelling techniques to help MBA students effectively present their summer internships, prior work experience, leadership roles, live projects, and business school experiences in interviews.",
-            lectures: 4,
+            lectures: 3,
             assignments: 1,
-            moduleHours: 3
+            moduleHours: 1
           },
           {
-            week: "Consulting Interview Demonstrations through Mock Sessions",
+            week: "Interview Demonstrations through Mock Sessions",
             topics: [],
-            details: "Observe consulting interview demonstrations featuring guest IIM/ISB alum interviewers featuring case interviews & guesstimates. Learn correct styles of communication through Case diagnostics and guesstimate solutions. Communication techniques to demonstrate structured thinking, avoid common mistakes, and navigate real interview scenarios with confidence.",
-            lectures: 5,
-            moduleHours: 5
+            details: "Observe end-to-end consulting interview demonstrations featuring case interviews and guesstimates, conducted by senior corporate professionals and Tier-1 B-school alumni. Learn the communication style expected in consulting interviews, asking effective clarifying questions, interpreting interviewer cues, structuring your responses, and applying interview best practices.",
+            lectures: 9,
+            moduleHours: 4
           }
         ]
       },
       {
         slug: "placement-combo-2026",
-        title: "Consulting + Placement Essentials Combo 2026",
-        desc: "The most comprehensive interview preparation program for MBA placements—combining role-agnostic interview foundations with advanced consulting interview preparation.",
+        title: "Placement Foundations + ConsultPro Combo for B-Schools",
+        desc: "A comprehensive placement preparation program that combines the best of Placement Foundations and ConsultPro. It builds strong interview fundamentals for a wide range of MBA business roles while providing complete preparation for consulting and strategy interviews. The curriculum has been optimized by consolidating overlapping content to deliver a seamless learning experience without any repetition.",
         duration: "24 Months",
         lessons: 65,
         hours: 42,
@@ -343,13 +348,15 @@ export const cohorts: Cohort[] = [
         price: 8999,
         originalPrice: 12999,
         enrollHref: "https://dtkhkw.courses.store/869497",
+        demoId: "LE6ni4gNYZQ",
+        brochureUrl: "https://drive.google.com/file/d/12GwMerZDEFKwt6T9he9Oay8YbAx7Tkg6/view?usp=drive_link",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" },
           { category: "2 Complimentary passes to EdgeX GD Labs (Virtual Mock GD practice)", access: "Slots Every Weekend - join as per your schedule" }
         ],
-        callout: "EARLY BIRD BEST VALUE PRICE: 11000 + 1 CV REVIEW FREE",
+        callout: "Recommended for students targeting consulting while preparing comprehensively for MBA placements across multiple business roles. This integrated program combines Placement Foundations and ConsultPro into one seamless learning journey with optimized content and no unnecessary repetition",
         journey: [
           { title: "You Enroll into the course" },
           { title: "Instant Access to Pre-Recorded Modules", timeframe: "instant" },
@@ -360,66 +367,75 @@ export const cohorts: Cohort[] = [
         faqs: m3Faqs,
         curriculum: [
           {
-            week: "Structured Problem Solving & Core Business Frameworks",
+            week: "Business Foundations & Value Chains, Structured Problem Solving and Core Strategic Frameworks",
             topics: [],
-            details: "Develop the structured thinking and analytical toolkit used in consulting and strategy roles. Learn MECE principles, issue trees, hypothesis-driven problem solving, benchmarking, income statement analysis, and core business frameworks including Porter's Five Forces, Value Chain, BCG Matrix, the Pareto Principle and more. The module also covers industry value chains and applies these concepts to practical business scenarios.",
-            lectures: 10,
-            moduleHours: 2
+            details: "Develop the structured thinking and analytical toolkit used in consulting and strategy roles. Learn MECE principles, issue trees, hypothesis-driven problem solving, benchmarking, income statement analysis, and core business frameworks including Porter’s Five Forces, Value Chain, BCG Matrix, the Pareto Principle and more. The module also covers industry value chains and applies these concepts to practical business scenarios.",
+            lectures: 8,
+            assignments: 2,
+            moduleHours: 7
           },
           {
             week: "Case Interview Excellence",
             topics: [],
             details: "Master the structured approach to solving consulting case interviews across profitability, market entry, growth strategy, pricing, operations, M&A, and other common business scenarios. Learn how to ask insightful clarifying questions, develop robust frameworks, synthesize findings, and communicate recommendations with the confidence expected by top consulting firms.",
-            lectures: 12,
-            moduleHours: 4
+            lectures: 7,
+            assignments: 4,
+            moduleHours: 6
           },
           {
             week: "Guesstimates & Quantitative Reasoning",
             topics: [],
             details: "Develop a systematic approach to tackling estimation problems using logical assumptions, structured decomposition, and quantitative reasoning. Learn proven techniques to solve market sizing and guesstimate questions while clearly communicating your thought process under interview conditions.",
-            lectures: 8,
-            moduleHours: 6
+            lectures: 5,
+            assignments: 6,
+            moduleHours: 8
           },
           {
             week: "Consulting Readiness & Executive Presence",
             topics: [],
             details: "Go beyond case solving to develop the professional skills expected of successful consulting candidates. Learn networking strategies, interview etiquette, executive communication, and stakeholder management while understanding how to navigate the consulting recruitment process. The module also includes advanced storytelling techniques to help MBA students effectively present their summer internships, prior work experience, leadership roles, live projects, and business school experiences in interviews.",
-            lectures: 4,
+            lectures: 3,
+            assignments: 1,
             moduleHours: 1
           },
           {
-            week: "Consulting Interview Demonstrations through Mock Sessions",
+            week: "Interview Demonstrations through Mock Sessions",
             topics: [],
-            details: "Observe complete consulting interview demonstrations featuring case interviews, guesstimates, and candidate interactions from start to finish. Learn how high-performing candidates structure their thinking, communicate effectively, avoid common mistakes, and navigate real interview scenarios with confidence.",
-            lectures: 5
+            details: "Observe end-to-end consulting interview demonstrations featuring case interviews and guesstimates, conducted by senior corporate professionals and Tier-1 B-school alumni. Learn the communication style expected in consulting interviews, asking effective clarifying questions, interpreting interviewer cues, structuring your responses, and applying interview best practices.",
+            lectures: 9,
+            moduleHours: 4
           },
           {
-            week: "Interview Fundamentals & Preparation Strategy",
+            week: "Additional Applications of Structured Problem Solving across functional roles",
             topics: [],
-            details: "Build a structured approach to interview preparation by understanding how interviewers evaluate candidates and what differentiates top performers. Learn effective preparation strategies, communication principles, interview-day readiness, professional demeanor and the strategic use of your résumé to guide conversations. The module also explores role-specific expectations across different corporate functions and provides practical frameworks to help you prepare with clarity and confidence for various business roles.",
+            details: "Covers applications of structured problem solving across various business scenarios across varied industries in verticals like Growth, Category, Marketing, Operations, Product Management, Business Analytics, Customer Experience, and General Management",
+            lectures: 3,
+            assignments: 1,
+            moduleHours: 3
+          },
+          {
+            week: " Behavioral Assessment, Leadership Principles, & General Management",
+            topics: [],
+            details: "Leadership principles and behavioural competencies evaluated across business interviews, including evidence-based storytelling, leadership experiences, stakeholder management, professional judgement, communication, and behavioural interview strategy. Includes detailed question compendiums covering the professional qualities commonly assessed across organizations.",
             lectures: 7,
-            moduleHours: 5
-          },
-          {
-            week: "Structured Problem Solving & Functional Applications",
-            topics: [],
-            details: "Develop a systematic approach to solving varied business and analytical problems using structured thinking frameworks such as MECE, top-down decomposition, issue trees, value chain analysis, hypothesis-driven reasoning, first-principles thinking, and user-centric analysis. Apply these techniques across a range of functional scenarios including product management, user journeys, marketing analytics, customer segmentation, operations, pricing, and business decision-making to communicate clear, logical, and well-structured solutions. (Optimized for any overlaps with Module 1)",
-            lectures: 4,
-            moduleHours: 10
-          },
-          {
-            week: "Leadership Principles, General Management, & Behavioral Assessment",
-            topics: [],
-            details: "Develop a structured approach to behavioral interviews by understanding how interviewers evaluate leadership traits and professional qualities through targeted questions and pressure-testing techniques. Learn how to identify, prepare, and communicate evidence-based stories that demonstrate ownership, professional judgment, bias for action, integrity, growth mindset, customer focus, collaboration, resilience, and learning agility. Master techniques to articulate individual impact and team scenarios, navigate follow-up questions, and consistently present yourself as a high-potential candidate. The principles discussed are representative of the leadership traits assessed by leading organizations across consulting, technology, product, and corporate roles.",
-            lectures: 10,
-            moduleHours: 10
+            assignments: 5,
+            moduleHours: 6
           },
           {
             week: "Navigating HR & Hiring Manager Interviews",
             topics: [],
-            details: "Develop a strategic understanding of HR and hiring manager interviews by learning the distinct objectives, evaluation criteria, and decision-making processes behind each stage. Explore how organizations assess cultural fit, motivation, communication, professionalism, and long-term potential, while identifying common pitfalls and interview \"no-nos\" that can negatively impact hiring outcomes.",
+            details: "Objectives, evaluation criteria, and interview strategies for HR and hiring manager interviews, including recruiter expectations, career motivation, professional judgement, executive communication, and handling challenging interview situations.",
             lectures: 5,
+            assignments: 2,
             moduleHours: 4
+          },
+          {
+            week: "Interview Excellence & Placement Readiness",
+            topics: [],
+            details: "Essential strategies for interview preparation and placement success, including focused company and role research, CV positioning, interview mindset, professional presence, group discussion performance, placement-day execution, and interview best practices.",
+            lectures: 6,
+            assignments: 2,
+            moduleHours: 5
           }
         ]
       },
