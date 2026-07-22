@@ -210,7 +210,7 @@ export const cohorts: Cohort[] = [
         originalPrice: 4999,
         enrollHref: "https://dtkhkw.courses.store/859366",
         trailerId: "DToU9DR_5LQ",
-        brochureUrl: "/media/brochure/EdgeX_M1_Course Brochure.pdf",
+        brochureUrl: "/media/Brochure/EdgeX_M1_Course Brochure.pdf",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -277,7 +277,7 @@ export const cohorts: Cohort[] = [
         enrollHref: "https://dtkhkw.courses.store/854646",
         trailerId: "3kgwHmeoefE",
         demoId: "LE6ni4gNYZQ",
-        brochureUrl: "/media/brochure/EdgeX_M2_Course Brochure.pdf",
+        brochureUrl: "/media/Brochure/EdgeX_M2_Course Brochure.pdf",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
@@ -349,7 +349,7 @@ export const cohorts: Cohort[] = [
         originalPrice: 12999,
         enrollHref: "https://dtkhkw.courses.store/869497",
         demoId: "LE6ni4gNYZQ",
-        brochureUrl: "/media/brochure/EdgeX_M3_Course Brochure.pdf",
+        brochureUrl: "/media/Brochure/EdgeX_M3_Course Brochure.pdf",
         addons: ["Lifetime Access to EdgeX Corporate Club"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
