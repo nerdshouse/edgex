@@ -92,7 +92,7 @@ function ModuleItem({ index, week, topics, details, lectures, assignments, modul
                 {(lectures || assignments || moduleHours) && (
                   <div className="flex flex-wrap gap-4 pt-4 border-t border-[var(--border)] text-xs font-medium text-[var(--text-muted)] uppercase tracking-[0.05em]">
                     {lectures && <span>{lectures} Lectures</span>}
-                    {assignments && <span>{assignments} Learning Hours</span>}
+                    {assignments && <span>{assignments} Learning Resources</span>}
                     {moduleHours && <span>{moduleHours} Hours</span>}
                   </div>
                 )}
