@@ -92,7 +92,7 @@ function ModuleItem({ index, week, topics, details, lectures, assignments, modul
                 {(lectures || assignments || moduleHours) && (
                   <div className="flex flex-wrap gap-4 pt-4 border-t border-[var(--border)] text-xs font-medium text-[var(--text-muted)] uppercase tracking-[0.05em]">
                     {lectures && <span>{lectures} Lectures</span>}
-                    {assignments && <span>{assignments} Assignments</span>}
+                    {assignments && <span>{assignments} Learning Hours</span>}
                     {moduleHours && <span>{moduleHours} Hours</span>}
                   </div>
                 )}
@@ -193,7 +193,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                         const parts = [];
                         if (totalModules > 0) parts.push(`${totalModules} Modules`);
                         if (totalLectures > 0) parts.push(`${totalLectures} Lectures`);
-                        if (totalAssignments > 0) parts.push(`${totalAssignments} Assignments & Learning Resources`);
+                        if (totalAssignments > 0) parts.push(`${totalAssignments} Learning Resources`);
 
                         if (parts.length > 0) {
                           accessText = parts.join(", ");

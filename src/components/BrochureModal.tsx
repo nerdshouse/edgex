@@ -71,10 +71,6 @@ export default function BrochureModal({ isOpen, onClose, courseSlug, brochureUrl
     }
 
     setLoading(true);
-    let popup: Window | null = null;
-    if (brochureUrl) {
-      popup = window.open("about:blank", "_blank");
-    }
 
     try {
       const response = await fetch("/api/brochure", {
@@ -88,21 +84,17 @@ export default function BrochureModal({ isOpen, onClose, courseSlug, brochureUrl
       }
 
       setSuccess(true);
-      
-      // Trigger download
-      if (brochureUrl && popup) {
-        popup.location.href = brochureUrl;
-      } else if (!brochureUrl) {
+
+      if (brochureUrl) {
         const link = document.createElement("a");
-        link.href = "/media/brochure/Brochure.pdf";
-        link.download = `EdgeX-Brochure-${courseSlug}.pdf`;
+        link.href = brochureUrl;
+        link.download = "";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       }
 
     } catch (err: any) {
-      if (popup) popup.close();
       setError(err.message || "An unexpected error occurred.");
     } finally {
       setLoading(false);
@@ -152,15 +144,15 @@ export default function BrochureModal({ isOpen, onClose, courseSlug, brochureUrl
                 </div>
                 <h4 className="text-lg font-medium text-[var(--text-primary)]">Details Submitted!</h4>
                 <div className="mt-5">
-                  <a
-                    href={brochureUrl || "/media/brochure/Brochure.pdf"}
-                    target={brochureUrl ? "_blank" : undefined}
-                    download={!brochureUrl ? `EdgeX-Brochure-${courseSlug}.pdf` : undefined}
-                    rel={brochureUrl ? "noopener noreferrer" : undefined}
-                    className="text-sm font-semibold text-[var(--accent)] underline underline-offset-2 hover:text-[var(--primary)] transition-colors"
-                  >
-                    Click here if it didn't open
-                  </a>
+                  {brochureUrl && (
+                    <a
+                      href={brochureUrl}
+                      download
+                      className="text-sm font-semibold text-[var(--accent)] underline underline-offset-2 hover:text-[var(--primary)] transition-colors"
+                    >
+                      Click here if it didn't start
+                    </a>
+                  )}
                 </div>
               </div>
             ) : (
