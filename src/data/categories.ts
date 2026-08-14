@@ -3,7 +3,7 @@ import { SessionMentor, defaultMentors } from "./sessions";
 
 export interface CourseListing {
   tag: string;
-  status: string;
+  status?: string;
   code: string;
   title: string;
   desc: string;
@@ -95,7 +95,6 @@ export const categoryData: Record<string, CategoryData> = {
     courses: [
       {
         tag: "Foundations (Role Agnostic)",
-        status: "Pre-launch Enrolments",
         code: "M1",
         title: "Placement Foundations for B-Schools",
         desc: "Core skills required for all MBA placements, focusing on role-agnostic Structured Problem-Solving, Leadership Principles, General Management & Behavioural Interviews, HR rounds, Business Thinking, Structured Communication, Professional Conduct, and Placement prep strategy. Complimentary Mock GDs",
@@ -103,7 +102,6 @@ export const categoryData: Record<string, CategoryData> = {
       },
       {
         tag: "Consulting/Strategy/Business Analytics",
-        status: "Pre-launch Enrolments",
         code: "M2",
         title: "ConsultPro for B-Schools",
         desc: "Everything required to excel in Consulting and Strategy interviews, including advanced Case Prep, Guesstimates, Core Consulting Frameworks and their applications, Structured Thinking & Communication. Also includes multiple case interview demonstrations with T1 B-School Alums.",
@@ -111,7 +109,6 @@ export const categoryData: Record<string, CategoryData> = {
       },
       {
         tag: "Combo",
-        status: "Pre-launch Enrolments",
         code: "M3",
         title: "Placement Foundations + ConsultPro Combo for B-Schools",
         desc: "Complete preparation for MBA placements, combining role-agnostic Interview Foundations with Advanced Consulting and Strategy interview prep in one comprehensive program.",
