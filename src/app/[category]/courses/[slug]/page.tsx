@@ -225,7 +225,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                     {isGDLabs ? (
                       "Students may book sessions as and when they feel ready. New slots are released every weekend and can be booked at least one week in advance."
                     ) : (
-                      <>24 Months<span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>Instant Access upon course Launch (August 12th, 2026)&nbsp;|&nbsp;Access to all course updates</>
+                      <>24 Months<span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>{cohort.slug === "mba" ? "Instant Access to all Modules" : "Instant Access upon course Launch (September 10th, 2026)"}&nbsp;|&nbsp;Access to all course updates</>
                     )}
                   </span>
                 </p>
@@ -287,7 +287,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                       </div>
                     )}
                     <div className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      {originalPrice ? "Pre-Launch Price" : "Price"}
+                      {originalPrice && cohort.slug !== "mba" ? "Pre-Launch Price" : "Price"}
                     </div>
                     <div className="flex flex-col items-center justify-center">
                       {originalPrice && price && originalPrice > price && (

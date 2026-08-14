@@ -206,8 +206,7 @@ export const cohorts: Cohort[] = [
         tag: "Placement",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 4299,
-        originalPrice: 4999,
+        price: 4999,
         enrollHref: "https://dtkhkw.courses.store/859366",
         trailerId: "DToU9DR_5LQ",
         brochureUrl: "/media/Brochure/EdgeX_M1_Course Brochure.pdf",
@@ -217,7 +216,7 @@ export const cohorts: Cohort[] = [
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" },
           { category: "GD Labs", access: "Slots Every Weekend - join as per your schedule" }
         ],
-        callout: "Note that these modules contain powerful interview prep lessons for B School placements, irrespective of the domain. However specific technical or specialized topics needed for specific verticals/job functions, if any, is not covered and students should prepare from alternate sources.",
+        callout: "Refund Policy : For all current MBA students first year or second year - If you enroll in the course and are unable to secure any job offer during your EdgeX course tenure, we will provide a 100% refund of your course fee at the end of your tenure (24 months), upon submission of relevant supporting documents/proof as required. No questions asked.",
         journey: [
           { title: "You Enroll into the course" },
           { title: "Instant Access to Pre-Recorded Modules", timeframe: "instant" },
@@ -272,8 +271,7 @@ export const cohorts: Cohort[] = [
         tag: "Consulting",
         instructor: "Punita Shrivastava",
         instructorRole: "Lead Instructor",
-        price: 6799,
-        originalPrice: 7999,
+        price: 7999,
         enrollHref: "https://dtkhkw.courses.store/854646",
         trailerId: "3kgwHmeoefE",
         demoId: "LE6ni4gNYZQ",
@@ -283,7 +281,7 @@ export const cohorts: Cohort[] = [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" }
         ],
-        callout: "Advanced Case Prep for Management, Strategy and General Consulting Interviews. Also useful for those looking for structured problem solving practice for non-consulting roles",
+        callout: "Refund Policy : For all current MBA students first year or second year - If you enroll in the course and are unable to secure any job offer during your EdgeX course tenure, we will provide a 100% refund of your course fee at the end of your tenure (24 months), upon submission of relevant supporting documents/proof as required. No questions asked.",
         journey: [
           { title: "You Enroll into the course" },
           { title: "Instant Access to Pre-Recorded Modules", timeframe: "instant" },
@@ -356,7 +354,7 @@ export const cohorts: Cohort[] = [
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" },
           { category: "2 Complimentary passes to EdgeX GD Labs (Virtual Mock GD practice)", access: "Slots Every Weekend - join as per your schedule" }
         ],
-        callout: "Recommended for students targeting consulting while preparing comprehensively for MBA placements across multiple business roles. This integrated program combines Placement Foundations and ConsultPro into one seamless learning journey with optimized content and no unnecessary repetition",
+        callout: "Refund Policy : For all current MBA students first year or second year - If you enroll in the course and are unable to secure any job offer during your EdgeX course tenure, we will provide a 100% refund of your course fee at the end of your tenure (24 months), upon submission of relevant supporting documents/proof as required. No questions asked.",
         journey: [
           { title: "You Enroll into the course" },
           { title: "Instant Access to Pre-Recorded Modules", timeframe: "instant" },
