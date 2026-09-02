@@ -462,9 +462,14 @@ export const cohorts: Cohort[] = [
         faqs: m4Faqs,
         curriculum: [
           {
-            week: "Five Live GD Simulations",
+            week: "GD Prep Resources and Guidance",
             topics: [],
-            details: "Participate in five live Group Discussion simulations conducted over Zoom in small batches of 6–8 participants from the same cohort. Sessions use carefully curated discussion topics, closely replicate the environment of corporate placement GDs, and are moderated by EdgeX TAs. Students are required to be in formal dress-up and keep their camera on. However, for protecting confidentiality, students details will not be displayed to other participants"
+            details: "Recorded lectures on communication style, conversation methodolgies, and important tips and tricks for cracking corporate GDs. Detailed resources with various expected topics compendium and complete prep material for the same."
+          },
+          {
+            week: "Mock GD practice - 4 Slots",
+            topics: [],
+            details: "Participate in 4 live Group Discussion simulations conducted over Zoom in small batches of 6–8 participants from top colleges across India. Sessions use carefully curated discussion topics, closely replicate the environment of corporate placement GDs, and are moderated by EdgeX TAs. Slots are released every weekend, morning and evening, students can book their seats at least 1 week in advance as per their schedule. Students are required to keep their camera on, however for protecting confidentiality, students details will not be displayed to other participants."
           },
           {
             week: "Personalized Expert Feedback & Guidance",
@@ -739,9 +744,14 @@ export const cohorts: Cohort[] = [
         faqs: m4Faqs,
         curriculum: [
           {
-            week: "Five Live GD Simulations",
+            week: "GD Prep Resources and Guidance",
             topics: [],
-            details: "Participate in five live Group Discussion simulations conducted over Zoom in small batches of 6–8 participants from the same cohort. Sessions use carefully curated discussion topics, closely replicate the environment of corporate placement GDs, and are moderated by EdgeX TAs. Students are required to be in formal dress-up and keep their camera on. However, for protecting confidentiality, students details will not be displayed to other participants"
+            details: "Recorded lectures on communication style, conversation methodolgies, and important tips and tricks for cracking corporate GDs. Detailed resources with various expected topics compendium and complete prep material for the same"
+          },
+          {
+            week: "Mock GD practice - 4 Slots",
+            topics: [],
+            details: "Participate in 4 live Group Discussion simulations conducted over Zoom in small batches of 6–8 participants from top colleges across India. Sessions use carefully curated discussion topics, closely replicate the environment of corporate placement GDs, and are moderated by EdgeX TAs. Slots are released every weekend, morning and evening, students can book their seats at least 1 week in advance as per their schedule. Students are required to keep their camera on, however for protecting confidentiality, students details will not be displayed to other participants"
           },
           {
             week: "Personalized Expert Feedback & Guidance",

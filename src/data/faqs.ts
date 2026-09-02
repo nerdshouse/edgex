@@ -53,7 +53,9 @@ export const m4Faqs = [
   { q: "Will I receive individual feedback?", a: "Yes. Every participant receives a personalized EdgeX GD Performance Report within five working days. The report highlights strengths, areas for improvement, and practical recommendations to help improve future performance." },
   { q: "Do I need to keep my camera on?", a: "Yes. Students are expected to participate with their camera switched on and dressed in formal professional attire to ensure the simulations closely resemble actual corporate placement processes." },
   { q: "Are my details visible to other participants?", a: "No. To maintain privacy and create a comfortable learning environment, participant details are kept confidential and are not displayed to other students during the session." },
-  { q: "Can I choose when to attend my sessions?", a: "Yes. New GD Lab slots are released every weekend. Students can book sessions at least one week in advance and participate whenever they feel adequately prepared." }
+  { q: "Can I choose when to attend my sessions?", a: "Yes. New GD Lab slots are released every weekend. Students can book sessions at least one week in advance and participate whenever they feel adequately prepared." },
+  { q: "If I have booked a slot but unable to make it due to last minute changes, will I be able to reschedule? ", a: "If you have booked a slot and need to reschedule it to a later time, you will be required to inform your TA at least 24 hours in advance. This is to ensure the best GD experience for all students and ensure healthy participation in every GD." },
+  { q: "I only want to practice GDs for a particular domain of topics (e.g. healthcare). How can that be facilitated?", a: "Topics are not revealed to students until they are actually in the GD, this helps us to create a close-to-real practice experience for students. However, if you have preference to practice only a specific domain (say, healthcare), you can inform that to your TA after your enrolment and he/she will keep you posted on upcoming slots that fall under your preferred domain." }
 ];
 
 export const e1Faqs = [

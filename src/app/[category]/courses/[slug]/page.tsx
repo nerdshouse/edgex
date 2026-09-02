@@ -223,7 +223,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                   <span className="font-semibold text-[var(--text-primary)]">Course Access: </span>
                   <span>
                     {isGDLabs ? (
-                      "Students may book sessions as and when they feel ready. New slots are released every weekend and can be booked at least one week in advance."
+                      "Students may book sessions as and when they are ready, anytime in 24 months. New slots are released every week for Saturdays and Sundays (Morning 10am-2pm, evening 5pm-8pm) and can be booked at least one week in advance."
                     ) : (
                       <>24 Months<span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>{cohort.slug === "mba" ? "Instant Access to all Modules" : "Instant Access upon course Launch (September 10th, 2026)"}&nbsp;|&nbsp;Access to all course updates</>
                     )}
