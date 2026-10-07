@@ -128,11 +128,11 @@ export const site = {
         href: "/mba-students/courses/consulting-advanced-2026",
       },
       {
-        title: "Placement Foundations for B-Schools",
+        title: "Placement Interview Essentials for B-Schools",
         href: "/mba-students/courses/placement-foundations-2026",
       },
       {
-        title: "Placement Foundations for Engineers",
+        title: "Business Interview Essentials for Engineers",
         href: "/engineering-students/courses/placement-foundations-engineers",
       },
     ],
@@ -411,7 +411,7 @@ export const site = {
 
   companySlider: {
     label: "Placement outcomes",
-    title: "Students have cracked interviews at",
+    title: "Target Companies",
     lanes: [
       [
         "Accenture",

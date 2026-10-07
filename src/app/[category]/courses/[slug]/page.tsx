@@ -225,7 +225,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                     {isGDLabs ? (
                       "Students may book sessions as and when they are ready, anytime in 24 months. New slots are released every week for Saturdays and Sundays (Morning 10am-2pm, evening 5pm-8pm) and can be booked at least one week in advance."
                     ) : (
-                      <>24 Months<span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>{cohort.slug === "mba" ? "Instant Access to all Modules" : "Instant Access upon course Launch (September 10th, 2026)"}&nbsp;|&nbsp;Access to all course updates</>
+                      <>24 Months<span className="text-[var(--text-muted)]">&nbsp;|&nbsp;</span>Instant module wise access&nbsp;|&nbsp;Access to all course updates</>
                     )}
                   </span>
                 </p>
@@ -287,7 +287,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                       </div>
                     )}
                     <div className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      {originalPrice && cohort.slug !== "mba" ? "Pre-Launch Price" : "Price"}
+                      Price
                     </div>
                     <div className="flex flex-col items-center justify-center">
                       {originalPrice && price && originalPrice > price && (
@@ -308,7 +308,7 @@ export default function CoursePage({ params }: { params: Promise<{ category: str
                     {isGDLabs ? "Enroll in this program →" : "Enroll in this course →"}
                   </Link>
 
-                  {!isGDLabs && (
+                  {false && !isGDLabs && cohort.slug === "mba" && (
                     <button
                       onClick={() => setIsBrochureOpen(true)}
                       className="text-[13px] text-center text-[var(--text-secondary)] hover:text-[var(--primary)] underline decoration-[var(--border)] underline-offset-4 hover:decoration-[var(--primary)] transition-colors"
