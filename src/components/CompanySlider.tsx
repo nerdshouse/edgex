@@ -57,8 +57,8 @@ export default function CompanySlider() {
         >
           <p className="section-label justify-center mb-4">{companySlider.label}</p>
           <h2 className="section-title text-xl sm:text-2xl text-balance">
-            {companySlider.title.split("interviews at")[0]}
-            <span className="text-[var(--accent)]">interviews at</span>
+            {companySlider.title.split("Companies")[0]}
+            <span className="text-[var(--accent)]">Companies</span>
           </h2>
         </motion.div>
 

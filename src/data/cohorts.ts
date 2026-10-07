@@ -197,7 +197,7 @@ export const cohorts: Cohort[] = [
     courses: [
       {
         slug: "placement-foundations-2026",
-        title: "Placement Foundations for B-Schools - 2026",
+        title: "Placement Interview Essentials for B-Schools - 2026",
         desc: "Industry-agnostic Interview essentials for all MBA placements, covering detailed structured problem solving and its applications in interviews, behavioural interviews, leadership principles, professional conduct & communication, and interview strategy for business roles across Growth, Category, Marketing, Operations, Product Management, Business Analytics, Customer Experience, and General Management",
         duration: "24 Months",
         lessons: 34,
@@ -210,7 +210,7 @@ export const cohorts: Cohort[] = [
         enrollHref: "https://dtkhkw.courses.store/859366",
         trailerId: "DToU9DR_5LQ",
         brochureUrl: "/media/Brochure/EdgeX_M1_Course Brochure.pdf",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" },
@@ -226,32 +226,32 @@ export const cohorts: Cohort[] = [
         outcomes: [],
         faqs: m1Faqs,
         curriculum: [
-          { 
-            week: "Structured Problem Solving & Functional Applications", 
+          {
+            week: "Structured Problem Solving & Functional Applications",
             topics: [],
             details: "Structured problem-solving methodologies and their applications across various business scenarios in functions such as Growth, Category Management, Marketing, Operations, Product Management, Business Analytics, Customer Experience, and General Management. Includes practical examples from a wide range of industries.",
             lectures: 10,
             assignments: 5,
             moduleHours: 10
           },
-          { 
-            week: "Leadership Principles, General Management & Behavioral Assessment", 
+          {
+            week: "Leadership Principles, General Management & Behavioral Assessment",
             topics: [],
             details: "Leadership principles and behavioural competencies evaluated across business interviews, including evidence-based storytelling, leadership experiences, stakeholder management, professional judgement, communication, and behavioural interview strategy. Includes detailed question compendiums covering the professional qualities commonly assessed across organizations.",
             lectures: 7,
             assignments: 5,
             moduleHours: 6
           },
-          { 
-            week: "Navigating HR & Hiring Manager Interviews", 
+          {
+            week: "Navigating HR & Hiring Manager Interviews",
             topics: [],
             details: "Objectives, evaluation criteria, and interview strategies for HR and hiring manager interviews, including recruiter expectations, career motivation, professional judgement, executive communication, and handling challenging interview situations.",
             lectures: 5,
             assignments: 2,
             moduleHours: 4
           },
-          { 
-            week: "Interview Excellence & Placement Readiness", 
+          {
+            week: "Interview Excellence & Placement Readiness",
             topics: [],
             details: "Essential strategies for interview preparation and placement success, including focused company and role research, CV positioning, interview mindset, professional presence, group discussion performance, placement-day execution, and interview best practices.",
             lectures: 6,
@@ -276,7 +276,7 @@ export const cohorts: Cohort[] = [
         trailerId: "3kgwHmeoefE",
         demoId: "LE6ni4gNYZQ",
         brochureUrl: "/media/Brochure/EdgeX_M2_Course Brochure.pdf",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" }
@@ -334,8 +334,8 @@ export const cohorts: Cohort[] = [
       },
       {
         slug: "placement-combo-2026",
-        title: "Placement Foundations + ConsultPro Combo for B-Schools",
-        desc: "A comprehensive placement preparation program that combines the best of Placement Foundations and ConsultPro. It builds strong interview fundamentals for a wide range of MBA business roles while providing complete preparation for consulting and strategy interviews. The curriculum has been optimized by consolidating overlapping content to deliver a seamless learning experience without any repetition.",
+        title: "ConsultPro + Placement Interview Essentials Combo",
+        desc: "A comprehensive placement preparation program that combines the best of Placement Interview Essentials and ConsultPro. It builds strong interview fundamentals for a wide range of MBA business roles while providing complete preparation for consulting and strategy interviews. The curriculum has been optimized by consolidating overlapping content to deliver a seamless learning experience without any repetition.",
         duration: "24 Months",
         lessons: 65,
         hours: 42,
@@ -348,7 +348,7 @@ export const cohorts: Cohort[] = [
         enrollHref: "https://dtkhkw.courses.store/869497",
         demoId: "LE6ni4gNYZQ",
         brochureUrl: "/media/Brochure/EdgeX_M3_Course Brochure.pdf",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" },
@@ -493,7 +493,7 @@ export const cohorts: Cohort[] = [
     courses: [
       {
         slug: "placement-foundations-engineers",
-        title: "Placement Foundations for Engineers",
+        title: "Business Interview Essentials for Engineers",
         desc: "Build the complete interview foundation for engineers aspiring to business careers, covering the core skills required across consulting, product, analytics, operations, and other business roles.",
         duration: "24 Months",
         lessons: 34,
@@ -505,7 +505,7 @@ export const cohorts: Cohort[] = [
         price: 2499,
         originalPrice: 2999,
         enrollHref: "https://dtkhkw.courses.store/779003",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" },
@@ -521,32 +521,32 @@ export const cohorts: Cohort[] = [
         outcomes: [],
         faqs: e1Faqs,
         curriculum: [
-          { 
-            week: "Interview Fundamentals & Preparation Strategy", 
+          {
+            week: "Interview Fundamentals & Preparation Strategy",
             topics: [],
             details: "Build a structured approach to interview preparation by understanding how interviewers evaluate candidates and what differentiates top performers. Learn effective preparation strategies, communication principles, interview-day readiness, professional demeanor and the strategic use of your résumé to guide conversations. The module also explores role-specific expectations across different corporate functions and provides practical frameworks to help you prepare with clarity and confidence for various business roles.",
             lectures: 7,
             assignments: 5,
             moduleHours: 5
           },
-          { 
-            week: "Structured Problem Solving & Functional Applications", 
+          {
+            week: "Structured Problem Solving & Functional Applications",
             topics: [],
             details: "Develop a systematic approach to solving varied business and analytical problems using structured thinking frameworks such as MECE, top-down decomposition, issue trees, value chain analysis, hypothesis-driven reasoning, first-principles thinking, and user-centric analysis. Apply these techniques across a range of functional scenarios including product management, user journeys, marketing analytics, customer segmentation, operations, pricing, and business decision-making to communicate clear, logical, and well-structured solutions.",
             lectures: 12,
             assignments: 5,
             moduleHours: 10
           },
-          { 
-            week: "Leadership Principles, General Management, & Behavioral Assessment", 
+          {
+            week: "Leadership Principles, General Management, & Behavioral Assessment",
             topics: [],
             details: "Develop a structured approach to behavioral interviews by understanding how interviewers evaluate leadership traits and professional qualities through targeted questions and pressure-testing techniques. Learn how to identify, prepare, and communicate evidence-based stories that demonstrate ownership, professional judgment, bias for action, integrity, growth mindset, customer focus, collaboration, resilience, and learning agility. Master techniques to articulate individual impact and team scenarios, navigate follow-up questions, and consistently present yourself as a high-potential candidate. The principles discussed are representative of the leadership traits assessed by leading organizations across consulting, technology, product, and corporate roles.",
             lectures: 10,
             assignments: 10,
             moduleHours: 10
           },
-          { 
-            week: "Navigating HR & Hiring Manager Interviews", 
+          {
+            week: "Navigating HR & Hiring Manager Interviews",
             topics: [],
             details: "Develop a strategic understanding of HR and hiring manager interviews by learning the distinct objectives, evaluation criteria, and decision-making processes behind each stage. Explore how organizations assess cultural fit, motivation, communication, professionalism, and long-term potential, while identifying common pitfalls and interview \"no-nos\" that can negatively impact hiring outcomes.",
             lectures: 5,
@@ -569,7 +569,7 @@ export const cohorts: Cohort[] = [
         price: 4999,
         originalPrice: 5999,
         enrollHref: "https://dtkhkw.courses.store/869650",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" }
@@ -627,7 +627,7 @@ export const cohorts: Cohort[] = [
       },
       {
         slug: "placement-combo-engineers",
-        title: "Consulting + Placement Essentials Combo",
+        title: "ConsultPro + Business Interview Essentials Combo",
         desc: "",
         duration: "24 Months",
         lessons: 65,
@@ -639,7 +639,7 @@ export const cohorts: Cohort[] = [
         price: 6299,
         originalPrice: 8999,
         enrollHref: "https://dtkhkw.courses.store/869651",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" },
           { category: "LIVE Doubt Clearing sessions", access: "Slots Every Weekend - join as per your schedule" },
@@ -787,7 +787,7 @@ export const cohorts: Cohort[] = [
         price: 4999,
         originalPrice: 5999,
         enrollHref: "https://dtkhkw.courses.store/869674",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" }
         ],
@@ -848,7 +848,7 @@ export const cohorts: Cohort[] = [
         price: 7599,
         originalPrice: 8999,
         enrollHref: "https://dtkhkw.courses.store/869682",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" }
         ],
@@ -905,7 +905,7 @@ export const cohorts: Cohort[] = [
       },
       {
         slug: "placement-combo-professionals",
-        title: "Interview Essentials + Consulting Pro Combo for Lateral Interviews",
+        title: "Interview Essentials + ConsultPro Combo for Lateral Interviews",
         desc: "Complete preparation for lateral interviews, combining role-agnostic interview foundations with advanced consulting and strategy interview preparation in one comprehensive program.",
         duration: "24 Months",
         lessons: 65,
@@ -917,7 +917,7 @@ export const cohorts: Cohort[] = [
         price: 9999,
         originalPrice: 14998,
         enrollHref: "https://dtkhkw.courses.store/869696",
-        addons: ["Lifetime Access to EdgeX Corporate Club"],
+        addons: ["Lifetime Access to EdgeX Corporate Club and Recruiter Podcasts"],
         inclusions: [
           { category: "Pre-Recorded Modules", access: "24 Months, Instant Access upon enrolment" }
         ],

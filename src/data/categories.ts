@@ -85,7 +85,7 @@ export const categoryData: Record<string, CategoryData> = {
   "mba-students": {
     hero: {
       label: "Premier B-School Placements (Tier 1)",
-      title: "Learn how Global Corporates actually evaluate MBA candidates.",
+      title: "Time-saving, accelerated placement courses designed for last-minute prep",
       subtitle: "Prepare with experts. Perform with confidence. Ace your placements.",
       highlight: "Courses designed by senior corporate professionals & experienced interviewers.",
       features: ["Structured Curriculum", "Self-Paced Learning", "Live GD & Interview Practice"],
@@ -94,23 +94,23 @@ export const categoryData: Record<string, CategoryData> = {
     coursesSubtitle: "Explore Courses",
     courses: [
       {
-        tag: "Foundations (Role Agnostic)",
-        code: "M1",
-        title: "Placement Foundations for B-Schools",
-        desc: "Core skills required for all MBA placements, focusing on role-agnostic Structured Problem-Solving, Leadership Principles, General Management & Behavioural Interviews, HR rounds, Business Thinking, Structured Communication, Professional Conduct, and Placement prep strategy. Complimentary Mock GDs",
-        href: "/mba-students/courses/placement-foundations-2026",
-      },
-      {
         tag: "Consulting/Strategy/Business Analytics",
-        code: "M2",
+        code: "M1",
         title: "ConsultPro for B-Schools",
         desc: "Everything required to excel in Consulting and Strategy interviews, including advanced Case Prep, Guesstimates, Core Consulting Frameworks and their applications, Structured Thinking & Communication. Also includes multiple case interview demonstrations with T1 B-School Alums.",
         href: "/mba-students/courses/consulting-advanced-2026",
       },
       {
+        tag: "Foundations (Role Agnostic)",
+        code: "M2",
+        title: "Placement Interview Essentials for B-Schools",
+        desc: "Core skills required for all MBA placements, focusing on role-agnostic Structured Problem-Solving, Leadership Principles, General Management & Behavioural Interviews, HR rounds, Business Thinking, Structured Communication, Professional Conduct, and Placement prep strategy. Complimentary Mock GDs",
+        href: "/mba-students/courses/placement-foundations-2026",
+      },
+      {
         tag: "Combo",
         code: "M3",
-        title: "Placement Foundations + ConsultPro Combo for B-Schools",
+        title: "ConsultPro + Placement Interview Essentials Combo",
         desc: "Complete preparation for MBA placements, combining role-agnostic Interview Foundations with Advanced Consulting and Strategy interview prep in one comprehensive program.",
         href: "/mba-students/courses/placement-combo-2026",
       },
@@ -144,15 +144,13 @@ export const categoryData: Record<string, CategoryData> = {
     courses: [
       {
         tag: "Foundations (Role Agnostic)",
-        status: "Pre-launch Enrolments",
         code: "E1",
-        title: "Placement Foundations for Engineers",
+        title: "Business Interview Essentials for Engineers",
         desc: "Core skills required for business-focused campus placements, from role-agnostic structured problem-solving and behavioural interviews to HR rounds, business fundamentals, and professional communication",
         href: "/engineering-students/courses/placement-foundations-engineers", // We need valid slug links here. They were pointing to /contact in old version. Let's assume standard courses exist or point to contact for now. I'll update hrefs to route to dynamic pages if slugs exist, else contact. The user had "/contact" for engineers courses. Let's maintain "/contact" for now to avoid 404s if courses don't exist.
       },
       {
         tag: "Consulting/Strategy/Business Analytics",
-        status: "Pre-launch Enrolments",
         code: "E2",
         title: "ConsultPro for Engineers",
         desc: "Everything required to excel in consulting interviews, including advanced case preparation, guesstimates, consulting frameworks, structured thinking & communication, and case interview demonstrations.",
@@ -160,9 +158,8 @@ export const categoryData: Record<string, CategoryData> = {
       },
       {
         tag: "Combo",
-        status: "Pre-launch Enrolments",
         code: "E3",
-        title: "Consulting + Placement Essentials Combo",
+        title: "ConsultPro + Business Interview Essentials Combo",
         desc: "Complete prep for engineers seeking business roles, combining role-agnostic interview foundations with advanced consulting and strategy interview preparation in one comprehensive program.",
         href: "/engineering-students/courses/placement-combo-engineers",
       },
@@ -196,7 +193,6 @@ export const categoryData: Record<string, CategoryData> = {
     courses: [
       {
         tag: "Foundations",
-        status: "Pre-launch Enrolments",
         code: "L1",
         title: "Lateral Interview Foundations",
         desc: "Core skills required for lateral interviews, focusing on role-agnostic structured problem-solving, behavioural and leadership interviews, business thinking, structured communication, executive presence, stakeholder management, and interview strategy. Includes complimentary mock interview sessions.",
@@ -204,7 +200,6 @@ export const categoryData: Record<string, CategoryData> = {
       },
       {
         tag: "Consulting/Strategy/Business Analytics",
-        status: "Pre-launch Enrolments",
         code: "L2",
         title: "ConsultPro for Lateral Interviews",
         desc: "Everything required to excel in Consulting and Strategy interviews, including advanced Case Prep, Guesstimates, Core Consulting Frameworks and their applications, Structured Thinking & Communication. Also includes multiple case interview demonstrations with T1 B-School Alums.",
@@ -212,7 +207,6 @@ export const categoryData: Record<string, CategoryData> = {
       },
       {
         tag: "Combo",
-        status: "Pre-launch Enrolments",
         code: "L3",
         title: "Interview Essentials + ConsultPro Combo for Lateral Interviews",
         desc: "Complete preparation for lateral interviews, combining role-agnostic interview foundations with advanced consulting and strategy interview preparation in one comprehensive program.",
